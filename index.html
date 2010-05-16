@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<h1>Recent</h1>
+
+<div id="recent-posts">
+  {% for post in site.posts limit:10 %}
+  <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+  {% endfor %}
+</div>

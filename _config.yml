@@ -1,0 +1,111 @@
+auto: true
+server: true
+server_port: 2222
+projects:
+ -
+   name: Ronin
+   website: http://ronin.rubyforge.org/
+   source: http://github.com/ronin-ruby/
+   mailinglist: http://groups.google.com/group/ronin-ruby
+   chatroom: irc://irc.freenode.net:6667/ronin
+ -
+   name: Spidr
+   website: http://spidr.rubyforge.org/
+   source: http://github.com/postmodern/spidr
+   mailinglist: http://groups.google.com/group/spidr
+   chatroom: irc://irc.freenode.net:6667/spidr
+ -
+   name: WSOC
+   source: http://github.com/postmodern/wsoc
+   mailinglist: http://groups.google.com/group/spidr
+   chatroom: irc://irc.freenode.net:6667/spidr
+ -
+   name: Sketches
+   website: http://sketches.rubyforge.org/
+   source: http://github.com/postmodern/sketches
+ -
+   name: DeploYML
+   source: http://github.com/postmodern/deployml
+   status: dev
+ -
+   name: Pullr
+   source: http://github.com/postmodern/pullr
+ -
+   name: Raingrams
+   website: http://raingrams.rubyforge.org/
+   source: http://github.com/postmodern/raingrams
+ -
+   name: Chars
+   source: http://github.com/postmodern/chars
+ -
+   name: Parameters
+   source: http://github.com/postmodern/parameters
+ -
+   name: Contextify
+   source: http://github.com/postmodern/contextify
+ -
+   name: OpenNamespace
+   source: http://github.com/postmodern/open_namespace
+ -
+   name: DataPaths
+   source: http://github.com/postmodern/data_paths
+ -
+   name: RProgram
+   source: http://github.com/postmodern/rprogram
+ -
+   name: RTranscoder
+   source: http://github.com/postmodern/rtranscoder
+ -
+   name: dm-visualizer
+   source: http://gituhub.com/postmodern/dm-visualizer
+   status: dev
+ -
+   name: dm-is-read_only
+   source: http://github.com/postmodern/dm-is-read_only
+   status: dev
+ -
+   name: dm-predefined
+   source: http://github.com/postmodern/dm-predefined
+ -
+   name: ffi-pcap
+   source: http://github.com/sophsec/ffi-pcap
+   status: dev
+   chatroom: irc://irc.overthewire.org:6697/sophsec
+ -
+   name: ffi-libnet
+   source: http://github.com/sophsec/ffi-libnet
+   status: wip
+   chatroom: irc://irc.overthewire.org:6697/sophsec
+ -
+   name: ffi-tre
+   source: http://github.com/sophsec/ffi-tre
+   status: wip
+   chatroom: irc://irc.overthewire.org:6697/sophsec
+ -
+   name: ffi-ptrace
+   source: http://github.com/sophsec/ffi-ptrace
+   status: wip
+   chatroom: irc://irc.overthewire.org:6697/sophsec
+ -
+   name: ffi-udis86
+   source: http://github.com/sophsec/ffi-udis86
+   chatroom: irc://irc.overthewire.org:6697/sophsec
+ -
+   name: ruby-yasm
+   source: http://github.com/sophsec/ruby-yasm
+   chatroom: irc://irc.overthewire.org:6697/sophsec
+ -
+   name: ruby-nmap
+   source: http://github.com/sophsec/ruby-nmap
+   chatroom: irc://irc.overthewire.org:6697/sophsec
+ -
+   name: Wordlist
+   source: http://github.com/sophsec/wordlist
+   status: dev
+ -
+   name: Shodan Ruby
+   source: http://github.com/postmodern/shodan-ruby
+   status: dev
+ -
+   name: GScraper
+   source: http://github.com/postmodern/gscraper

@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+{% for project in site.projects %}
+<div class="project">
+  {% if project.status != null %}
+  <div class="{{ project.status }}-badge"></div>
+  {% endif %}
+
+  {% if project.website != null %}
+  <h2><a href="{{ project.website }}">{{ project.name }}</a></h2>
+  {% else if project.source != null %}
+  <h2><a href="{{ project.source }}">{{ project.name }}</a></h2>
+  {% endif %}
+
+  <ol class="links">
+    <li><a href="{{ project.website }}">website</a></li>
+
+    {% if project.source != null %}
+    <li><a href="{{ project.source }}">source</a></li>
+    {% endif %}
+
+    {% if project.mailinglist != null %}
+    <li><a href="{{ project.mailinglist }}">mailinglist</a></li>
+    {% endif %}
+
+    {% if project.chatroom != null %}
+    <li><a href="{{ project.chatroom }}">chatroom</a></li>
+    {% endif %}
+  </ol>
+</div>
+{% endfor %}
