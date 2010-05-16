@@ -10,34 +10,33 @@ img {
 a {
 }
 
-#page {
-	margin: 180px 100px;
-	color: black;
+#menu {
+	margin: 180px 100px 0 100px;
+	padding: 10px;
 	background-color: white;
 }
 
-#menu {
-	clear: both;
-	padding: 10px;
-	list-style: none;
-}
-
-#menu > li {
+#menu > div.item {
 	float: left;
-	clear: none;
 	padding: 10px 40px;
 }
 
-#menu > li > a {
+#menu > div.item > a {
 	color: black;
 	font-weight: bold;
 	text-decoration: none;
 }
 
-#menu > li > a:hover {
-	color: gray;
+#menu > div.item > a:hover {
 	font-weight: bold;
-	text-decoration: overline;
+	text-decoration: none;
+	border-top: 5px solid black;
+}
+
+#page {
+	margin: 0 100px 180px 100px;
+	color: black;
+	background-color: white;
 }
 
 #content {

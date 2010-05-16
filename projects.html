@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<h1>Projects</h1>
+
 {% for project in site.projects %}
 <div class="project">
   {% if project.status != null %}
@@ -15,7 +17,9 @@ layout: default
   {% endif %}
 
   <ol class="links">
+    {% if project.website != null %}
     <li><a href="{{ project.website }}">website</a></li>
+    {% endif %}
 
     {% if project.source != null %}
     <li><a href="{{ project.source }}">source</a></li>
