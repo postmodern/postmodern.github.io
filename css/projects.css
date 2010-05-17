@@ -11,16 +11,16 @@ div.project img.badge {
 div.project > h2 {
 }
 
-div.project > ol.links {
+div.project > ul.links {
 	list-style: none;
 }
 
-div.project > ol.links > li {
+div.project > ul.links > li {
 	clear: none;
 	float: left;
 	margin: 0 1em;
 }
 
-div.project > ol.links > li > a {
+div.project > ul.links > li > a {
 	font-weight: bold;
 }

@@ -21,7 +21,7 @@ css:
     {% endif %}
   </h2>
 
-  <ol class="links">
+  <ul class="links">
     {% if project.website != null %}
     <li><a href="{{ project.website }}">website</a></li>
     {% endif %}
@@ -37,6 +37,6 @@ css:
     {% if project.chatroom != null %}
     <li><a href="{{ project.chatroom }}">chatroom</a></li>
     {% endif %}
-  </ol>
+  </ul>
 </div>
 {% endfor %}
