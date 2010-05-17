@@ -1,19 +1,22 @@
 ---
 layout: default
+css:
+ - projects
 ---
 
 <h1>Projects</h1>
+<hr />
 
 {% for project in site.projects %}
-<div class="project">
-  {% if project.status != null %}
-  <div class="{{ project.status }}-badge"></div>
-  {% endif %}
-
+<div class="project span-11">
   {% if project.website != null %}
   <h2><a href="{{ project.website }}">{{ project.name }}</a></h2>
   {% else if project.source != null %}
   <h2><a href="{{ project.source }}">{{ project.name }}</a></h2>
+  {% endif %}
+
+  {% if project.status != null %}
+  <img class="badge" src="/images/{{ project.status }}_badge.png" />
   {% endif %}
 
   <ol class="links">

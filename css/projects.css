@@ -1,0 +1,26 @@
+div.project {
+	height: 70px;
+}
+
+div.project > img.badge {
+	float: right;
+	width: 60px;
+	height: 60px;
+}
+
+div.project > h2 {
+}
+
+div.project > ol.links {
+	list-style: none;
+}
+
+div.project > ol.links > li {
+	clear: none;
+	float: left;
+	margin: 0 1em;
+}
+
+div.project > ol.links > li > a {
+	font-weight: bold;
+}
