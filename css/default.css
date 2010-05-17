@@ -12,6 +12,12 @@ img {
 a {
 }
 
+#moon {
+	position: absolute;
+	top: 20px;
+	left: 40px;
+}
+
 #menu {
 	margin: 180px 100px 0 100px;
 	padding: 10px;
