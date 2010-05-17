@@ -71,10 +71,11 @@ body {
 #menu > li {
 	height: 20px;
 	margin: 10px;
+	font-size: 120%;
+	font-weight: bold;
 }
 
 #menu > li > a {
-	font-weight: bold;
 	padding-left: 10px;
 	border-left: 20px solid white;
 }
