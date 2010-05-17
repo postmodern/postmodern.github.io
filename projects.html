@@ -9,15 +9,17 @@ css:
 
 {% for project in site.projects %}
 <div class="project span-11">
-  {% if project.website != null %}
-  <h2><a href="{{ project.website }}">{{ project.name }}</a></h2>
-  {% else if project.source != null %}
-  <h2><a href="{{ project.source }}">{{ project.name }}</a></h2>
-  {% endif %}
+  <h2>
+    {% if project.website != null %}
+    <a href="{{ project.website }}">{{ project.name }}</a>
+    {% else if project.source != null %}
+    <a href="{{ project.source }}">{{ project.name }}</a>
+    {% endif %}
 
-  {% if project.status != null %}
-  <img class="badge" src="/images/{{ project.status }}_badge.png" />
-  {% endif %}
+    {% if project.status != null %}
+    <img class="badge" src="/images/{{ project.status }}_badge.png" />
+    {% endif %}
+  </h2>
 
   <ol class="links">
     {% if project.website != null %}

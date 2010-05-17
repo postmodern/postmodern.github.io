@@ -2,7 +2,7 @@ div.project {
 	height: 70px;
 }
 
-div.project > img.badge {
+div.project img.badge {
 	float: right;
 	width: 60px;
 	height: 60px;
