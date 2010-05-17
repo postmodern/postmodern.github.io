@@ -5,6 +5,9 @@ var defaultLayout = {
     $("#moon").toggle(
       function() {
         $("#page").fadeOut("slow");
+
+        // lazy hack to popup the somafm.com DroneZone stream
+        window.location = 'http://somafm.com/startstream=dronezone.pls';
       },
       
       function() {
