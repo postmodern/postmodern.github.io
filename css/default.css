@@ -1,15 +1,8 @@
 body {
-	width: 100%;
 	background-color: black;
 	background-image: url(/images/sand_dunes.png);
 	background-attachment: fixed;
 	font-family: sans-serif;
-}
-
-img {
-}
-
-a {
 }
 
 #moon {
@@ -19,36 +12,20 @@ a {
 }
 
 #page {
-	margin: 180px 100px;
-}
-
-#menu {
-	height: 40px;
+	width: 800px;
+	margin: 180px auto;
+	color: black;
 	background-color: white;
 }
 
-#menu > .item {
-	float: left;
-	margin: 10px 40px;
-}
-
-#menu > .item > a {
+#page a {
 	color: black;
-	font-weight: bold;
 	text-decoration: none;
-}
-
-#menu > span.item > a:hover {
-	font-weight: bold;
-	text-decoration: none;
-	border-top: 5px solid black;
 }
 
 #content {
-	clear: both;
-	padding: 1em;
-	color: black;
-	background-color: white;
+	float: left;
+	padding: 10px 1em;
 }
 
 #content h1 {
@@ -79,12 +56,29 @@ a {
 	list-style: square;
 }
 
-#content a {
-	color: black;
-	text-decoration: none;
-}
-
 #content a:hover {
 	color: white;
 	background-color: black;
+}
+
+#sidebar {
+}
+
+#menu {
+	list-style: none;
+}
+
+#menu > li {
+	height: 20px;
+	margin: 10px;
+}
+
+#menu > li > a {
+	font-weight: bold;
+	padding-left: 10px;
+	border-left: 20px solid white;
+}
+
+#menu > li > a:hover {
+	border-left: 20px solid black;
 }
