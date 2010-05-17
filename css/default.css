@@ -18,38 +18,37 @@ a {
 	left: 40px;
 }
 
+#page {
+	margin: 180px 100px;
+}
+
 #menu {
-	margin: 180px 100px 0 100px;
-	padding: 10px;
+	height: 40px;
 	background-color: white;
 }
 
-#menu > div.item {
+#menu > .item {
 	float: left;
-	padding: 10px 40px;
+	margin: 10px 40px;
 }
 
-#menu > div.item > a {
+#menu > .item > a {
 	color: black;
 	font-weight: bold;
 	text-decoration: none;
 }
 
-#menu > div.item > a:hover {
+#menu > span.item > a:hover {
 	font-weight: bold;
 	text-decoration: none;
 	border-top: 5px solid black;
 }
 
-#page {
-	margin: 0 100px 180px 100px;
-	color: black;
-	background-color: white;
-}
-
 #content {
 	clear: both;
 	padding: 1em;
+	color: black;
+	background-color: white;
 }
 
 #content h1 {

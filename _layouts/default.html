@@ -15,13 +15,15 @@
 
   <body>
     {% include header.html %}
-    {% include menu.html %}
 
     <div id="page">
+      {% include menu.html %}
+
       <div id="content">
         {{ content }}
       </div>
     </div>
+
     {% include footer.html %}
   </body>
 </html>
