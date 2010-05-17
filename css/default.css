@@ -1,6 +1,8 @@
 body {
 	width: 100%;
 	background-color: black;
+	background-image: url(/images/sand_dunes.png);
+	background-attachment: fixed;
 	font-family: sans-serif;
 }
 
