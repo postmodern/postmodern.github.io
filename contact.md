@@ -3,6 +3,7 @@ layout: default
 ---
 
 # Contact
+-----------------------------------------------------------------------------
 
 * [GitHub](http://github.com/postmodern)
 * [Twitter](http://twitter.com/postmodern_mod3)
