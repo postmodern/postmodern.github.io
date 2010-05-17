@@ -5,11 +5,11 @@ layout: default
 <h1>Recent</h1>
 <hr />
 
-<div id="recent-posts">
+<ul id="recent-posts">
   {% for post in site.posts limit:10 %}
-  <p>
+  <li>
     {{ post.date | date: "%Y / %m / %d" }} -
     <a href="{{ post.url }}">{{ post.title }}</a>
-  </p>
+  </li>
   {% endfor %}
-</div>
+</ul>
