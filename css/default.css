@@ -14,6 +14,7 @@ body {
 #page {
 	width: 800px;
 	margin: 180px auto;
+	padding: 10px;
 	color: black;
 	background-color: white;
 }
@@ -62,9 +63,12 @@ body {
 }
 
 #sidebar {
+	border-left: 2px solid black;
 }
 
 #menu {
+	margin: 0;
+	padding: 0;
 	list-style: none;
 }
 
