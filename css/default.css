@@ -14,7 +14,7 @@ body {
 #page {
 	width: 800px;
 	margin: 180px auto;
-	padding: 10px;
+	padding: 10px 0 0 0;
 	color: black;
 	background-color: white;
 }
@@ -63,7 +63,7 @@ body {
 }
 
 #sidebar {
-	border-left: 2px solid black;
+	border-left: 5px solid black;
 }
 
 #menu {
@@ -86,4 +86,12 @@ body {
 
 #menu > li > a:hover {
 	border-left: 20px solid black;
+}
+
+#footer {
+	clear: both;
+	padding: 10px;
+	color: gray;
+	background-color: black;
+	font-size: x-small;
 }
