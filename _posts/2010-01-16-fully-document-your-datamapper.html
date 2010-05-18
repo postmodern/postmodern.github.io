@@ -1,0 +1,68 @@
+---
+layout: post
+title: (Fully) Document your DataMapper models with YARD
+tags:
+ - datamapper
+ - docs
+ - rdoc
+ - ruby
+ - yard
+---
+
+<p>Any release quality software has to provide documentation, for the future maintainers and other developers. Traditionally, Ruby projects would use <a href="http://rdoc.rubyforge.org/">RDoc</a> and add custom documentation blurbs to their classes, methods, attributes and constants. Unfortunately, there's a major limitation to RDoc, I can't be extended to recognize new meta-programming method calls.</p>
+
+<p>This rigidness of RDoc really shows up when you need to document ORM backed projects, such as one containing <a href="http://datamapper.org/">DataMapper</a> models. DataMapper allows one to define the <a href="http://datamapper.org/docs/properties.html">properties</a> and <a href="http://datamapper.org/docs/associations.html">relations</a> between models using handy class-methods:</p>
+
+<pre>class MyModel
+
+  include DataMapper::Resource
+
+  # The primary key of the model
+  property :id, Serial
+
+  # The name of the model
+  property :name, String
+
+  # The many authors contributing to the model
+  has n, :authors
+
+  # The user that owns the model
+  belongs_to :user
+
+end</pre>
+
+<p>RDoc will not recognize <kbd>property, <kbd>has</kbd> or <kbd>belongs_to</kbd>. Nor will RDoc know that <kbd>property</kbd> adds a class-method and instance reader/writer methods with the given name to the model. Documentation fail.</p>
+
+<h2>Enter YARD</h2>
+
+<blockquote>YARD is a documentation generation tool for the Ruby programming language.¿ It enables the user to generate consistent, usable documentation that can be¿ exported to a number of formats very easily, and also supports extending for¿ custom Ruby constructs such as custom class level definitions.</blockquote>
+<a href="http://github.com/lsegal/yard">http://github.com/lsegal/yard</a>
+
+<p>YARD organizes most of it's parsing logic into multiple handlers; essentially classes that inherit <a href="http://yardoc.org/docs/yard/YARD/Handlers/Ruby/Base">YARD::Handlers::Ruby::Base</a> and define a <kbd>process</kbd> method. YARD also supports a plugin system, by loading any RubyGems installed on the system that are prefixed with <kbd>yard-</kbd> or <kbd>yard_</kbd>. Using these two features of YARD, one can easily create a YARD plugin gem containing custom handlers, which YARD can automatically load and use.</p>
+
+<h2>yard-dm</h2>
+
+<p><a href="http://github.com/postmodern/yard-dm">yard-dm</a> is a YARD plugin for parsing DataMapper model syntax. The plugin can handle the following statements:</p>
+
+<ul>
+  <li><kbd>property :name, Type</kbd></li>
+  <li><kbd>has n, :things</kbd></li>
+  <li><kbd>has 1, :thing</kbd></li>
+  <li><kbd>has 0..n, :things</kbd></li>
+  <li><kbd>has 1..n, :things</kbd></li>
+  <li><kbd>has 2..5, :things</kbd></li>
+  <li><kbd>belongs_to :stuff</kbd></li>
+</ul>
+
+<h3>Install It</h3>
+
+<pre>$ sudo gem install yard-dm</pre>
+
+<h3>Use It</h3>
+
+<pre>$ cd dm-project/
+$ yardoc</pre>
+
+<p>It's that easy.</p>
+
+<p>Next time you need complete documentation on your DataMapper backed project, just install <a href="http://yardoc.org/">YARD</a> and <a href="http://github.com/postmodern/yard-dm">yard-dm</a>.</p>
