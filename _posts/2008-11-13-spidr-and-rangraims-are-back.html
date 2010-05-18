@@ -1,0 +1,36 @@
+---
+layout: post
+title: Spidr and Raingrams are back, now with specs
+tags:
+ - course
+ - crawler
+ - generate
+ - json
+ - library
+ - marshal
+ - ngram
+ - ngrams
+ - obstacle
+ - raingrams
+ - random
+ - rspec
+ - rubygem
+ - rubygems
+ - spec
+ - spider
+ - spidr
+ - text
+ - web
+---
+
+<p><a href="http://raingrams.rubyforge.org/">Raingrams</a> is back in action. After sitting on <a href="http://rubyforge.org/">rubyforge</a> for quite some time, I was asked to add some features to the general purpose Ngrams Ruby library. I ended up refactoring the code to handle probability calculations better (only recalculate the Maximum Likelihood Estimation (MLE) when the set of ngrams changes), removed the Unigram model (kinda pointless in a ngrams library), allow a trained model to be dumped to a file using Marshal and added the ability to generate random text from trained models. Raingrams also received a total of 133 new <a href="http://github.com/postmodern/raingrams/tree/master/spec/">spec tests</a>.</p>
+
+<p>Install Raingrams:</p>
+
+<pre><code>$ sudo gem install raingrams</code></pre>
+
+<p><a href="http://spidr.rubyforge.org/">Spidr</a> also received some new spec tests. After fixing a link handling bug in Spidr 0.1.1, I decided to create a <a href="http://spidr.rubyforge.org/course/start.html">Web Spider Obstacle Course</a> for testing purposes. The course contains all manner of links (remote, local, relative, absolute, javascript, empty URLs and infinite looping links). The course also provides a <a href="http://spidr.rubyforge.org/course/specs.json">JSON file</a> containing spec information for how a web-spider should navigate the links. I also wrote a <a href="http://github.com/postmodern/spidr/blob/master/spec/helpers/course.rb">RSpec helper</a> which imports the spec information from the JSON file and auto-generates spec tests for how Spidr::Agent should navigate the links in the obstacle course.</p>
+
+<p>Install Spidr:</p>
+
+<pre><code>$ sudo gem install spidr</code></pre>
