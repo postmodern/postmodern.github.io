@@ -1,0 +1,62 @@
+---
+layout: post
+title: Ronin 0.2.1 "notashellscript" released
+tags:
+ - console
+ - diagnostics
+ - dorks
+ - environment
+ - extensions
+ - fail
+ - git
+ - github
+ - HTML
+ - libxml2
+ - milw0rm
+ - nmap
+ - nokogiri
+ - notashellscript
+ - overlays
+ - platform
+ - print_error
+ - print_info
+ - print_warning
+ - refactor
+ - rewrite
+ - ronin
+ - scanners
+ - solid
+ - subcommands
+ - unescaped
+ - verbose
+---
+
+<p>Yesterday Ronin 0.2.1, code-name "notashellscript", was released. That's right, we finally surpassed the awkward 0.1.x phase. Although, I completely forgot to write about Ronin 0.2.0, code-named "solid", which is where most of the action occurred.</p>
+
+<p>Ronin 0.2.0 saw the complete refactoring and specing of the <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/Platform.html">Platform</a> code, which manages Overlays and their Extensions. Besides the huge amount of bug-fixes, modularization and renaming, Overlays can now have their own top-level <kbd>lib/</kbd> directories. Also, all of the <kbd>lib/</kbd> directories contained within an Overlay and it's Extensions are added to the <kbd>$LOAD_PATH</kbd> upon activation. This allows for easier requiring of code embedded within Overlays.</p>
+
+<p>Ronin 0.2.0 also saw the addition of the <kbd>ronin/environment</kbd> file, which loads all of the convenience methods, configuration from <kbd>~/.ronin/config.rb</kbd> and starts Ronin's Database. The environment file makes it easier to load up all of Ronin (minus the Platform code) in an IRB session and get hacking.</p>
+
+<p>Grey bearded hackers bemoan how every exploit, library and framework have their own special <i>leet</i> diagnostic printing format. Some prefer the defacto "[*] Message" while others go for the saucy "{+} Message". Well grey beards you have one more reason to bemoan, <kbd>UI::Diagnostics</kbd> was added to Ronin 0.2.0. The UI::Diagnostics module adds the <kbd>print_info</kbd>, <kbd>print_warning</kbd> and <kbd>print_error</kbd> methods to a class. The output of these methods are controlled by the <kbd>UI::Verbose</kbd> module.</p>
+
+<p>Ronin 0.2.1, code-name "notashellscript", had a couple but still important changes. Ronin 0.2.1 has dropped <a href="http://enfranchisedmind.com/blog/2008/03/24/rexml-dynamic-typing-lose/">REXML</a> in favour of <a href="http://nokogiri.rubyforge.org/">Nokogiri</a> for XML support. Nokogiri brings faster XML/HTML parsing and building to Ronin, providing it's own set of bindings to libxml2.</p>
+
+<p><a href="http://ronin.rubyforge.org/docs/ronin/Ronin/UI/CommandLine.html">UI::CommandLine</a> was rewritten in Ronin 0.2.1. Now sub-commands are accessible by both the <kbd>ronin sub-command --options</kbd> style and git style sub-commands, such as <kbd>ronin-command --options</kbd>. The git style sub-commands provide a more direct way of calling sub-commands.</p>
+
+<p>Many of Ronin's other libraries received convenience sub-commands which simply start the Ronin console with the specific library pre-loaded. Ever wanted to jump right into Ronin Dorks or Ronin Scanners, now you totally can:</p>
+
+<pre>$ ronin-scanners
+&gt;&gt; Scanners::Nmap.scan(:targets =&gt; '10.1.1.*', :syn_scan =&gt; true)
+...</pre>
+
+<p>Finally, I've started to practice what I preach by setting up my own Ronin <a href="http://github.com/postmodern/postmodern-ronin/tree/master">Overlay</a> to experiment with. Of course, the Overlay is hosted on <a href="http://github.com/">github.com</a>, so feel free to clone and fork away. To install the Overlay under Ronin, use the following command:</p>
+
+<pre>$ ronin install git://github.com/postmodern/postmodern-ronin.git</pre>
+
+<p>So far, I've added an <a href="http://github.com/postmodern/postmodern-ronin/tree/master/milw0rm">extension</a> which parses the exploit lists on <a href="http://milw0rm.com/">milw0rm.com</a>. The milw0rm extensions is accessible within Ronin using the following code:</p>
+
+<pre>$ ronin
+&gt;&gt; puts Ronin.milw0rm.remote.recent
+...</pre>
+
+<p>Ironically, while testing the extension I noticed that <a href="http://milw0rm.com/">milw0rm</a> does not properly escape the titles of their exploits, resulting in unescaped <kbd>&lt;</kbd> and <kbd>&gt;</kbd> characters in their HTML.</p>
