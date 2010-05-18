@@ -1,0 +1,67 @@
+---
+layout: post
+title: Spidr 0.2.2 released.
+tags:
+ - auth
+ - basic
+ - cookiejar
+ - cookies
+ - http
+ - ruby
+ - spider
+ - web
+ - wsoc
+---
+
+Spidr 0.2.2 (code-named "next-level") has been released. This release contains a lot of changes that pushes Spidr into a new level of web spidering.
+
+<h2>Web Spider Obstacle Course (WSOC)</h2>
+
+Spidr 0.2.2 now requires and makes use of the new <a href="http://github.com/postmodern/wsoc/">Web Spider Obstacle Course (WSOC)</a> for testing. Before one runs the RSpec test-suite for Spidr, the WSOC server must first be started:
+<pre>$ wsoc_server</pre>
+
+Then simply run the specs as usual:
+<pre>$ rake spec</pre>
+
+<h2>Cookie support</h2>
+
+As of 0.2.2, Spidr now comes with a <a href="http://spidr.rubyforge.org/docs/Spidr/CookieJar.html">CookieJar</a>, thanks to the work of <a href="http://twitter.com/zapnap/">@zapnap</a>. Now when the <a href="http://spidr.rubyforge.org/docs/Spidr/Agent.html">Spidr::Agent</a> visits a page, any new cookie values will be merged into the CookieJar, and sent back with any future requests.
+
+Additionally, one can now access the Cookie values from a <a href="http://spidr.rubyforge.org/docs/Spidr/Page.html">Spidr::Page</a> object.
+<pre>page.cookie
+# =&gt; "COUNTRY=USA%2C97.100.45.38; expires=Mon, 18-Jan-2010 06:19:24 GMT; path=/; domain=.php.net"</pre>
+<pre>page.cookies
+# =&gt; ["COUNTRY=USA%2C97.100.45.38; expires=Mon, 18-Jan-2010 06:19:24 GMT; path=/; domain=.php.net"]</pre>
+
+<h2>HTTP Basic Auth support</h2>
+
+Spidr 0.2.2 now comes with a brand new <a href="http://spidr.rubyforge.org/docs/Spidr/AuthStore.html">AuthStore</a>, for organizing HTTP Authentication credentials; also thanks to the work of <a href="http://twitter.com/zapnap/">@zapnap</a>.
+
+Provided you have the credentials for the various HTTP Basic Auth protected areas that are to be spidered, Spidr can automatically respond to Basic Auth challenges. 
+
+Simply specify the credentials to the <a href="http://spidr.rubyforge.org/docs/Spidr/Agent.html">Spidr::Agent</a> and the agent will do the rest:
+<pre>Spidr.host('corporation.com') do |agent|
+  agent.authorized.add('http://corporation.com/private/', 'user1233', 'motivate synergize')
+
+  agent.every_page do |page|
+    if page.url.path =~ /private/
+      # ...
+    end
+  end
+end</pre>
+
+<h2>URL Sanitization</h2>
+
+<p>A small yet important module was added in Spidr 0.2.2, and that is <a href="http://spidr.rubyforge.org/docs/Spidr/Sanitizers.html">Spidr::Sanitizers</a>. The <kbd>Sanitizers</kbd> module adds configuration settings to <a href="http://spidr.rubyforge.org/docs/Spidr/Agent.html">Spidr::Agent</a> for how incoming URLs are to be sanitized.</p>
+
+<p>For instance, URL fragments are removed by default, but this can be changed:</p>
+
+<pre>agent.strip_fragments
+# =&gt; true
+agent.strip_fragments = true</pre>
+
+<p>Additionally, perhaps one might wish to strip the query strings from all URLs:</p>
+
+<pre>agent.strip_query = true</pre>
+
+<p><b>Note:</b> If YARD documentation generation fails when installing Spidr 0.2.2, this is due to a <a href="http://rubyforge.org/tracker/?func=detail&amp;aid=27674&amp;group_id=627&amp;atid=2472">bug in RDoc/SimpleMarkup generation</a>.</p>
