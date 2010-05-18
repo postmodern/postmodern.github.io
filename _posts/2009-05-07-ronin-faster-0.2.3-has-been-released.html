@@ -1,0 +1,114 @@
+---
+layout: post
+title: Ronin "faster" 0.2.3 has been released
+tags:
+ - 1.9.1
+ - cache
+ - cacheable
+ - CIDR
+ - database
+ - each
+ - enumerable
+ - extlib
+ - faster
+ - globbed
+ - init
+ - ip
+ - IPAddr
+ - iterate
+ - overlay
+ - overlays
+ - performance
+ - ronin
+ - ruby
+ - ruby19
+ - rubygem
+ - subcommands
+ - try
+---
+
+<p>The wait is over, Ronin 0.2.3 (code-named "faster") has finally been released. This release contains new code, more specs, some very important architectural changes and a few bug-fixes.</p>
+
+<h2>Ronin on Ruby 1.9.1</h2>
+
+<p>Probably the most important news in Ronin 0.2.3, is that Ronin is now Ruby 1.9.1 compatible. Ronin can now take advantage of the considerable performance improvements in Ruby 1.9.1-p0. If you tend to do security research and find yourself having to use Ruby 1.9.1, you should look into using Ronin.</p>
+
+<h2>Faster Load-Times</h2>
+
+<p>Ronin also saw various architectural changes to help reduce load-times. The <kbd>ronin/models.rb</kbd> file was removed, which loaded models from the other Ronin libraries before the Database was setup. Now other Ronin libraries can call the <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/Database.html#update%21-class_method">Database.update!</a> method, which will run non-destructive auto-migrations on the Database. <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/UI/CommandLine.html">Ronin::UI::CommandLine</a> saw yet more refactoring. With the new <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/UI/CommandLine.html">Ronin::UI::CommandLine</a>, sub-commands are loaded on-demand, instead of all at once.</p>
+
+<p>Together these architectural changes have dramatically improved the load-time of Ronin's console. On systems that rarely run the Ruby interpreter, start-up times for Ronin should look like the following:</p>
+
+<pre>$ time (echo exit | (ronin &gt; /dev/null))
+
+real	0m3.841s
+user	0m1.141s
+sys	0m0.514s</pre>
+
+<p>On systems that regularly run the Ruby interpreter (thus caching frequently used memory and data) start-up times for Ronin will be a little quicker:</p>
+
+<pre>$ time (echo exit | (ronin &gt; /dev/null))
+
+real	0m1.656s
+user	0m1.137s
+sys	0m0.478s</pre>
+
+<h2>New Convenience Methods</h2>
+
+<p>In 0.2.3 the <a href="http://ronin.rubyforge.org/docs/ronin/IPAddr.html#each-instance_method">IPAddr#each</a> and <a href="http://ronin.rubyforge.org/docs/ronin/IPAddr.html#each-class_method">IPAddr.each</a> methods were added. It's somewhat common to need to iterate over a range of IP addresses. Say you have a CIDR notation IP address, and need to iterate over every IP address covered by it's netmask. Simply create a new <kbd>IPAddr</kbd> object and call <kbd>each</kbd>:</p>
+
+<pre>ip = IPAddr.new('10.1.1.1/24')
+ip.each do |addr|
+  ...
+end</pre>
+
+<p>Well that's sort of cool, but what if you have a globbed IP address, similar to the ones <a href="http://www.insecure.org/">nmap</a> accepts? <a href="http://ronin.rubyforge.org/docs/ronin/IPAddr.html#each-class_method">IPAddr.each</a> has you covered:</p>
+
+<pre>IPAddr.each('10.1.1-5.*') do |addr|
+  ...
+end</pre>
+
+<p>Both <kbd>IPAddr#each</kbd> and <kbd>IPAddr.each</kbd> can  iterate over IPv6 addresses.</p>
+
+<p><a href="http://ronin.rubyforge.org/docs/ronin/Net.html#http_powered_by-class_method">Net.http_powered_by</a> and <a href="http://ronin.rubyforge.org/docs/ronin/Net.html#http_server-class_method">Net.http_server</a> also got added in 0.2.3. These methods provide quick access to the <kbd>X-Powered-By</kbd> and <kbd>Server</kbd> HTTP headers, respectively.</p>
+
+<pre>Net.http_powered_by(:url =&gt; 'http://www.stalkdaily.com/')
+# =&gt; "PHP/5.2.9"
+
+Net.http_server(:url =&gt; 'http://www.darkc0de.com/)
+# =&gt; "Apache/2.2.11 (Unix) PHP/4.4.9 mod_ssl/2.2.11 OpenSSL/0.9.8c mod_fastcgi/2.4.6 Phusion_Passenger/2.1.2 DAV/2 SVN/1.4.2"</pre>
+
+<p><a href="http://ronin.rubyforge.org/docs/ronin/String.html#pad-instance_method">String#pad</a> was also added in 0.2.3. The pad method doesn't do a lot, it merely pads a String out to a maximum length:</p>
+
+<pre>"hello".pad('A', 48)
+# =&gt; "helloAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"</pre>
+
+<p>If you hate having to deal with exceptions in Ruby, the <kbd>try</kbd> method might prove useful. The <kbd>try</kbd> method simple attempts to run a block of code, catching and ignoring any exceptions that were raised:</p>
+
+<pre>require 'resolv'
+
+try do
+  Resolv.getaddress('might.not.exist.com')
+end</pre>
+
+<h2>Cacheable</h2>
+
+<p><kbd>Ronin::Objectify</kbd> was replaced by the new <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/Cacheable.html">Ronin::Cacheable</a> module. Cacheable provides reliable caching and loading of <a href="http://contextify.rubyforge.org/">Contextified</a> objects with Ronin's Database. Using the new Cacheble module, the data you want cached into the database must be defined in a <kbd>cache</kbd> block:</p>
+
+<pre>ronin_exploit do
+  cache do
+    self.name = 'stupidhttpd'
+    self.version = '0.2'
+    self.author(:name =&gt; 'Postmodern')
+  end
+
+  ...
+end</pre>
+
+<p>The use of a <kbd>cache</kbd> block creates a separation between the data to be cached and the code which will eventually be loaded.</p>
+
+<h2>Overlays</h2>
+
+<p>As of 0.2.3, overlays now support the automatic loading of the <kbd>lib/init.rb</kbd> file. So if you have code you'd like automatically loaded (maybe extensions to the Array class) from your Overlay, simply require it in the <kbd>lib/init.rb</kbd> file.</p>
+
+<p>The loading of Extensions from Overlays became a little more robust in 0.2.3. If an exception is encountered when loading an extension file, the exception will be printed and the file ignored.</p>
