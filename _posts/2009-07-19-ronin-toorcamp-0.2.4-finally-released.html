@@ -1,0 +1,145 @@
+---
+layout: post
+title: Ronin "toorcamp" 0.2.4 finally released
+tags:
+ - 1.9.1
+ - fork
+ - github
+ - intext
+ - ronin
+ - ronin-dorks
+ - ronin-exploits
+ - ronin-gen
+ - ronin-php
+ - ronin-scanners
+ - ronin-sql
+ - ronin-web
+ - ruby
+ - scanners
+ - toorcamp
+ - website
+---
+
+<p><b>Update:</b> As <a href="http://carnal0wnage.attackresearch.com/blog/7">CG</a> points out, I forgot to post the slides from the ToorCamp presentation. Here they are in <a href="http://ronin.rubyforge.org/talks/publishing_and_mayhem.html">XHTML form</a>.</p>
+
+<p><b>Update:</b> @<a href="http://twitter.com/sanitybit">sanitybit</a> discovered that <a href="http://rubyforge.org/projects/parameters">parameters</a> 0.1.7, which is required by ronin 0.2.4, was not released. Parameters 0.1.7 has now been released.</p>
+
+<p>As promised in the <a href="http://toorcamp.org/content/B5">Ronin: A Platform for Publishing and Mayhem</a> talk at <a href="http://toorcamp.org/">ToorCamp</a>, Ronin 0.2.4 has finally been released. I was wanting to release 0.2.4 before ToorCamp, and hand out copies while there, but due to time constraints I had to wait till after the event.</p>
+
+<code><pre>$ gem update</pre></code>
+
+<h2>Signed RubyGems</h2>
+
+<p>All released versions of Ronin, from 0.2.4 onward, will be signed. You can download the public certificate used to verify all of my gems <a href="http://rubyforge.org/frs/download.php/57952/postmodern-public_cert.pem">here</a>. A more in depth explanation of RubyGem Signing is given in <a href="http://rubygems.org/read/chapter/21">Chapter 21</a> of the <a href="http://rubygems.org/read/">RubyGems Manual</a>.</p>
+ 
+<h2>Bug Fixes</h2>
+
+<p>Mr. <a href="//github.com/evoltech/">evoltech</a> discovered and fixed a bug in the lookup of command names containing dashes, which was causing issues with the <a href="http://ronin.rubyforge.org/gen/">ronin-gen</a> commands. <a href="http://github.com/cooperq/">flatline</a> also improved the reliability of the caching of exploits from Overlays, now any exceptions raised during the caching of each exploit will be ignored.</p>
+
+<h2>Bytes and Chars</h2>
+
+<p>The 0.2.4 release now comes with new convenience methods to make working with byte and char <a href="http://ronin.rubyforge.org/docs/ronin/Array.html">Arrays</a> easier:</p>
+
+<code><pre>[0x41, 0x41, 0x42].chars
+# =&gt; ["A", "A", "B"]</pre></code>
+
+<code><pre>["A", "B"].bytes
+# =&gt; [0x41, 0x42]</pre></code>
+
+<code><pre>[0x41, 0x41, 0x41].char_string
+# =&gt; "AAB"</pre></code>
+
+<h2>Un-Hexdumping</h2>
+
+<p>The <a href="http://ronin.rubyforge.org/docs/ronin/File.html#unhexdump-class_method">File.unhexdump</a> method was also added, making it even easier to un-hexdump those dumps.</p>
+
+<h2>Exceptions</h2>
+
+<p>Occasionally one needs to run some code which may raise exceptions, but you might not care about such exceptions, and would rather have them printed out. The <a href="http://ronin.rubyforge.org/docs/ronin/Kernel.html#catch_all-instance_method">catch_all</a> method does exactly that. <kbd>catch_all</kbd> will catch all exceptions and print abbreviated back-traces.</p>
+
+<code><pre>require 'resolv'
+
+catch_all do
+  Resolv.getaddress('www.wired.com')
+end</pre></code>
+
+<p>Another note-worth change in 0.2.4, was the renaming of the <kbd>try</kbd> method to <kbd>attempt</kbd>; so as not to conflict with JRuby's <kbd>try</kbd> method.</p>
+
+<h2>HTTP</h2>
+
+<p>The <a href="http://ronin.rubyforge.org/docs/ronin/Net.html#http_request-class_method">Net.http_request</a> method was added, allowing one to make arbitrary HTTP Requests, just specify the <kbd>:method</kbd> option.</p>
+
+<code><pre>Net.http_request(:host =&gt; 'www.example.com', :method =&gt; :head)</pre></code>
+
+<h2>Templates::Erb</h2>
+
+<p>The <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/Templates/Erb.html">Templates::Erb</a> module was added in 0.2.4, providing convenience methods for rendering <a href="http://www.ruby-doc.org/stdlib/libdoc/erb/rdoc/index.html">Embedded Ruby</a> (ERB) templates.</p>
+
+<h2>Scanners::Scanner</h2>
+
+<p>The <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/Scanners/Scanner.html">Scanners::Scanner</a> module was also added in 0.2.4. The Scanner module can be included into any class and allows one to define multiple scanner rules by name, which are ran against each target, returning results in real-time via a callback.</p>
+
+<p>An example usage of Scanners::Scanner would be to add scanner rules to all IPAddr objects, having each IP address within a netmask scanned.</p>
+
+<code><pre>
+require 'ronin/scanners/scanner'
+require 'ronin/extensions/ip_addr'
+
+class IPAddr
+
+  include Ronin::Scanners::Scanner
+
+  scanner(:dns) do |ip,results|
+    Resolve.getnames(ip).each do |name|
+      results.call(name)
+    end
+  end
+
+  def each_target(&amp;block)
+    each(&amp;block)
+  end
+
+end</pre></code>
+
+<p>First we include Ronin::Scanners::Scanner into the IPAddr class. Then we define a simple scanner rule to perform reverse DNS lookup on an IP address and returns the results using the <kbd>result</kbd> callback. Finally we define the <kbd>each_target</kbd> method which enumerates over each IP address in the netmask, passing each to the block to be scanned.</p>
+
+<p>To run all scanner rules on an IPAddr range:</p>
+
+<code><pre>ip = IPAddr.new('10.1.1.1/24')
+ip.scan</pre></code>
+
+<p>To only run the DNS scanner rule:</p>
+
+<code><pre>ip.dns_scan</pre></code>
+
+<p>The SQL Injection, LFI and RFI scanning code has now been ported to use Scanners::Scanner.</p>
+
+<h2>Accessible Extensions</h2>
+
+<p>Extensions from Overlays are now more accessible. Within the Ronin console, they can be accessed as local variables:</p>
+
+<code><pre>puts milw0rm.remote.first_page</pre></code>
+
+<p>This is all thanks to the new Ronin#method_missing method; which catches missing instance method calls, and attempts to load the appropriate extension.</p>
+
+<h2>Command Name Changes</h2>
+
+<p>The <kbd>ls</kbd> and <kbd>rm</kbd> ronin commands have now been renamed to <kbd>list</kbd> and <kbd>remove</kbd>, respectively.</p>
+
+<p>To list all installed Overlays:</p>
+
+<code><pre>$ ronin list</pre></code>
+
+<p>To remove (but not delete) an Overlay:</p>
+
+<code><pre>$ ronin remove overlay-name</pre></code>
+
+<h2>New Dorks</h2>
+
+<p>ronin-dorks 0.1.2 saw the addition of the <a href="http://ronin.rubyforge.org/docs/ronin-dorks/Ronin/Web/Dorks.html#intext-class_method">intext</a>, <a href="http://ronin.rubyforge.org/docs/ronin-dorks/Ronin/Web/Dorks.html#allintext-class_method">allintext</a>, <a href="http://ronin.rubyforge.org/docs/ronin-dorks/Ronin/Web/Dorks.html#string_intext-class_method">string_intext</a>, <a href="http://ronin.rubyforge.org/docs/ronin-dorks/Ronin/Web/Dorks.html#all_strings_intext-class_method">all_strings_intext</a>, <a href="http://ronin.rubyforge.org/docs/ronin-dorks/Ronin/Web/Dorks.html#intitle-class_method">intitle</a>, <a href="http://ronin.rubyforge.org/docs/ronin-dorks/Ronin/Web/Dorks.html#allintitle-class_method">allintitle</a>, <a href="http://ronin.rubyforge.org/docs/ronin-dorks/Ronin/Web/Dorks.html#string_intitle-class_method">string_intitle</a> methods to <a href="http://ronin.rubyforge.org/docs/ronin-dorks/Ronin/Web/Dorks.html">Web::Dorks</a>. The new intext and intitle convenience methods should simplify the creation of future dorks.</p>
+
+<h2>ronin.rubyforge.org Open Sourced</h2>
+
+<p>Last but not least, the source-code for the <a href="http://ronin.rubyforge.org/">ronin.rubyforge.org</a> website has been open-sourced on <a href="http://github.com/postmodern/ronin.rubyforge.org/">GitHub</a>. Now if you want to make a correction or add a How-To, just <a href="http://github.com/postmodern/ronin.rubyforge.org/fork/">fork it</a>, commit your changes, then send <a href="http://github.com/postmodern/">me</a> a <a href="http://github.com/guides/pull-requests">pull-request</a> and I'll upload your changes.</p>
+
+<p>The collaborative editing is already happening, <a href="http://github.com/evoltech/">evoltech</a> already wrote up a new badass <a href="http://ronin.rubyforge.org/contribute/">Contribute</a> page, that explains typical Git(Hub) workflow.</p>
