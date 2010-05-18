@@ -1,0 +1,53 @@
+---
+layout: post
+title: Introducing the new Web Spider Obstacle Course
+tags:
+ - course
+ - crawler
+ - obstacle
+ - ruby
+ - sinatra
+ - spider
+ - test
+ - testing
+ - web
+ - wsoc
+---
+
+<p>The Web Spider Obstacle Course was originally developed for testing the <a href="http://spidr.rubyforge.org/">Spidr</a> library. The Obstacle Course was essentially a set of static files containing valid links, invalid links, links to previously visited pages and links to non-existent hosts/ports. Having the course hosted on spidr.rubyforge.org made it difficult to do advanced testing (such as using HTTP Redirects), not to mention slow to access.</p>
+
+<p>Now the <a href="http://github.com/postmodern/wsoc/">Web Spider Obstacle Course (WSOC)</a> has been rewritten as a Ruby <a href="http://sinatrarb.com/">Sinatra</a> app that can be ran locally. Since most Ruby developers are familiar with Sinatra, it should not be too difficult to extend the Obstacle Course.</p>
+
+<p>Currently WSOC tests a Web Spider's ability to navigate:</p>
+
+<ul>
+  <li>Empty links.</li>
+  <li>Circular links.</li>
+  <li>Links with relative-paths.</li>
+  <li>Links with absolute-paths.</li>
+  <li>Remote links.</li>
+  <li>javascript: links.</li>
+  <li>Links within frameset and iframe tags.</li>
+  <li>Cookie protected pages.</li>
+  <li>HTTP 300, 301, 302, 303 and 307 Redirects.</li>
+  <li>HTTP Baisc Auth protected pages.</li>
+</ul>
+
+<h2>3... 2... 1... Go</h2>
+
+<h3>Install:</h3>
+<pre>$ sudo gem install wsoc</pre>
+
+<h3>Run:</h3>
+<pre>wsoc_server -p 8080</pre>
+
+<h3>Visit:</h3>
+<pre>firefox http://localhost:8080/</pre>
+
+<p>The front page of WSOC will explain the rules of the Obstacle Course and providing the Start URL for any would-be Web Spiders. The WSOC server still contains the Obstacle Course Specs, available at <a href="http://localhost:8080/specs">http://localhost:8080/specs</a>. The Obstace Course Specs are essentially a list of URLs, the expected behavior of the spider for the URL (<kbd>visit</kbd>, <kbd>ignore</kbd> or <kbd>fail</kbd>) and a message about the given URL. These specs can be access by Web Spider test suites in JSON (<a href="http://localhost:8080/specs.json">http://localhost:8080/specs.json</a>) or YAML (<a href="http://localhost:8080/specs.json">http://localhost:8080/specs.yaml</a>) formats.</p>
+
+<h2>Use It</h2>
+
+<p>If you actively maintain a Web Spider, or are thinking of writing a Web Spider/Crawler/Scanner, I highly recommend you use the Web Spider Obstacle Course as part of your testing solution. The Obstacle Course will test more than a Web Spiders ability to resolve relative links or only visit a link once.</p>
+
+<p>The internet is a wild place, and will not always obey XHTML 1.1 Strict or HTTP 1.0 standards. Test your Web Spiders fully before setting them loose.</p>
