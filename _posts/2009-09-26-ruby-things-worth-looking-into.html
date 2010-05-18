@@ -1,0 +1,136 @@
+---
+layout: post
+title: Ruby things worth looking into
+tags:
+ - ffi
+ - gem
+ - gemcutter
+ - handler
+ - libffi
+ - rack
+ - rdoc
+ - ruby
+ - rubygems
+ - sinatra
+ - thor
+ - yard
+---
+
+<p>Over the past couple of months, I've been researching and playing with various up-and-coming Ruby libraries/services. So I thought it would be useful for other developers if I wrote something up.</p>
+
+<h2>Sinatra</h2>
+
+<p>If you already haven't heard, <a href="http://www.sinatrarb.com/intro.html">Sinatra</a> is cool sauce. Sinatra is a Ruby Domain Specific Language for creating web-apps that can fit in a single file.</p>
+
+<pre># myapp.rb
+require 'rubygems'
+require 'sinatra'
+get '/' do
+  'Hello world!'
+end</pre>
+
+<pre>$ gem install sinatra
+$ ruby myapp.rb</pre>
+
+<p>It's that easy. But let's say you want to create an app accessible as a Class, just inherit Sinatra::Base.</p>
+
+<pre>require 'rubygems'
+require 'sinatra'
+
+class MyApp &lt; Sinatra::Base
+
+  get &#39;/&#39; do
+    &#39;Hello world!&#39;
+  end
+
+end</pre>
+
+<p>I found the URL param parsing and request routing on-par with that of Merb/Rails. I also enjoyed the <kbd>halt</kbd> and <kbd>pass</kbd> methods, which will cause Sinatra to re-route a request to other handlers.</p>
+
+<p>Defining helper methods which can be used within request handlers was as easy as creating a module with some instance methods, then registering the module using the <kbd>helpers</kbd> method.</p>
+
+<pre>module Helpers
+  module Rendering
+    include Rack::Utils
+
+    alias h escape_html
+  end
+end
+
+class MyApp &lt; Sinatra::Base
+
+  helpers Helpers::Rendering
+
+end</pre>
+
+<p>Sinatra is built on top of Rack, so reviewing the <a href="http://rack.rubyforge.org/">Rack API</a> might not hurt. The current Rack::Request object can be accessed via the <kbd>request</kbd> method. The return value of a request handler can be a String, Array of Strings or even a Rack::Response object. Sinatra also provides the Rack <a href="http://vision-media.ca/resources/ruby/ruby-rack-middleware-tutorial">call</a> method, which can be overridden for more custom request routing (such as vhost routing to other Rack apps). Given Sinatra's <a href="http://www.sinatrarb.com/api/index.html">API Documentation</a>, it's fairly easy to customize and extend your Sinatra app.</p>
+
+<h2>Thor</h2>
+
+<p><a href="http://github.com/wycats/thor/">Thor</a> is an alternative to <a href="http://rake.rubyforge.org/">Rake</a> or <a href="http://www.rubyinside.com/sake-system-wide-rake-tasks-543.html">Sake</a>. Thor makes it very easy to define tasks as methods, and define command-line options/arguments for those tasks using a succinct syntax.</p>
+
+<p>Thor tasks can be invoked via the <kbd>thor command, or loading the Thor class and calling the <kbd>start</kbd> method directly.</p>
+
+<p>I also noticed that Rails3 is using Thor::Group and Thor::Actions, to create <a>code generators</a>.</p>
+
+<p>While documentation is scarce for Thor, I fould it's <a href="http://github.com/wycats/thor/">code-base</a> fairly readable.</p>
+
+<h2>FFI</h2>
+
+<p>There's an easier way to write Ruby extensions to C libraries. It's called FFI, or Foreign Function Interface. <a href="http://github.com/ffi/ffi/">Ruby FFI</a> is a rubygem (named <kbd>ffi</kbd>) by Wayne Meissner which wraps around <a href="http://sourceware.org/libffi/">libffi</a>, to provide a Ruby interface to load libraries, attach functions, variables and mapping in Structs/Unions/enums/callbacks.</p>
+
+<p>To create a Ruby interface to a library, simply create a module which extends FFI::Library and attach some functions as module methods.</p>
+
+<pre>module FFI
+  module TRE
+    extend FFI::Library
+
+    ffi_lib 'tre' # finds and loads the library
+
+    # attaches a function named tre_regcomp, and defines the
+    # types for it's arguments and return value.
+    attach_function :tre_regcomp, [:pointer, :pointer, :int], :int
+    # ...
+  end
+end</pre>
+
+<p>More examples can be found <a href="http://wiki.github.com/ffi/ffi/examples">here</a>.</p>
+
+<p>If you need to quickly write bindings for a library, give FFI a shot. Another benefit of having FFI Ruby bindings, is that they will work seamlessly with <a href="http://jruby.com/">JRuby</a> and <a href="http://rubini.us/">Rubinius</a>, on any platform that is supported by libffi.</p>
+
+<h2>YARD</h2>
+
+<p><a href="http://yard.soen.ca/">YARD</a> is an alternative to the defacto RDoc documentation generation, that allows one to annotate code using a <a href="http://yard.soen.ca/getting_started#docing">@tag</a> based syntax and Markdown/Textile/RDoc formatting. YARD stores all the gathered documentation information in a Marshalable data-store file (<kbd>.yardoc</kbd>), which opens the door to on-the-fly documentation searching. YARD can also export it's data to XML or XHTML+CSS+jQuery.</p>
+
+<p>Want to use YARD in your project? Drop this task into your Rakefile.</p>
+
+<pre>YARD::Rake::YardocTask.new do |t|
+  t.files   = ['lib/**/*.rb']
+  t.options = [
+    '--protected',
+    '--files', 'History.txt',
+    '--title', 'MyProject'
+  ]
+end
+
+task :docs =&gt; :yardoc</pre>
+
+<pre>$ rake docs &amp;&amp; firefox doc/index.html</pre>
+
+<p>Want to use YARD on someone else's (github) project, checkout <a href="http://rdoc.info/">rdoc.info</a>, it's built on YARD and Ruby 1.8.7.</p>
+
+<p>YARD can also be extended to detect and document meta-programming methods which define other methods at runtime. For example, this <a href="http://github.com/postmodern/parameters/blob/master/lib/parameters/yard/handlers/ruby/parameter_handler.rb">YARD handler</a> (for Ruby 1.9.x) which documents <kbd>parameter</kbd> method-calls from the <a href="http://parameters.rubyforge.org/">Parameters</a> library.</p>
+
+<p>Loren Segal's <a href="http://gnuu.org/2009/06/17/yard-at-montreal-rb/">slides</a> from his YARD presentation at Montreal.rb are also worth checking out.</p>
+
+<h2>Gemcutter</h2>
+
+<p><a href="http://gemcutter.org/">Gemcutter</a> provides easy and fun RubyGem hosting, which is <a href="http://github.com/qrush/gemcutter">open-source</a> and aims to become the <a href="http://www.mail-archive.com/rubygems-developers@rubyforge.org/msg03123.html">the default gem hosting solution</a> for Ruby. Did I mention that it looks classy (thanks to a redesign by <a href="http://robots.thoughtbot.com/post/165832471/gemcutter-org-redesign-preview">ThoughtBot</a>)?</p>
+
+<p>Publishing gems to Gemcutter is as easy as running:</p>
+
+<pre>gem push pkg/my_project-0.1.0.gem</pre>
+
+<p>The <kbd>gem push</kbd> command can override previously uploaded versions of a gem. No more going into Rubyforge's File Admin panel to delete mistakenly uploaded versions, just run <kbd>gem push</kbd> again.</p>
+
+<p>Also, Gemcutter is a <a href="http://www.sinatrarb.com/">Sinatra</a> app running on <a href="http://heroku.com/">Heruko</a>.</p>
