@@ -1,0 +1,53 @@
+---
+layout: post
+title: Spidr "solid" 0.2.0
+tags:
+ - crawl
+ - crawler
+ - gemcutter
+ - https
+ - link
+ - page
+ - pause
+ - skip
+ - spider
+ - spidr
+ - ssl
+ - web
+---
+
+<p>After a period of refactoring, <a href="http://spidr.rubyforge.org/">Spidr</a> 0.2.0 (code-named "solid") has been released. Many things we're added to this release, along with some very important bug-fixes and optimizations.</p>
+
+<h2>Major changes</h2>
+
+<p>Spidr, along with many of my other projects, has moved to <a href="http://yard.soen.ca/">YARD</a> based documentation. YARD's tag based documentation format really helped me annotate every method within Spidr. The new YARD docs can be found in the usual <a href="http://spidr.rubyforge.org/docs/">location</a>.</p>
+
+<p>Also following suite with many of my other projects, you can now find Spidr on the awesome and easy to use <a href="http://gemcutter.org/gems/spidr">gemcutter.org</a>.</p>
+
+<p>Spidr should be a little faster now. Thanks to the work of <a href="http://github.com/justfalter/">justfalter</a>, HTTP sessions with unique hosts/ports are now cached and resued. HTTP sessions no longer have to be re-initialized upon every request. Also, the history and failures lists are now Ruby Sets, yielding improved lookup times for checking if a link has been previously visted.</p>
+
+<p>The code-base of Spidr should be a little more organized. Many methods within <a href="http://spidr.rubyforge.org/docs/Spidr/Agent.html">Spidr::Agent</a> were grouped by functionality and moved to separate modules (<a href="http://spidr.rubyforge.org/docs/Spidr/Events.html">Events</a> and <a href="http://spidr.rubyforge.org/docs/Spidr/Filters.html">Filters</a>) which are included back into <kbd>Spidr::Agent</kbd>.</p>
+
+<p>The <a href="http://spidr.rubyforge.org/docs/Spidr/Actions.html">Spidr::Actions</a> module was also added, which adds action methods that control spidering from within <a href="http://spidr.rubyforge.org/docs/Spidr/Events.html#every_url-instance_method">every_url</a>, <a href="http://spidr.rubyforge.org/docs/Spidr/Events.html#every_page-instance_method">every_page</a>, <a href="http://spidr.rubyforge.org/docs/Spidr/Events.html#every_failed_url-instance_method">every_failed_url</a>, <a href="http://spidr.rubyforge.org/docs/Spidr/Events.html#all_headers-instance_method">all_headers</a> event hooks. The <a href="http://spidr.rubyforge.org/docs/Spidr/Actions.html#pause%21-instance_method">pause!</a> method will pause the spider, while <a href="http://spidr.rubyforge.org/docs/Spidr/Actions.html#skip_page%21-instance_method">skip_page!</a> and <a href="http://spidr.rubyforge.org/docs/Spidr/Actions.html#skip_link%21-instance_method">skip_link!</a> can manipulate the processing of pages/links.</p>
+
+<p>The <a href="http://spidr.rubyforge.org/docs/Spidr/Page.html#search-instance_method">Spidr::Page#search</a>, <a href="http://spidr.rubyforge.org/docs/Spidr/Page.html#at-instance_method">Spidr::Page#at</a>, <a href="http://spidr.rubyforge.org/docs/Spidr/Page.html#title-instance_method">Spidr::Page#title</a> methods were also added. These methods should make <kbd>Spidr::Page</kbd> feel alittle more like <a href="http://mechanize.rubyforge.org/mechanize/WWW/Mechanize/Page.html">WWW::Mechanize::Page</a>, allowing one to search the DOM (parsed by <a href="http://nokogiri.rubyforge.org/nokogiri/">Nokogiri</a>) with XPath/CSS-path expressions.</p>
+
+<p>Lastly, many new examples which highlight some of the less-than-trivial things you can do with Spidr have been added to the <a href="http://spidr.rubyforge.org/#examples">website</a> and <a href="http://spidr.rubyforge.org/docs/">docs</a>.</p>
+
+<h2>Important bug-fixes</h2>
+
+<p><a href="http://spidr.rubyforge.org/docs/Spidr/Agent.html">Spidr::Agent</a> should now properly handle the spidering of SSL protected websites. Also thanks to <a href="http://github.com/justfalter/">justfalter</a>, HTTPS sessions are now properly initialized and stored in the HTTP session cache; so the SSL-handshake only need be performed once per unique host/port.</p>
+
+<p><a href="http://spidr.rubyforge.org/docs/Spidr/Agent.html#get_page-instance_method">Spidr::Agent#get_page</a> will now correctly send the URI query along with the URI path for HTTP requests. Thanks go out to Damian Steer for reporting this.</p>
+
+<p><a href="http://spidr.rubyforge.org/docs/Spidr/Page.html#doc-instance_method">Spidr::Page#doc</a> now returns a <a href="http://nokogiri.rubyforge.org/nokogiri/Nokogiri/XML/Document.html">Nokogiri::XML::Document</a> object for RSS/RDF/Atom pages, allowing one to properly search RSS/Atom feeds.</p>
+
+<p><a href="http://spidr.rubyforge.org/docs/Spidr/Page.html#code-instance_method">Spidr::Page#code</a> will now return the HTTP Status code as an Integer.</p>
+
+<p><a href="http://spidr.rubyforge.org/docs/Spidr/Page.html#links-instance_method">Spidr::Page#links</a> now properly handles the HTTP <kbd>Location</kbd> header.</p>
+
+<p>The URI expansion/normalization performed by <a href="http://spidr.rubyforge.org/docs/Spidr/Page.html#to_absolute-instance_method">Spidr::Page#to_absolute</a> was greatly improved. <kbd>Spidr::Page#to_absolute</kbd> will now properly preserve trailing '/' characters on URI paths.</p>
+
+<h2>Shout Outs</h2>
+
+<p>A big thanks to everyone who helped with Spidr 0.2.0 by reporting bugs and testing new code. I hope this release will help users get more out of Spidr.</p>
