@@ -1,0 +1,48 @@
+---
+layout: post
+title: Using YARD with Hoe, correctly
+tags:
+ - gem
+ - hoe
+ - rdoc
+ - ruby
+ - yard
+---
+
+<p>When I first switched from the more traditional <a href="http://episteme.arstechnica.com/eve/forums/a/ga/ul/299008287931/inlineimg/Y/train_wreck.jpg">RDoc</a> to <a href="http://yardoc.org/">YARD</a>, I was only using the basic YARD task. In YARD 0.2.3.5, a gem plugin was added to YARD that would run <kbd>yardoc</kbd> on an installed gem if <kbd>has_rdoc</kbd> was set to <kbd>"yard"</kbd> in the Gem Specification. The <kbd>yardoc</kbd> command would also use the <kbd>rdoc_options</kbd> and <kbd>extra_rdoc_files</kbd> options from the Gem Specification.</p>
+
+<p>Since I use <a href="http://seattlerb.rubyforge.org/hoe/">Hoe</a> for all my gem publishing needs, I got tired of having to specify all of this information explicitly in my Rakefiles; after all Hoe is suppose to make one's Rakefiles simple and elegant. So I took advantage of Hoe's plugin system and created a Hoe plugin to properly configure my projects for YARD.</p>
+
+<p>Introducing <a href="http://github.com/postmodern/hoe-yard/">hoe-yard</a>, a Hoe plugin that will:</p>
+
+<ul>
+  <li>Automatically find the README and History files, irregardless of file extension.</li>
+  <li>Sets <kbd>has_rdoc</kbd> to yard.</li>
+  <li>Sets <kbd>rdoc_options</kbd>.</li>
+  <li>Sets <kbd>extra_rdoc_files</kbd>.</li>
+  <li>Adds YARD and hoe-yard as development dependencies.</li>
+  <li>Adds the <kbd>yard</kbd> and <kbd>docs</kbd> Rake tasks.</li>
+</ul>
+
+<h2>Install</h2>
+<pre>$ sudo gem install hoe-yard</pre>
+
+<h2>Usage</h2>
+
+<pre>require 'rubygems'
+require 'hoe'
+
+Hoe.plugin :yard
+
+Hoe.spec('my_project') do
+  # ...
+
+  # optional YARD settings
+  self.yard_title = 'My Project (0.1.0)'
+  self.yard_markup = :markdown
+  self.yard_opts = ['--protected'] # any additional YARD options
+
+  # ...
+end</pre>
+
+<p>Not only does hoe-yard make setting up YARD with a project extremely easy, it also ensures the documentation that is automatically generated when a gem is installed will match the documentation published for that gem.</p>
