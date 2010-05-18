@@ -1,0 +1,97 @@
+---
+layout: post
+title: Ronin "big-push" 0.3.0 released
+tags:
+ - ANSI
+ - color
+ - datamapper
+ - gemcutter
+ - http
+ - output
+ - proxy
+ - ronin
+ - ruby
+ - server
+ - tcp
+ - test
+ - thor
+ - udp
+ - yard
+---
+
+<p>The long wait is over. <a href="http://ronin.rubyforge.org/">Ronin</a> 0.3.0, code-named "big-push", has finally been released.</p>
+
+<h2>DataMapper 0.10.0</h2>
+
+<p>Ronin was probably one of the first big Ruby apps to upgrade to <a href="http://datamapper.org/">DataMapper</a> 0.10.0. As a result of this, we had to postpone the release of Ronin 0.3.0, until DataMapper 0.10.0 had finished it's rigorous two month Q/A cycle.</p>
+
+<p>Once DataMapper 0.10.0 had been released, the two months of Q/A and almost a complete rewrite of the code-base really showed itself. I think <a href="http://twitter.com/dkubb">@dkubb</a>, <a href="http://twitter.com/dbussink">@dbussink</a>, <a href="http://sick.snusnu.info/">@snusnu</a>, <a href="http://twitter.com/xshay">@xshay</a>, <a href="http://twitter.com/myabc">@myabc</a>, <a href="http://twitter.com/rsim">@rsim</a>, <a href="http://twitter.com/namelessjon">@namelessjon</a>, <a href="http://twitter.com/knowtheory">@knowtheory</a> and everyone else who helped with 0.10.0 deserves applause for their hard work and dedication.</p>
+
+<h2>YARD</h2>
+
+<p>As of 0.3.0, Ronin has successfully moved to <a href="http://yard.soen.ca/">YARD</a> based documentation. The new Ronin API docs can be found in the usual <a href="http://ronin.rubyforge.org/docs/ronin/">location</a>. YARD really helped improve the detail of the Ronin API docs, allowing developers to specify method arguments, accepted object-types, yield arguments, possible exceptions and return-types.</p>
+
+<p>Additionally, YARD handlers were added to Ronin that parsed and regenerated documentation for DataMapper properties/relations. These additional YARD handlers helped improve documentation coverage for Ronin models, such as <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/Arch.html">Ronin::Arch</a> or <a href="http://ronin.rubyforge.org/docs/ronin-exploits/Ronin/Exploits/Exploit.html">Ronin::Exploits::Exploit</a>.</p>
+
+<h2>Ronin::UI::CommandLine</h2>
+
+<p><kbd>Ronin::UI::CommandLine</kbd> was almost entirely refactored in 0.3.0. <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/UI/CommandLine/Command.html">Ronin::UI::CommandLine::Command</a> was rewritten to use <a href="http://yehudakatz.com/2008/05/12/by-thors-hammer/">Thor</a>. Switching to Thor greatly simplified the ronin commands, making it easier to write new commands. A good example of this, is the source-code for the <kbd>install</kbd> command from <a href="http://github.com/postmodern/ronin/blob/0.2.4/lib/ronin/ui/command_line/commands/install.rb#L31">before</a> and <a href="http://github.com/postmodern/ronin/blob/0.3.0/lib/ronin/ui/command_line/commands/install.rb#L28">after</a> 0.3.0.</p>
+
+<p>Another benefit to using Thor, albeit cosmetic, was being able to use Thor's ANSI color-output. Normal output will now appear in green, warnings in yellow and error messages in red.</p>
+
+<p>New convenience methods were also added to <kbd>Ronin::UI::CommandLine::Command</kbd> to help format and print various data: <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/UI/CommandLine/Command.html#indent-instance_method">indent</a>, <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/UI/CommandLine/Command.html#print_title-instance_method">print_title</a>, <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/UI/CommandLine/Command.html#print_array-instance_method">print_array</a> and <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/UI/CommandLine/Command.html#print_hash-instance_method">print_hash</a>.</p>
+
+<h2>Ronin::UI::Output</h2>
+
+<p>As of 0.3.0, <kbd>Ronin::UI::Diagnostics</kbd> and <kbd>Ronin::UI::Verbose</kbd> were replaced with the brand new <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/UI/Output.html">Ronin::UI::Output</a> module. <kbd>Ronin::UI::Output</kbd> is designed to delegate how output is handled. By default all output is sent to <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/UI/Output/Handler.html">Ronin::UI::Output::Handler</a>, which prints the output to the terminal. One can override the default output handler by using <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/UI/Output.html#handler%3D-class_method">Ronin::UI::Output.handler=</a>, to specify the new handler module; which must define <kbd>print_info</kbd>, <kbd>print_debug</kbd>, <kbd>print_warning</kbd> and <kbd>print_error</kbd> methods.</p>
+
+<p><kbd>Ronin::UI::Output</kbd> also provides the <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/UI/Output/Helpers.html">Helpers</a> module, which can be included into any class and adds the <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/UI/Output/Helpers.html#print_info-instance_method">print_info</a>, <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/UI/Output/Helpers.html#print_debug-instance_method">print_debug</a>, <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/UI/Output/Helpers.html#print_warning-instance_method">print_warning</a> and <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/UI/Output/Helpers.html#print_error-instance_method">print_error</a> methods.</p>
+
+<h2>New Convenience Methods</h2>
+
+<p>New TCP and UDP networking methods were added to 0.3.0. Now one can easily create TCP/UDP servers using, <a href="http://ronin.rubyforge.org/docs/ronin/Net.html#tcp_server-class_method">Net.tcp_server</a>, <a href="http://ronin.rubyforge.org/docs/ronin/Net.html#tcp_server_session-class_method">Net.tcp_server_session</a>, <a href="http://ronin.rubyforge.org/docs/ronin/Net.html#tcp_single_server-class_method">Net.tcp_single_server</a>, <a href="http://ronin.rubyforge.org/docs/ronin/Net.html#udp_server-class_method">Net.udp_server</a> and <a href="http://ronin.rubyforge.org/docs/ronin/Net.html#udp_server_session-class_method">Net.udp_server_session</a>.</p>
+
+<p><a href="http://ronin.rubyforge.org/docs/ronin/Ronin/Network/HTTP/Proxy.html">Ronin::Network::HTTP::Proxy</a> was also added to 0.3.0. The <kbd>Ronin::Network::HTTP::Proxy</a> helps parse and represent HTTP proxy addresses, and is now used by <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/Network/HTTP.html#proxy-class_method">Ronin::Network::HTTP.proxy</a> and all <kbd>:proxy</kbd> options.</p>
+
+<pre>proxy = Network::HTTP::Proxy.parse('148.233.239.24:80')
+# =&gt; #&lt;Ronin::Network::HTTP::Proxy: 148.233.239.24:80&gt;</pre>
+
+<p>The <kbd>Proxy</kbd> class can also be used to test a proxy.</p>
+
+<pre>proxy.valid?
+# =&gt; true
+proxy.lag
+# =&gt; 0.003881</pre>
+
+<h2>Ronin::Platform</h2>
+
+<p>The <a href="http://github.com/postmodern/ronin/blob/0.3.0/static/ronin/platform/overlay.xsl">overlay.xsl</a> file got a make-over in 0.3.0. <kbd>overlay.xsl</kbd> is a XML StyleSheet, which helps render <a href="http://github.com/postmodern/postmodern-overlay/raw/master/ronin.xml">ronin.xml</a> files from Overlays into proper XHTML when they are viewed in a web-browser. Now <kbd>ronin.xml</kbd> files should appear more like a standard "About" web-page.</p>
+
+<p>Reloading Overlays/Extensions while ronin is running became possible with the addition of <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/Platform.html#reload%21-class_method">Ronin::Platform.reload!</a>. Now if an Extension is modified, one can simply call <kbd>Platform.reload!</kbd> and get the updated version.</p>
+
+<p>Ronin Extensions gained convenience methods for defining reader/writer methods to instance variables: <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/Platform/Extension.html#attr_reader-instance_method">attr_reader</a>, <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/Platform/Extension.html#attr_writer-instance_method">attr_writer</a> and <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/Platform/Extension.html#attr_accessor-instance_method">attr_accessor</a>. They can be used in Ronin Extensions, just as one would use them in a class.</p>
+
+<pre>ronin_extension do
+
+  attr_accessor :var
+  attr_reader :result
+
+  setup do
+    @var = 5
+    @result = nil
+  end
+  ...
+end</pre>
+
+<p>Ronin Extensions also gained their own on-demand temp directory. When <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/Platform/Extension.html#tmp_dir-instance_method">Ronin::Platform::Extension#tmp_dir</a> is called, a temp directory specifically for the extension will be created within <kbd>~/.ronin/tmp/</kbd>, and the path of the new temp directory will be returned.</p>
+
+<h2>Upgrading</h2>
+
+<p>As always, the rubygem files for Ronin 0.3.0 are available on <a href="http://rubyforge.org/frs/?group_id=3798">rubyforge.org</a>. One can update Ronin using rubygems by simplying running:</p>
+<pre>$ gem update ronin</pre>
+
+<p>Likewise, one can also install Ronin using rubygems:</p>
+
+<pre>$ gem install ronin</pre>
+
+<p>Also, as of Ronin 0.3.0 all releases of Ronin will also be made available on <a href="http://gemcutter.org/">gemcutter.org</a>.</p>
