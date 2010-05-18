@@ -1,0 +1,87 @@
+---
+layout: post
+title: Ronin 0.1.3 "shake down" Released
+tags:
+ - contextify
+ - dsl
+ - exploit
+ - gem_plugin
+ - git
+ - github
+ - hack
+ - hacking
+ - injection
+ - nmap
+ - payload
+ - refactoring
+ - reverse-require
+ - ronin
+ - rprogram
+ - scandb
+ - sql
+ - taxonomy
+ - vulnerability
+---
+
+<p>After many bug-fixes and testing Ronin 0.1.3, codenamed "shake down", has finally been released. I split out Ronin::Context into the <a href="http://contextify.rubyforge.org/">Contextify</a> library. Contextify is very handy for frameworks that want to load objects from Ruby files (without using YAML or defining specially named Classes/Modules). I've also refactored <a href="http://reverserequire.rubyforge.org/">reverse-require</a>, integrating it closer with RubyGems 1.3.0. Again, reverse-require is useful for frameworks that want to have a plugin system, but don't want to mess with the archaic gem_plugin. I eventually hope to get some of the code from reverse-requires merged into RubyGems. The <kbd>Ronin::Objectify</kbd> and <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/UI/CommandLine.html">Ronin::UI::CommandLine</a> modules also got a fresh refactoring.</p>
+
+<p><a href="http://github.com/postmodern/ronin-sql/">ronin-sql</a> also received some refactoring love. It's SQL/Injection DSL was rewritten to uses a token emitter / formatter strategy for generating SQL syntax from the DSL. The use of tokens greatly simplified generating complex syntax from an Abstract Syntax Tree (AST).</p>
+
+<pre><code>&gt;&gt; require 'ronin/sql'
+=&gt; true
+&gt;&gt; puts Code.sql_injection { has_table?(:users) }
+AND (SELECT count(*) FROM users) = 1
+=&gt; nil
+</code></pre>
+
+<p>Not only were there updates, but also some libraries released for the very first time. After sitting on github for a while, <a href="http://github.com/postmodern/ronin-exploits/">ronin-exploits</a> and <a href="http://github.com/postmodern/ronin-scanners/">ronin-scanners</a> were finally released.</p>
+
+<p>The <a href="http://github.com/postmodern/ronin-exploits/">ronin-exploits</a> library provides the ability to define exploits and payloads, as well as caching them in Ronin's database. Since ronin-exploits uses Contextify, writing exploits becomes easy and elegant:</p>
+
+<pre><code># test_exploit.rb
+require 'ronin/sessions/tcp'
+
+ronin_exploit do
+
+  extend Sessions::TCP
+
+  self.name = 'test'
+  self.version = '0.2'
+  self.license = License.cc_by_nc
+
+  self.author(:name =&gt; 'postmodern', :organization =&gt; 'SophSec')
+
+  def builder
+    @buffer = 'some data'
+  end
+
+  def deployer
+    tcp_send(@buffer)
+  end
+
+end
+</code></pre>
+
+<p>The library also allows one to associate Vulnerability Taxonomy information with Exploits or Payloads.</p>
+
+<p>The <a href="http://github.com/postmodern/ronin-scanners/">ronin-scanners</a> library provides interfaces to various security scanners. Currently, ronin-scanners provides a <a href="http://ronin.rubyforge.org/docs/ronin-scanners/Ronin/Scanners/Nmap.html">Rubyful interface</a> to the <a href="http://nmap.org/">Nmap</a> network scanner and <a href="http://ronin.rubyforge.org/docs/ronin-scanners/Ronin/Scanners/NmapTask.html">all of it's options</a>.</p>
+
+<pre><code>&gt;&gt; require 'ronin/scanners'
+=&gt; true
+&gt;&gt; puts Scanners::Nmap.scan(:targets =&gt; 'www.google.com', :ports =&gt; [80,21,25], :service_scan =&gt; true)
+Starting Nmap 4.68 ( http://nmap.org ) at 2009-01-09 16:51 PST
+Interesting ports on mh-in-f99.google.com (209.85.173.99):
+PORT   STATE    SERVICE VERSION
+21/tcp filtered ftp
+25/tcp filtered smtp
+80/tcp open     http    Google httpd 1.3 (GFE)
+Service Info: OS: Linux
+
+Service detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 11.627 seconds
+=&gt; nil
+</code></pre>
+
+<p>The library also uses <a href="http://scandb.rubyforge.org/">ScanDB</a>, so that Nmap scan results can be stored or queried using ScanDB's database.</p>
+
+<p>Now that I've completed another round of refactoring and releasing updated libraries, I can focus on other things, such as improving Ronin's <a href="http://ronin.rubyforge.org">website</a> and build a presentation for Ronin. Recently I was invited by evoltech from <a href="http://hackbloc.org">HackBloc</a> to trek down to the Bay Area and give a mini-presentation on Ronin at this years <a href="http://hackmeet.org/">Hack Meet</a>. Hack Meet is a semi-regular non-corporate hacker meet-up / mini-conference, where hackers gather and share their latest projects.</p>
