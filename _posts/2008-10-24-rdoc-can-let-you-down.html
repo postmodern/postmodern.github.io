@@ -17,6 +17,11 @@ tags:
  - yard
 ---
 
+<p><b>Update:</b> The Ruby Core developers have finally fixed
+<a href="http://redmine.ruby-lang.org/issues/show/1042">this bug</a> in RDoc.
+Thanks go out to Eric Hodel (for recently refactoring RDoc) and the
+Ruby Core developers for maintaining Ruby.</p>
+
 <p>Normally <a href="http://rdoc.sourceforge.net/">RDoc</a> is there for you when it comes to auto-generating nice HTML documentation for your Ruby projects. But just now, it flat out failed while generating <a href="http://www.graphviz.org/">Graphviz</a> diagrams of my code.</p>
 
 <p>I was attempting to generate some documentation for the <a href="http://github.com/postmodern/ronin-sql/tree/dsl_refactor">Ronin SQL library</a> in order to test the formatting of README.txt. To my surprise <code>rake docs</code> failed without any informative error message describing which file caused RDoc to chock.</p>
