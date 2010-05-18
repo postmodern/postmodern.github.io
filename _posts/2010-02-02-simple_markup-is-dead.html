@@ -1,0 +1,35 @@
+---
+layout: post
+tags:
+ - yard
+ - rdoc
+ - ruby
+ - simplemarkup
+ - markdown
+title: SimpleMarkup is dead. Long live MarkDown (and Textile)
+---
+
+<p>If you use <a href="http://rdoc.sourceforge.net/">RDoc</a>, than you're probably familiar with it's markup, known as <a href="http://rdoc.sourceforge.net/doc/files/markup/simple_markup_rb.html">SimpleMarkup</a>. If you've been using RDoc for a while, you are also probably aware that SimpleMarkup is horribly <a href="http://redmine.ruby-lang.org/issues/show/1042">broken</a>, when it comes to handling odd formatting.</p>
+
+<p>Besides the usual formatting mistakes that can easily crash SimpleMarkup, I and other users began noticing odd <a href="http://rubyforge.org/tracker/index.php?func=detail&amp;aid=27674&amp;group_id=627&amp;atid=2472">error messages</a> when installing YARD documentation with SimpleMarkup:</p>
+
+<pre><code>Unhandled special: Special: type=65, name=CROSSREF,_SPECIAL_, text="Spidr"</code></pre>
+
+<p>Even after ditching RDoc for <a href="http://yardoc.org/">YARD</a>, SimpleMarkup (the default markup used by YARD) was able to reach forth from it's icy RubyGem and introduce bugs into my code. This was the last straw, SimpleMarkup is dead, time to move on.</p>
+
+<p>Luckily, YARD supports using alternate markup engines, such as <a href="http://daringfireball.net/projects/markdown/basics">MarkDown</a> or <a href="http://redcloth.org/textile">Textile</a>. Having used MarkDown regularly in the past, and that it matched SimpleMarkup's syntax in some ways, I decided to convert all of my Ruby project's to MarkDown formatted YARD documentation.</p>
+
+<p>First, I had to specify the <kbd>--markup markdown</kbd> option in the <a href="http://github.com/postmodern/spidr/commit/38546a27c5a399f4b54e723de2dfbb87f61c8762#L2L14">yard_options</a> setting (provided by the <a href="http://hoe-yard.rubyforge.org/">hoe-yard</a> plugin) in the Rakefile.</p>
+
+<p>Second, I renamed the README.*, History.* files to README.md, History.md, respectively.</p>
+
+<p>Finally, I began the tedious process of converting SimpleMarkup formatted text to MarkDown:</p>
+
+<ol>
+  <li>Replace the <kbd>=</kbd>, <kbd>==</kbd>, <kbd>===</kbd> headings with <kbd>#</kbd>, <kbd>##</kbd>, <kbd>###</kbd>.</li>
+  <li>Indent all source-code examples not following a YARD <kbd>@example</kbd> tag by 4 spaces.</li>
+  <li>Convert any raw URLs to MarkDown links.</li>
+  <li>Replace any +code+ or &lt;tt&gt;code&lt;/tt&gt; formatting with `code` or &lt;code&gt;code&lt;/code&gt;. (Note: `code` can handle spaces, numbers and symbols within the ` ` characters, where as +code+ cannot.)</li>
+</ol>
+
+<p>In conclusion, that is how I ridded myself of the last buggy vestiges of RDoc, and increased the reliability of my documentation using YARD.</p>
