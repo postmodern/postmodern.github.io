@@ -1,0 +1,77 @@
+---
+layout: post
+title: Introducing Chars 0.1.0
+tags:
+ - alpha
+ - ascii
+ - case
+ - char
+ - chars
+ - code
+ - generate
+ - git
+ - github
+ - hex
+ - hexadecimal
+ - lower
+ - numeric
+ - octal
+ - random
+ - ruby
+ - rubygem
+ - text
+ - upper
+---
+
+<p>Yesterday I released the first version of <a href="http://chars.rubyforge.org/">Chars</a>. Chars is a Ruby library for working with character sets, generating random text and determining whether Strings or Integers belong to specific sets. Originally, Chars was part of the <a href="http://github.com/postmodern/ronin">Ronin</a> code-base, but was split-out in order to keep Ronin small and to promote code-reuse. So without further ado, here's some examples of what Chars can do:</p>
+
+<ul>
+  <li>
+    Determine whether a byte belongs to a character set: 
+    <pre>0x41.alpha?
+# =&gt; true</pre>
+  </li>
+
+  <li>
+    Determine whether a String belongs to a character set: 
+    <pre>"hello;".printable?
+# =&gt; true</pre>
+  </li>
+
+  <li>
+    Find all sub-strings that belong to a character set within a String:
+    <pre>ls = File.read('/bin/ls')
+Chars.printable.strings_in(ls)
+# =&gt; ["/lib64/ld-linux-x86-64.so.2", "KIq/", "5J~!", "%L~!", ...]</pre>
+  </li>
+
+  <li>
+    Return a random character from the set of all characters:
+    <pre>Chars.all.random_char
+# =&gt; "\x94"</pre>
+  </li>
+
+  <li>
+    Return a random Array of characters from the alpha-numeric character set:
+    <pre>Chars.alpha_numeric.random_array(10)
+# =&gt; ["Q", "N", "S", "4", "x", "z", "3", "M", "F", "F"]</pre>
+  </li>
+
+  <li>
+    Return a random String from the set of all characters: 
+    <pre>Chars.all.random_string(10)
+# =&gt; "\xc2h\xad\xccm7\x1e6J\x13"</pre>
+  </li>
+
+  <li>
+    Return a random String with a random length between 5 and 10, from the set of space characters:
+    <pre>Chars.space.random_string(5..10)
+# =&gt; "\r\v\n\t\n\f"</pre>
+  </li>
+</ul>
+
+<p>You can install Chars as a rubygem using the following command:</p>
+
+<pre>$ sudo gem install chars</pre>
+
+<p>If you want to hack on Chars, the code-base is available on <a href="http://github.com/postmodern/chars/tree/master">GitHub</a>.</p>
