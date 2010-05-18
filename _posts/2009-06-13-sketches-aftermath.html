@@ -1,0 +1,52 @@
+---
+layout: post
+title: Sketches: Aftermath
+tags:
+ - editor
+ - irb
+ - reload
+ - reloading
+ - repl
+ - ruby
+ - sketch
+ - sketches
+ - slime
+---
+
+<p>Apologies for not updating this blog more often. I have been very busy preparing for <a href="http://toorcamp.org/">ToorCamp</a> and releasing code.</p>
+
+<p>One of my newer projects is <a href="http://sketches.rubyforge.org/">Sketches</a>. The idea for Sketches came from hacking sessions with <a href="http://ronin.rubyforge.org/">Ronin</a>. Eventually you need to automate some small task, this requires that you write a small method in the Ronin Console. I would find myself either writing methods directly into the console or cluttering my home directory with small Ruby scripts that I would load into the console. Usually after testing my code, I realized some changes needed to be made, and the code redefined/reloaded.</p>
+
+<p>This became tedious and was cramping my work-flow. I just wanted to write code in my editor of choice and have it reloaded into the console like magic.</p>
+
+<p>I remembered that <a href="http://utilitybelt.rubyforge.org/">Utility Belt</a> had the ability to spawn an editor from IRB and load the resulting code after you exited it. Although, Utility Belt wont track the edited files and reload them whenever they change. Also, Utility Belt comes with a lot of OSX/S3 specific features that I didn't really need.</p>
+
+<p>So I dug up <a href="http://gist.github.com/20920">reval.rb</a>, borrowed the name Sketches from <a href="http://processing.org/">Processing's</a> idea of code "sketches" and one week later I had Sketches working in IRB (and Ronin).</p>
+
+<p>Sketches is easy to install:</p>
+
+<pre>$ sudo gem install sketches</pre>
+
+<p>Then just drop it into your <kbd>.irbrc</kbd>:</p>
+
+<pre>require 'sketches'
+
+Sketches.config :editor =&gt; 'gvim'</pre>
+
+<p>When you want to pop open a new sketch:</p>
+
+<pre>sketch</pre>
+
+<p>You can also name your sketches:</p>
+
+<pre>sketch :foo</pre>
+
+<p>See all of your current sketches:</p>
+
+<pre>sketches</pre>
+
+<p>Don't worry about closing the editor, sketches will persist until you exit IRB and can be re-opened using the <kbd>sketch</kbd> method:</p>
+
+<pre>sketch :foo</pre>
+
+<p>After posting it to <a href="http://www.reddit.com/r/ruby/comments/8nrwd/introducing_sketches_a_liveprogramming_gem/">reddit</a> I was surprised to see such an immediate positive reaction to the little project. I even saw posts on Twitter were people were using <a href="http://www.gnu.org/software/screen/">GNU Screen</a> with <a href="http://www.vim.org/">vim</a> for the editor command. I never thought of using <kbd>screen</kbd>, totally clever.</p>
