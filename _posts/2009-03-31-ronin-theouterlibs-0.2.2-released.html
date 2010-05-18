@@ -1,0 +1,66 @@
+---
+layout: post
+title: Ronin "theouterlibs" 0.2.2 released
+tags:
+ - bytes
+ - chars
+ - const_missing
+ - cvs
+ - darcs
+ - git
+ - hack
+ - hacking
+ - hex_unescape
+ - overlay
+ - overlays
+ - repertoire
+ - resources
+ - ronin
+ - ronin-gen
+ - ronin-php
+ - ronin-web
+ - rubygems
+ - static
+ - unhexdump
+---
+
+<p>Ronin 0.2.2, code-named "theouterlibs", has been released. This release of Ronin has seen more action in the other libraries which support Ronin.</p>
+
+<p>Ronin::Chars was split out of Ronin into the <a href="http://chars.rubyforge.org/">Chars</a> 0.1.0 library, in order to help other frameworks and code which work with characters.</p>
+
+<p>The ronin-overlay and ronin-ext sub-commands which handled generating skeleton Overlays and Extensions have been moved to the <a href="http://ronin.rubyforge.org/gen/">ronin-gen</a> library. The ronin-gen library provides various code-generates which allow other Ronin libraries to create their own custom code-generators.</p>
+
+<p>The <a href="http://repertoire.rubyforge.org/">R'epertoire</a> library saw significant refactoring after various bugs were uncovered while testing Ronin 0.2.2. Now R'epertoire 0.2.1 has improved Git support, but CVS and Darcs support was removed.</p>
+
+<p>Ronin also saw some minor improvements in 0.2.2. New convenience methods were added for formatting binary data:</p>
+
+<ul>
+  <li><a href="http://ronin.rubyforge.org/docs/ronin/Integer.html#bytes-instance_method">Integer#bytes</a>: returns the bytes that make up the Integer.
+    <pre>0xff41.bytes(2)
+# =&gt; [65, 255]</pre>
+
+    <pre>0xff41.bytes(4, :big)
+# =&gt; [0, 0, 255, 65]</pre>
+  </li>
+
+  <li><a href="http://ronin.rubyforge.org/docs/ronin/String.html#hex_unescape-instance_method">String#hex_unescape</a>: unescape those annoying hex-escaped Strings.
+    <pre>"\\x68\\x65\\x6c\\x6c\\x6f".hex_unescape
+# =&gt; "hello"</pre>
+  </li>
+
+  <li><a href="http://ronin.rubyforge.org/docs/ronin/String.html#unhexdump-instance_method">String#unhexdump</a>: un-hexdump a variety of hexdump formats.
+    <pre>File.read('data_dump.txt').unhexdump
+# =&gt; "..."</pre>
+  </li>
+</ul>
+
+<p><a href="http://ronin.rubyforge.org/docs/ronin/Ronin/Static.html">Ronin::Static</a> was also added in 0.2.2. The Ronin::Static module handles static resource directories which Ronin can search within for various files and directories. <a href="http://ronin.rubyforge.org/docs/ronin/Ronin/Static/Finders.html">Ronin::Static::Finders</a> provides path/file/directory finder methods that can be included into classes. Ronin Overlays and Extensions can now have static/ directories of their own, which are accessible via the Ronin::Static::Finders methods.</p>
+
+<p>Loaded extensions can now be reloaded on the fly:</p>
+
+<pre>Platform.extensions.reload!</pre>
+
+<p>Ronin Extensions also can be accessed via constants within the Ronin namespace:</p>
+
+<pre>Ronin::HelloWord.name
+# =&gt; "hello_word"</pre>
