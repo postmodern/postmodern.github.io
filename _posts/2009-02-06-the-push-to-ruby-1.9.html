@@ -1,0 +1,45 @@
+---
+layout: post
+title: The Push to Ruby 1.9
+tags:
+ - 1.9
+ - 1.9.1
+ - bdd
+ - debian
+ - gist
+ - github
+ - install
+ - isitruby19
+ - rspec
+ - ruby
+ - ruby19
+ - rubygems
+ - script
+ - shell
+ - tdd
+ - test
+ - unit
+---
+
+<p>So you probably heard that <a href="http://www.ruby-lang.org/en/news/2007/12/25/ruby-1-9-0-released/">Ruby 1.9.1</a> has been <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/326276">released</a>. That's right, no more testing release candidates, Ruby 1.9.1 has been marked stable. The 1.9.x series of Ruby comes with improved encoding support, includes <a href="http://www.rubygems.org/">RubyGems</a> by default and has merged with <a href="http://www.atdot.net/yarv/">YARV</a>.</p>
+
+<p>Including RubyGems was a good move, since it's always been a pain dealing with out-dated Debian packages of RubyGems, setting RUBYOPT or having <kbd>gem update --system</kbd> conflict with the customized Debian version of RubyGems. The inclusion of YARV, which implements a byte-code VM for Ruby, has brought considerable performance increases to Ruby. I've been having fun using the 1.9.1 release candidates to brute-force <a href="http://projecteuler.net/">Project Euler</a> problems.</p>
+
+<p>So here's the catch, most of the RubyGems for Ruby do not work properly with the 1.9.x series and it's minor API changes. This poses a good dev challenge to the Ruby community: test, fix, fork or rewrite the offending RubyGems.</p>
+
+<p>Some would say this will take some time, slowing the adoption of 1.9.1 or even stunting the Ruby community. But we came prepared, we got <a href="http://en.wikipedia.org/wiki/Test-driven_development">TDD</a>, <a href="http://en.wikipedia.org/wiki/Behavior_Driven_Development">BDD</a>, <a href="http://www.ruby-doc.org/stdlib/libdoc/test/unit/rdoc/classes/Test/Unit.html">Unit::Test</a>, <a href="http://rspec.info/">Rspec</a> and <a href="http://github.com/">github.com</a>.</p>
+
+<p>Also, a handy site just popped up today, <a href="http://isitruby19.com/">Is it Ruby 1.9</a>: Community-powered gem compatibility for Ruby 1.9. People can search for RubyGems and add testing information to them.</p>
+
+<p>To help with the push to Ruby 1.9.1, I threw together a shell script that installs Ruby 1.9.1 alongside 1.8.x. It's hosted on <a href="http://gist.github.com/59130">gist.github.com</a>, so feel free to fork it.</p>
+
+<pre>#!/bin/sh
+ 
+mkdir -p /usr/local/src &amp;&amp; cd /usr/local/src
+wget ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.1-p0.tar.bz2
+tar -xjvf ruby-1.9.1-p0.tar.bz2
+cd ruby-1.9.1-p0
+./configure --prefix=/usr --program-suffix=19 --enable-shared
+make &amp;&amp; make install</pre>
+
+<p>I'll be testing the RubyGems I use the most and my own projects. So far I've found that <a href="http://contextify.rubyforge.org/">Contextify</a>, <a href="http://parameters.rubyforge.org">Parameters</a>, <a href="http://gscraper.rubyforge.org/">GScraper</a> and <a href="http://spidr.rubyforge.org/">Spidr</a> all work with Ruby 1.9.1.</p>
