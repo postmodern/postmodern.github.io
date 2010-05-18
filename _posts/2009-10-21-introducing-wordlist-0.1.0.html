@@ -1,0 +1,61 @@
+---
+layout: post
+title: Introducing Wordlist 0.1.0
+tags:
+ - bruteforce
+ - build
+ - crawl
+ - generate
+ - password
+ - ruby
+ - rubygem
+ - sophsec
+ - spider
+ - spidr
+ - website
+ - wordlist
+---
+
+<p><b>Update:</b> Evoltech correctly pointed out that the Wordlist::Builders::Website example was incorrect. The Website.build method must take a path argument and then any additional options.</p>
+
+<p>For a while now people have asked/told me that I should write a Wordlist library for Ruby. People have also brought up the need to build wordlists from existing <a href="http://en.wikipedia.org/wiki/Text_corpus">corpora</a>; such as the text from a website. After seeing varying attempts at this task, I finally got serious and released <a href="http://wordlist.rubyforge.org/">Wordlist 0.1.0</a>.</p>
+
+<p>Currently, the design of the Wordlist Ruby library is quite simple. <a href="http://wordlist.rubyforge.org/Wordlist/Builder.html">Wordlist::Builder</a> is the base class for all wordlist builders. It handles parsing text, filtering out duplicate words, and writing the unique words to a file. The Builder class stores the CRC32 hash of each word in a Hash, mapping the word length to the Set of CRC32 hashes. Using a bucket system for the CRC32 hashes, keeps both word lookup time and memory usage to a minimum.</p>
+
+<pre><code>Wordlist::Builder.build('list.txt') do |builder|
+  builder.parse(some_text)
+  builder.parse_file('some/file.txt')
+end</code></pre>
+
+<p>Wordlist also provides <a href="http://wordlist.rubyforge.org/Wordlist/Builders/Website.html">Wordlist::Builders::Website</a>, which uses <a href="http://spidr.rubyforge.org/">Spidr</a> to completely spider a host, and build a wordlist from the inner-text recovered from every visited page.</p>
+
+<pre><code>require 'wordlist/builders/website'
+
+Wordlist::Builders::Website.build('list.txt',:host =&gt; 'www.example.com')</code></pre>
+
+<p>Wordlist doesn't just build wordlists, it can also enumerate them. Wordlist defines <a href="http://wordlist.rubyforge.org/Wordlist/List.html">Wordlist::List</a> as the base class for all wordlist readers. Per convenience, Wordlist also defines <a href="http://wordlist.rubyforge.org/Wordlist/FlatFile.html">Wordlist::FlatFile</a> which handles the enumeration of flat-file wordlists.</p>
+
+<pre><code>list = Wordlist::FlatFile.new('list.txt')
+list.each_word do |word|
+  puts word
+end</code></pre>
+
+<p>The <a href="http://wordlist.rubyforge.org/Wordlist/List.html#M000021">Wordlist::List</a> also provides methods for defining text-mutation rules, which are applied in series to each enumerated word.</p>
+
+<pre><code>list.mutate 'o', '0'
+list.mutate '@', 0x41
+list.mutate(/[hax]/i) { |match| match.swapcase }
+
+list.each_mutation do |word|
+  puts word
+end</code></pre>
+
+<p>A mutation rule takes a String or Regexp (which is used to match a sub-string within a word) and another String, Integer or block which is used as a replacement for the matched sub-string. A mutation rule will perform every possible combination of sub-string replacement, passing each mutated word to the next mutation rule, and so on.</p>
+
+<p>One can install Wordlist using rubygems, by simply running the following command:</p>
+
+<pre><code>$ sudo gem install wordlist</code></pre>
+
+<p>The <a href="http://www.git-scm.com/">git</a> repository for Wordlist is located on <a href="http://github.com/sophsec/wordlist">GitHub</a>.</p>
+
+<p>As of 0.1.0, Wordlist is fairly simple but it gets the job done. The library was fun to design and test, as it involved borrowing some techniques typically used in blind-fuzzing. Expect more features and updates to Wordlist as time goes on.</p>
