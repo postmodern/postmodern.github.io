@@ -1,0 +1,79 @@
+---
+layout: post
+title: RDoc can let you down, can give you up, can run around and desert you...
+tags:
+ - datamapper
+ - fail
+ - gist
+ - github
+ - graphviz
+ - library
+ - merb
+ - rake
+ - rdoc
+ - ronin
+ - ruby
+ - sql
+ - yard
+---
+
+<p>Normally <a href="http://rdoc.sourceforge.net/">RDoc</a> is there for you when it comes to auto-generating nice HTML documentation for your Ruby projects. But just now, it flat out failed while generating <a href="http://www.graphviz.org/">Graphviz</a> diagrams of my code.</p>
+
+<p>I was attempting to generate some documentation for the <a href="http://github.com/postmodern/ronin-sql/tree/dsl_refactor">Ronin SQL library</a> in order to test the formatting of README.txt. To my surprise <code>rake docs</code> failed without any informative error message describing which file caused RDoc to chock.</p>
+
+<p>Here's the output of <code>rake --trace docs</code>:</p>
+
+<p>[ <a href="http://gist.github.com/19353">gist.github.com/19353</a> ]</p>
+<pre><code>
+Generating HTML...
+Diagrams: ...
+/usr/lib64/ruby/1.8/rdoc/markup/simple_markup/fragments.rb:291: warning: Object#type is deprecated; use Object#class
+rake aborted!
+undefined method `level' for nil:NilClass
+/usr/lib64/ruby/1.8/rdoc/markup/simple_markup/fragments.rb:292:in `add_list_breaks'
+/usr/lib64/ruby/1.8/rdoc/markup/simple_markup/fragments.rb:282:in `each'
+/usr/lib64/ruby/1.8/rdoc/markup/simple_markup/fragments.rb:282:in `add_list_breaks'
+/usr/lib64/ruby/1.8/rdoc/markup/simple_markup/fragments.rb:153:in `normalize'
+/usr/lib64/ruby/1.8/rdoc/markup/simple_markup.rb:459:in `group_lines'
+/usr/lib64/ruby/1.8/rdoc/markup/simple_markup.rb:255:in `convert'
+/usr/lib64/ruby/1.8/rdoc/generators/html_generator.rb:246:in `markup'
+/usr/lib64/ruby/1.8/rdoc/generators/html_generator.rb:818:in `value_hash'
+/usr/lib64/ruby/1.8/rdoc/generators/html_generator.rb:865:in `write_on'
+/usr/lib64/ruby/1.8/rdoc/generators/html_generator.rb:1293:in `gen_into'
+/usr/lib64/ruby/1.8/rdoc/generators/html_generator.rb:1293:in `open'
+/usr/lib64/ruby/1.8/rdoc/generators/html_generator.rb:1293:in `gen_into'
+/usr/lib64/ruby/1.8/rdoc/generators/html_generator.rb:1289:in `each'
+/usr/lib64/ruby/1.8/rdoc/generators/html_generator.rb:1289:in `gen_into'
+/usr/lib64/ruby/1.8/rdoc/generators/html_generator.rb:1276:in `generate_html'
+/usr/lib64/ruby/1.8/rdoc/generators/html_generator.rb:1197:in `generate'
+/usr/lib64/ruby/1.8/rdoc/rdoc.rb:284:in `document'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake/rdoctask.rb:113:in `define'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:617:in `call'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:617:in `execute'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:612:in `each'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:612:in `execute'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:578:in `invoke_with_call_chain'
+/usr/lib64/ruby/1.8/monitor.rb:242:in `synchronize'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:571:in `invoke_with_call_chain'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:588:in `invoke_prerequisites'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:585:in `each'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:585:in `invoke_prerequisites'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:577:in `invoke_with_call_chain'
+/usr/lib64/ruby/1.8/monitor.rb:242:in `synchronize'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:571:in `invoke_with_call_chain'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:564:in `invoke'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:2019:in `invoke_task'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:1997:in `top_level'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:1997:in `each'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:1997:in `top_level'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:2036:in `standard_exception_handling'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:1991:in `top_level'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:1970:in `run'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:2036:in `standard_exception_handling'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/lib/rake.rb:1967:in `run'
+/usr/lib64/ruby/gems/1.8/gems/rake-0.8.3/bin/rake:31
+/usr/bin/rake:19:in `load'
+/usr/bin/rake:19
+</code></pre>
+
+<p>Suddenly, all that talk about <a href="http://www.infoq.com/news/2008/07/yard-documentation-generator">YARD</a> replacing RDoc is sounding a lot more pragmatic. YARD has certainly worked out for <a href="http://datamapper.rubyforge.org/">DataMapper</a> and <a href="http://merbivore.com/documentation.html">Merb</a> thus far. Maybe <a href="http://ronin.rubyforge.org/">Ronin</a> will give <a href="http://yard.rubyforge.org/">YARD</a> a try.</p>
