@@ -57,6 +57,10 @@ body {
 	list-style: square;
 }
 
+#content a {
+	text-decoration: underline;
+}
+
 #content a:hover {
 	color: white;
 	background-color: black;
