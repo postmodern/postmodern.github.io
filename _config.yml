@@ -1,6 +1,7 @@
 auto: true
 server: true
 server_port: 2222
+rdiscount: true
 projects:
  -
    name: Ronin
