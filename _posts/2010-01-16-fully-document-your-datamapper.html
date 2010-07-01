@@ -35,7 +35,7 @@ end</pre>
 
 <h2>Enter YARD</h2>
 
-<blockquote>YARD is a documentation generation tool for the Ruby programming language.¿ It enables the user to generate consistent, usable documentation that can be¿ exported to a number of formats very easily, and also supports extending for¿ custom Ruby constructs such as custom class level definitions.</blockquote>
+<blockquote>YARD is a documentation generation tool for the Ruby programming language. It enables the user to generate consistent, usable documentation that can be exported to a number of formats very easily, and also supports extending for custom Ruby constructs such as custom class level definitions.</blockquote>
 <a href="http://github.com/lsegal/yard">http://github.com/lsegal/yard</a>
 
 <p>YARD organizes most of it's parsing logic into multiple handlers; essentially classes that inherit <a href="http://yardoc.org/docs/yard/YARD/Handlers/Ruby/Base">YARD::Handlers::Ruby::Base</a> and define a <kbd>process</kbd> method. YARD also supports a plugin system, by loading any RubyGems installed on the system that are prefixed with <kbd>yard-</kbd> or <kbd>yard_</kbd>. Using these two features of YARD, one can easily create a YARD plugin gem containing custom handlers, which YARD can automatically load and use.</p>
