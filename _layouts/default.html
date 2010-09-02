@@ -33,12 +33,10 @@
     {% include header.html %}
 
     <div id="page" class="container">
+      {% include menu.html %}
+
       <div id="content" class="span-14">
         {{ content }}
-      </div>
-
-      <div id="sidebar" class="span-4">
-        {% include menu.html %}
       </div>
 
       <div id="footer">

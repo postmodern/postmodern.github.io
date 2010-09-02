@@ -14,7 +14,7 @@ body {
 #page {
 	width: 800px;
 	margin: 180px auto;
-	padding: 10px 0 0 0;
+	padding: 10px;
 	color: black;
 	background-color: white;
 }
@@ -77,19 +77,19 @@ body {
 }
 
 #menu > li {
-	height: 20px;
-	margin: 10px;
-	font-size: 120%;
-	font-weight: bold;
+	float: left;
+	width: 25%;
+	color: white;
+	text-align: center;
+	font-size: 200%;
+	background-color: black;
 }
 
 #menu > li > a {
-	padding-left: 10px;
-	border-left: 20px solid white;
+	color: white;
 }
 
 #menu > li > a:hover {
-	border-left: 20px solid black;
 }
 
 #footer {
