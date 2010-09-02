@@ -52,6 +52,7 @@ body {
 	color: white;
 	background-color: black;
 	padding: 0.5em 1em;
+	overflow: auto;
 }
 
 #content ul,ol {
