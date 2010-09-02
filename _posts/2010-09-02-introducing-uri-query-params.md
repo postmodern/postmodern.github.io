@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Introducing uri-query_params
+tags:
+ - uri
+ - query_params
 ---
 
 [uri-query_params](http://github.com/postmodern/uri-query_params) is a new
