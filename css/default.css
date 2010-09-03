@@ -9,10 +9,10 @@ body {
 	position: fixed;
 	top: 20px;
 	left: 25px;
-	z-index: -1;
 }
 
 #page {
+	position: relative;
 	width: 800px;
 	margin: 180px auto;
 	padding: 10px;
