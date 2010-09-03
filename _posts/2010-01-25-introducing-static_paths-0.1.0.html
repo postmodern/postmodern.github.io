@@ -17,7 +17,7 @@ tags:
 
 <p>When writing a library which bundles static-content in a directory named <kbd>data/</kbd> or <kbd>static/</kbd>, you usually need to find the directory using something like.</p>
 
-<pre><code>File.expand_path(File.join(File.dirname(__FILE__),'..','..','..','..','static))</code></pre>
+<pre><code>File.expand_path(File.join(File.dirname(__FILE__),'..','..','..','..','static'))</code></pre>
 
 <p>But then you want to allow plugins to extend the functionality of your library, and even add their own static-content. Now you have to manage more than one directory path.</p>
 
