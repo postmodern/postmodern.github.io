@@ -2,6 +2,7 @@
 layout: post
 title: Introducing uri-query_params
 tags:
+ - ruby
  - uri
  - query_params
 ---
