@@ -24,6 +24,8 @@ attempts to require it then finds the constant in the namespace.
 
     $ gem install open_namespace
 
+## Examples
+
     require 'open_namespace'
     
     module Project
