@@ -103,5 +103,8 @@ Note, that the `Array` may contain:
         >> number = (1..100)
         >> [*word, number].comprehension { |*s| puts s.join }
 
-This code requires Ruby 1.9 since [Enumerator#peek](http://rubydoc.info/docs/ruby-core/1.9.2/Enumerator#peek-instance_method)
+This code does require Ruby 1.9 since [Enumerator#peek](http://rubydoc.info/docs/ruby-core/1.9.2/Enumerator#peek-instance_method)
 was not back-ported to Ruby 1.8.7.
+
+    $ rvm install 1.9.2
+
