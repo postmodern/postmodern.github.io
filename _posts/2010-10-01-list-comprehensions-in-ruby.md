@@ -56,7 +56,7 @@ done.
 
 Unfortunately, Ruby does not support list comprehensions, and only has
 a couple methods for doing [Combinatorics](http://en.wikipedia.org/wiki/Combinatorics) (`Array#combination` and `Array#permutation`).
-So, I implemented [list comprehensions](http://gist.github.com/605891)
+So, I [implemented list comprehensions](http://gist.github.com/605891)
 for the Ruby `Array` class:
 
     >> require './array_comprehension'
