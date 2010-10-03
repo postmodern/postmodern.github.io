@@ -98,7 +98,7 @@ Note, that the `Array` may contain:
 
 * Even other list comprehensions:
 
-        >> syllable = ([('a'..'z')] * 2).comprehension
+        >> syllable = (['a'..'z'] * 2).comprehension
         >> word = [syllable] * 4
         >> number = (1..100)
         >> [*word, number].comprehension { |*s| puts s.join }
