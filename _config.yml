@@ -5,7 +5,7 @@ rdiscount: true
 projects:
  -
    name: Ronin
-   website: http://ronin.rubyforge.org/
+   website: http://ronin-ruby.github.com/
    source: http://github.com/ronin-ruby/
    mailinglist: http://groups.google.com/group/ronin-ruby
    chatroom: irc://irc.freenode.net:6667/ronin
