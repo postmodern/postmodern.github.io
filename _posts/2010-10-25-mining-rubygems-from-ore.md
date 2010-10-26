@@ -206,7 +206,7 @@ Users can install custom Ore templates from Git repositories:
       test_unit
       yard
       bundler
-      jeweler
+      jeweler_tasks
       rdoc
       ore_tasks
     Installed templates:
