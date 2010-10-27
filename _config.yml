@@ -25,6 +25,10 @@ projects:
    website: http://sketches.rubyforge.org/
    source: http://github.com/postmodern/sketches
  -
+   name: Ore
+   website: http://github.com/ruby-ore/ore
+   source: http://github.com/ruby-ore/ore
+ -
    name: DeploYML
    source: http://github.com/postmodern/deployml
    status: dev
