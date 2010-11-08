@@ -132,7 +132,7 @@ We can even use Ore in `.gemspec` files:
       end
     rescue NameError
       STDERR.puts "The 'my-project.gemspec' file requires Ore."
-      STDERR.puts "Run `gem install ore` to install Ore."
+      STDERR.puts "Run `gem install ore-core` to install Ore."
     end
 
 Ore will still work with `gem build` and even Bundler.
