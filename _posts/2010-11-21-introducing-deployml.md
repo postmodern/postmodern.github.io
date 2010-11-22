@@ -30,7 +30,7 @@ deployment utility with `git` and `ssh`.
 
 Introducing [DeploYML](http://github.com/postmodern/deployml#readme),
 a simple deployment solution for Ruby / Rails projects that uses a
-**single YAML file**, [Git](http://http://www.git-scm.com) and `ssh`.
+**single YAML file**, [Git](http://www.git-scm.com) and `ssh`.
 
 Configuring DeploYML requires at least **two** things:
 
