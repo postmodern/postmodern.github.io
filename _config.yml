@@ -31,7 +31,6 @@ projects:
  -
    name: DeploYML
    source: http://github.com/postmodern/deployml
-   status: dev
  -
    name: Pullr
    source: http://github.com/postmodern/pullr
