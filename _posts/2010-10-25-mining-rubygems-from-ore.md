@@ -95,7 +95,7 @@ using Git, and list all files tracked by Git.
 
 For a complete reference of everything that may go into a `gemspec.yml`
 file, and how Ore infers missing data, please see
-[GemspecYML](http://rubydoc.info/github/ruby-ore/ore/master/file/GemspecYML.md).
+[GemspecYML](http://rubydoc.info/gems/ore-core/file/GemspecYML.md).
 
 Building gems with Ore is easy as:
 
