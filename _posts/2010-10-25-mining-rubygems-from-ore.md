@@ -239,6 +239,7 @@ the following tasks:
     rake push             # Builds and pushes a Gem
     rake release          # Builds and Pushes a new Gem / Build, Tags and Pushe...
     rake tag              # Tags a release and pushes the tag
+    rake version          # Displays the current version
 
 To generate a project with `Ore::Tasks` included:
 
