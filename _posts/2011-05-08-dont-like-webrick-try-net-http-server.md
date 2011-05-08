@@ -30,12 +30,12 @@ have complete documentation and the API is awkward in comparison to
 
 When [Parslet](http://kschiess.github.com/parslet/)
 (a pure Ruby PEG Parser library) was announced, I wondered how hard would it
-be to write an HTTP Parser with Parslet. After researching the other
-Ragel HTTP Parsers ([Thin](https://github.com/macournoyer/thin/blob/master/ext/thin_parser/common.rl)
+be to write a HTTP Parser with Parslet. After researching the other
+Ragel based HTTP Parsers ([Thin](https://github.com/macournoyer/thin/blob/master/ext/thin_parser/common.rl)
 and [Unicorn](https://github.com/defunkt/unicorn/blob/master/ext/unicorn_http/unicorn_http_common.rl))
 and double checking [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616.html),
 I suddenly had a [pure-Ruby HTTP Parser](https://github.com/postmodern/net-http-server/blob/master/lib/net/http/server/parser.rb).
-(in one file that you could read!)
+(in one file, that you can actually read!)
 
 I found that the way in which Parslet nested matches into Arrays of Hashes
 resulted in data that looked very much like a Rack `env` Hash.
@@ -64,7 +64,7 @@ I settled on using the battle tested [GServer](http://rubydoc.info/stdlib/gserve
 class to handle the Connections for
 [Nett:HTTP::Server::Daemon](https://github.com/postmodern/net-http-server/blob/master/lib/net/http/server/daemon.rb).
 I also borrowed some ideas from Rack, such as passing
-HTTP Requests via a `call` method, and returning HTTP Responses as an Array
+HTTP Requests via a `call` method and returning HTTP Responses as an Array
 (containing the HTTP Status, Headers and Body).
 
     require 'net/http/server'
