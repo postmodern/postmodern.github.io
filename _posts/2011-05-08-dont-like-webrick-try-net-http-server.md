@@ -9,7 +9,7 @@ tags:
  - rack
 ---
 
-**TL;DR**
+## TL;DR
 
 [net-http-server](http://github.com/postmodern/net-http-server):
 
@@ -22,11 +22,15 @@ tags:
 * [Rack Handler](https://github.com/postmodern/net-http-server/blob/master/lib/rack/handler/http.rb) included
 * [full YARD Documentation](http://rubydoc.info/gems/net-http-server/frames)
 
+## WEBrick
+
 Some have said that the [WEBrick](http://www.ruby-doc.org/stdlib/libdoc/webrick/rdoc/index.html)
 HTTP Server is a [Ghetto](http://www.mikeperham.com/2010/11/22/the-ruby-stdlib-is-a-ghetto/).
 While WEBrick is very fast for a pure-Ruby HTTP Server, it certainly does not
 have complete documentation and the API is awkward in comparison to
 [Rack](http://rack.rubyforge.org/).
+
+## The Parser
 
 When [Parslet](http://kschiess.github.com/parslet/)
 (a pure Ruby PEG Parser library) was announced, I wondered how hard would it
@@ -50,6 +54,8 @@ resulted in data that looked very much like a Rack `env` Hash.
     #      :version=>"1.1",
     #      :headers=>[{:name=>"Cookie", :value=>"xyz;123"}]
     #    }
+
+## The Daemon
 
 The next step was to write an actual Daemon that would:
 
@@ -76,6 +82,8 @@ HTTP Requests via a `call` method and returning HTTP Responses as an Array
       [200, {'Content-Type' => 'text/html'}, ['Hello World']]
     end
 
+## The Rack Handler
+
 Given that the API was already very Rack-ish, writing a [Rack handler](https://github.com/postmodern/net-http-server/blob/master/lib/rack/handler/http.rb) on top of `Net::HTTP::Server::Daemon` was simple.
 
     require 'rack/handler/http'
@@ -90,6 +98,8 @@ Given that the API was already very Rack-ish, writing a [Rack handler](https://g
     end
 
     Rack::Handler::HTTP.run HelloWorld, :Host => 'localhost', :Port => 1212
+
+## Benchmarks
 
 By now your probably wondering, how fast is this pure Ruby HTTP Server?
 
