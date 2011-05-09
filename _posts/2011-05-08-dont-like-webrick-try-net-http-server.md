@@ -161,4 +161,5 @@ By now your probably wondering, how fast is this pure Ruby HTTP Server?
      100%    236 (longest request)
 
 Definitely not as fast as [Thin](http://code.macournoyer.com/thin/) or even
-WEBrick, but not too bad considering its pure-Ruby.
+WEBrick, but not too bad considering its pure-Ruby and the size of the
+code-base.
