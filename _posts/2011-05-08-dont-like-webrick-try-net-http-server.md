@@ -26,8 +26,8 @@ tags:
 
 Some have said that the [WEBrick](http://www.ruby-doc.org/stdlib/libdoc/webrick/rdoc/index.html)
 HTTP Server is a [Ghetto](http://www.mikeperham.com/2010/11/22/the-ruby-stdlib-is-a-ghetto/).
-While WEBrick is very fast for a pure-Ruby HTTP Server, the parsing code is
-hand written and [difficult to read](https://github.com/ruby/ruby/blob/trunk/lib/webrick/httprequest.rb#L256-414).
+While WEBrick is **very fast** for a pure-Ruby HTTP Server, the parsing
+code is hand written and [difficult to read](https://github.com/ruby/ruby/blob/trunk/lib/webrick/httprequest.rb#L256-414).
 WEBrick is also one of the oldest Ruby HTTP Servers, but for some reason
 lacks [documentation coverage](http://www.ruby-doc.org/stdlib/libdoc/webrick/rdoc/classes/WEBrick/HTTPServer.html).
 Given the rise of [Rack](http://rack.rubyforge.org/), middleware
