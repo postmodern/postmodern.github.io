@@ -14,7 +14,7 @@ want the pagination logic, maybe in a JSON API, without using Rails or
 ActiveRecord, but instead [Sinatra][3] and [DataMapper][4]. As it turns out,
 DataMapper makes DIY pagination as simple as:
 
-    @posts = Post.all[((page - 1) * per_page), per_page]
+    @posts = Post[((page - 1) * per_page), per_page]
 
 As a Sinatra helper method this would look like:
 
