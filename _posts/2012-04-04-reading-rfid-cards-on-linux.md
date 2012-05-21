@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: Reading RFID Cards on Linux (in the year 2012)
 tags:
   - rfid
