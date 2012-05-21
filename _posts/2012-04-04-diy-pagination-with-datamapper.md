@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: DIY Pagination with DataMapper
 tags:
  - ruby
