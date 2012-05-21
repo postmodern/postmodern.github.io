@@ -13,8 +13,8 @@ be used to manage the dependencies of any large Ruby application or library.
 
 In order to help developers create projects with Bundler already setup,
 [template files][2] and a `bundle gem` command were added.
-Since Bundler was the "new hotness" and developers were becoming
-dissatisfied with [Jeweler]/[Hoe], bloggers and developers began to
+Since Bundler was the "new hotness" and developers were becoming increasingly
+dissatisfied with [Jeweler]/[Hoe], the community began to
 [cargo][3] [cult][4] Bundler as the defacto way to create RubyGems.
 
 ## Looking Back
