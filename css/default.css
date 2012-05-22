@@ -68,6 +68,21 @@ body {
 	background-color: black;
 }
 
+#content div.note, div.warning {
+	clear: right;
+	margin: 0.5em 0 0.5em 0;
+	padding: 0.5em;
+	border: 10px solid black;
+}
+
+#content div.note {
+	background-color: #a8ffa8;
+}
+
+#content div.warning {
+	background-color: #ffa8a8;
+}
+
 #sidebar {
 	border-left: 5px solid black;
 }
