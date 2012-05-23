@@ -24,8 +24,8 @@ tags:
   </p>
 
   <p>
-  If you are a diehard Bundler user, please read the <em>entire</em> article.
-  This article <strong>is not</strong> putting Bundler down,
+  If you are a diehard Bundler user, please read the <em>entire</em> blog post.
+  This blog post <strong>is not</strong> putting Bundler down,
   nor is it posing a binary choice between Bundler and some new tool.
   </p>
 </div>
