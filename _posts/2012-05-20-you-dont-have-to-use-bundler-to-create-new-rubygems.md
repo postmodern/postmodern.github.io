@@ -18,9 +18,9 @@ tags:
   <p>
   I am perfectly aware that one does not need any tools to create a RubyGem,
   and that all you really need is RubyGems and a <kbd>*.gemspec</kbd>
-  file. However, the majority of users do not have the time and patience
-  to create each Ruby project by hand. Thus developers have historically used
-  project generators such as Hoe, Jeweler and now Bundler.
+  file. However, the majority of users do not have the time or patience
+  to create each Ruby project from scratch. Thus developers have historically
+  used project <em>generators</em> such as Hoe, Jeweler and now Bundler.
   </p>
 
   <p>
