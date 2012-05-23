@@ -26,16 +26,16 @@ imposed a certain workflow onto the developer.
 Sometime before the [introduction][1] of [Bundler], Yehuda Katz [proposed][2]
 a radically simpler way of building Gems, using the [gemspec] file.
 Developers could use the built-in `gem build` command to build a `.gem` file
-from a `.gemspec`, and use a `gem push` command to publish the gem to
+from a `.gemspec`, and use the `gem push` command to publish the Gem to
 [rubygems.org]. This marked the start of an exodus of sorts,
 away from using Gem helpers such as [Hoe] and [Jeweler].
 
 ## All you need is a Gemspec?
 
-With the advent of building gems from a gemspec, a vocal minority formed
+With the advent of building gems from a `.gemspec`, a vocal minority formed
 within the Ruby community. They proclaimed that all one needs is a gemspec,
 and that all other tools ([Hoe], [Jeweler], [Bundler] and even [Rake])
-were obsolete!
+are now obsolete!
 
 Let us take a look at how they might release a Gem:
 
@@ -47,12 +47,12 @@ Let us take a look at how they might release a Gem:
     $ git push --tags
 
 It takes roughly **six** commands to release a Gem to [rubygems.org].
-A developer must also remember to run each of these six commands, in order,
+A developer must remember to run each of these six commands, in order,
 every time they release a new version of their Gem. The possibility for human
 error increases.
 
 In fact, I have found Gems that contained newer source-code than their Git
-repository, because the developer forgot to commit or push the changes
+repository; because the developer forgot to commit or push the changes
 before pushing the Gem. I have also found Git repositories with no tags,
 making it difficult to review what exactly changed between versions.
 
@@ -76,15 +76,15 @@ I looked at [Gem::PackageTask], [MG], [gem release] and even
 [Gem::PackageTask] only built the `.gem` file, but did not check `git status`,
 tag the release or push the `.gem`.
 [MG] also did not check `git status` before releasing,
-did not tag releases, and only supports Git. [gem release] came the closest,
+did not tag releases, and only supports Git. [gem release] came close,
 but did not check `git status` before releasing, deleted the `.gem` file,
 only supports Git and tried to do too much
 (auto-magically bumping the version of your project for you).
-[bundler/gem_helper] came even closer, although while it defined [Rake] tasks
-it did leverage Rake's powerful [task => dependency][3] system.
+[bundler/gem_helper] came the closest, although while it defined [Rake] tasks
+it did not leverage Rake's powerful [task => dependency][3] system.
 
 So I decided to cherry-pick all of the nice features from [Hoe], [Jeweler],
-[MG], [gem release] and [bundler/gem_helper], while leaving out the
+[MG], [gem release] and [bundler/gem_helper], and leave out the
 _opinionated_ features.
 
 ## rubygems-tasks
