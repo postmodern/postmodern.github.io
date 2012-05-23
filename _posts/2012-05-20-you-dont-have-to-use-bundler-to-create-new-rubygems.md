@@ -30,6 +30,8 @@ tags:
   </p>
 </div>
 
+## Enter Bundler
+
 [Bundler] was initially created as a more robust way to [manage dependencies
 of Rails3 applications][1]. Once Bundler was integrated
 into the Rails3 generator templates, developers realized Bundler could also
