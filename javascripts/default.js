@@ -1,4 +1,4 @@
-var meditation = {
+var Meditation = {
   mode: false,
 
   stream: "http://somafm.com/startstream=dronezone.pls",
@@ -26,14 +26,21 @@ var meditation = {
   }
 };
 
-var defaultLayout = {
+var Layout = {
   setupMoon: function() {
     // hooks the click events for the moon
     // to enter/exit "meditation" mode
-    $("#moon").toggle(meditation.enter,meditation.exit);
+    $("#moon").toggle(Meditation.enter,Meditation.exit);
   }
 };
 
+var Blog = {
+  setup: function() {
+    $("div.warning").hide().slideDown(900);
+  }
+}
+
 $(document).ready(function() {
-  defaultLayout.setupMoon();
+  Layout.setupMoon();
+  Blog.setup();
 });
