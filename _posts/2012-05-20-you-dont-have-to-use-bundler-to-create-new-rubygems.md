@@ -6,6 +6,30 @@ tags:
   - bundler
 ---
 
+<div class="warning">
+  <h3>Warning: Controversial Content</h3>
+
+  <p>
+  If you are morally or ethically opposed to using Project Generators
+  and prefer to create RubyGems by hand,
+  <strong>STOP READING AND CLICK THE BACK BUTTON</strong>.
+  </p>
+
+  <p>
+  I am perfectly aware that one does not need any tools to create a RubyGem,
+  and that all you really need is RubyGems and a <kbd>*.gemspec</kbd>
+  file. However, the majority of users do not have the time and patience
+  to create each Ruby project by hand. Thus developers have historically used
+  project generators such as Hoe, Jeweler and now Bundler.
+  </p>
+
+  <p>
+  If you are a diehard Bundler user, please read the <em>entire</em> article.
+  This article <strong>is not</strong> putting Bundler down,
+  nor is it posing a binary choice between Bundler and some new tool.
+  </p>
+</div>
+
 [Bundler] was initially created as a more robust way to [manage dependencies
 of Rails3 applications][1]. Once Bundler was integrated
 into the Rails3 generator templates, developers realized Bundler could also
