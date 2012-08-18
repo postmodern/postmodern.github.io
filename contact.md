@@ -14,7 +14,7 @@ layout: default
 <h2 id="pgp">PGP</h2>
 
 * PGP ID: `0xB9515E77`
-* PGP Key: [postmodern.asc](/postmodern.asc).
+* PGP Key: [postmodern.asc](https://raw.github.com/postmodern/postmodern.github.com/master/postmodern.asc)
 * PGP Fingerprint:
 
     04B2 F3EA 6541 40BC C7DA
