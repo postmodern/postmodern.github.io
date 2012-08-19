@@ -13,7 +13,7 @@ layout: default
 
 <h2 id="pgp">PGP</h2>
 
-My PGP key can be downloaded over `https` from [GitHub](https://raw.github.com/postmodern/postmodern.github.com/master/postmodern.asc):
+My PGP key (`0xB9515E77`) can be securely downloaded from [GitHub](https://raw.github.com/postmodern/postmodern.github.com/master/postmodern.asc):
 
     $ wget https://raw.github.com/postmodern/postmodern.github.com/master/postmodern.asc
     $ gpg --import postmodern.asc
