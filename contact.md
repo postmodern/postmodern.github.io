@@ -30,4 +30,4 @@ command:
     uid                  Postmodern Modulus III (Postmodern) <postmodern.mod3@gmail.com>
     sub   4096g/4BD91DF0 2009-09-18
     
-Make sure to verify that the `Key fingerprint` matches.
+Make sure to verify that the "Key fingerprint" matches.
