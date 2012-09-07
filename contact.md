@@ -13,7 +13,7 @@ layout: default
 
 <h2 id="pgp">PGP</h2>
 
-My PGP key (`0xB9515E77`) can be securely downloaded from [GitHub](https://raw.github.com/postmodern/postmodern.github.com/master/postmodern.asc):
+My PGP key [0xB9515E77] can be securely downloaded from [GitHub](https://raw.github.com/postmodern/postmodern.github.com/master/postmodern.asc):
 
     $ wget https://raw.github.com/postmodern/postmodern.github.com/master/postmodern.asc
     $ gpg --import postmodern.asc
@@ -31,3 +31,5 @@ command:
     sub   4096g/4BD91DF0 2009-09-18
     
 Make sure to verify that the "Key fingerprint" matches.
+
+[0xB9515E77]: http://pgp.mit.edu:11371/pks/lookup?op=get&search=0xB9515E77
