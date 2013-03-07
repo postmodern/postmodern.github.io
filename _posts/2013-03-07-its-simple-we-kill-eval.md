@@ -83,7 +83,7 @@ While we cannot remove `eval` from Ruby itself, we can remove it from our code.
 **Challenge:** grep through as much Ruby code as possible looking for
 `_eval [%\"]`, and replace as many instances as possible with `define_method`:
 
-    $ egrep -r "_eval [%\"]" */lib/
+    $ egrep -r "_eval [%\"<]" */lib/
 
 [@tenderlove]: https://twitter.com/tenderlove
 [metaid.rb]: https://github.com/defunkt/metaid/blob/master/metaid.rb
