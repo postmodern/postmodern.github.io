@@ -55,7 +55,7 @@ for your metaprogramming needs.
 
 ## Some other things you don't need eval for
 
-Injecting reader/writter methods:
+Injecting reader/writer methods:
 
     module Mixin
       attr_accessor :foo
@@ -102,12 +102,14 @@ Much cleaner!
 
 ## It's time to kill eval
 
-`eval` is a security risk and is not needed in most cases. It's time to kill
-`eval` before it causes another Remote Code Execution (RCE) vulnerability.
-While we cannot remove `eval` from Ruby itself, we can remove it from our code.
+`eval` is a security risk and is not necessary in most cases. It is time to
+~~kill~~ eradicate `eval` from our code-bases, before it causes another
+embarrassing Remote Code Execution (RCE) vulnerability.
 
 **Challenge:** grep through as much Ruby code as possible looking for
-`_eval [%\"]`, and replace as many instances as possible with `define_method`:
+`_eval [%\"]`, and replace as many instances as possible with `define_method`,
+const_set`, `class_variable_set`, `instance_variable_set` or even
+`*_eval` with a block:
 
     $ egrep -r "_eval [%\"<]" */lib/
 
