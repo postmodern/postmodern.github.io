@@ -16,11 +16,11 @@ This myth has caused Ruby developers to prefer using `module_eval`/`class_eval`
 with String substitution to dynamically define methods:
 
     def define_custom_reader(name)
-      module_eval do
+      module_eval %{
         def #{name}
           get_data("#{name}")
         end
-      end
+      }
     end
 
 The problem with the above code is that if user-input is passed to
