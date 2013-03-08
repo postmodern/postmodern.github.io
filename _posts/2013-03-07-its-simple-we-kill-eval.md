@@ -53,6 +53,32 @@ In fact, according to RubyGems.org [statistics][2] the majority of Rubyists
 have already upgraded to 1.9.x. There is no excuse not to use `define_method`
 for your metaprogramming needs.
 
+## Some other things you don't need eval for
+
+Injecting reader/writter methods:
+
+    module Mixin
+      attr_accessor :foo
+    end
+
+    class Base
+      include Mixin
+    end
+
+    obj.extend Mixin
+
+Defining Constants:
+
+    klass.const_set(:FOO,foo)
+
+Setting Instance Variables:
+
+    obj.instance_variable_set('@foo',foo)
+
+Setting Class Variables:
+
+    klass.class_variable_set('@@foo',foo)
+
 ## metaid.rb
 
 As depicted above `define_method` works great for defining instance methods.
