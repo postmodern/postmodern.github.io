@@ -13,9 +13,9 @@ layout: default
 
 <h2 id="pgp">PGP</h2>
 
-My PGP key [0xB9515E77] can be securely downloaded from [GitHub](https://raw.github.com/postmodern/postmodern.github.com/master/postmodern.asc):
+My PGP key [0xB9515E77] can be securely downloaded from [GitHub](https://raw.github.com/postmodern/postmodern.github.io/master/postmodern.asc):
 
-    $ wget https://raw.github.com/postmodern/postmodern.github.com/master/postmodern.asc
+    $ wget https://raw.github.com/postmodern/postmodern.github.io/master/postmodern.asc
     $ gpg --import postmodern.asc
     gpg: key B9515E77: public key "Postmodern Modulus III (Postmodern) <postmodern.mod3@gmail.com>" imported
     gpg: Total number processed: 1
