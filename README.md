@@ -1,6 +1,6 @@
 # What?
 
-This is my [site](http://postmodern.github.com/). The site provides a blog
+This is my [site](http://postmodern.github.io/). The site provides a blog
 and a current list of my projects.
 
 # Why?

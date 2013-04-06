@@ -6,20 +6,20 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Postmodern's Blog</title>
-  <link href="http://postmodern.github.com/atom.xml" rel="self" />
-  <link href="http://postmodern.github.com/" />
+  <link href="http://postmodern.github.io/atom.xml" rel="self" />
+  <link href="http://postmodern.github.io/" />
   <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>http://postmodern.github.com/</id>
+  <id>http://postmodern.github.io/</id>
   {% for post in site.posts %}
   <entry>
     <title>{{ post.title }}</title>
-    <link href="http://postmodern.github.com{{ post.url }}" />
+    <link href="http://postmodern.github.io{{ post.url }}" />
     <updated>{{ post.date | date_to_xmlschema }}</updated>
     <author>
       <name>Postmodern</name>
       <email>postmodern.mod3@gmail.com</email>
     </author>
-    <id>http://postmodern.github.com{{ post.url }}</id>
+    <id>http://postmodern.github.io{{ post.url }}</id>
     <content type="html">{{ post.content | xml_escape }}</content>
   </entry>
   {% endfor %}
