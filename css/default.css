@@ -2,6 +2,7 @@ body {
 	background-color: black;
 	background-image: url(/images/sand_dunes.png);
 	background-attachment: fixed;
+	background-size: cover;
 	font-family: sans-serif;
 }
 
