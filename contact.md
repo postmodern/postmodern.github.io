@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Contact
+title: contact
 ---
 
-# Contact
+# contact
 -----------------------------------------------------------------------------
 
 {% include about.html %}
