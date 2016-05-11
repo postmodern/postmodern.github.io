@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
   <head>
     {% if page.title != null %}
-    <title>Postmodern - {{ page.title }}</title>
+    <title>/ postmodern / {{ page.title | downcase }}</title>
     {% else %}
-    <title>Postmodern</title>
+    <title>/ postmodern</title>
     {% endif %}
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8"/>
     <link rel="alternate" type="application/atom+xml" title="Blog Feed" href="/atom.xml" />
