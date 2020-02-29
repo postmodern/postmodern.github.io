@@ -1,3 +1,4 @@
-images/stock
-images/originals
-_site
+/images/stock
+/images/originals
+/_site
+.jekyll-cache
