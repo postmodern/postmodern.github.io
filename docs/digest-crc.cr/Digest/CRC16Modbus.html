@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.32.1">
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="github.com/postmodern/digest-crc.cr">
+  <title>Digest::CRC16Modbus - github.com/postmodern/digest-crc.cr</title>
+  <script type="text/javascript">
+    CrystalDoc.base_path = "../";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/postmodern/digest-crc.cr/Digest" data-name="digest">
+      <a href="../Digest.html">Digest</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/postmodern/digest-crc.cr/Digest/CRC" data-name="digest::crc(uint)">
+      <a href="../Digest/CRC.html">CRC</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/postmodern/digest-crc.cr/Digest/CRC1" data-name="digest::crc1">
+      <a href="../Digest/CRC1.html">CRC1</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/postmodern/digest-crc.cr/Digest/CRC16" data-name="digest::crc16">
+      <a href="../Digest/CRC16.html">CRC16</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/postmodern/digest-crc.cr/Digest/CRC16CCITT" data-name="digest::crc16ccitt">
+      <a href="../Digest/CRC16CCITT.html">CRC16CCITT</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/postmodern/digest-crc.cr/Digest/CRC16DNP" data-name="digest::crc16dnp">
+      <a href="../Digest/CRC16DNP.html">CRC16DNP</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/postmodern/digest-crc.cr/Digest/CRC16Modbus" data-name="digest::crc16modbus">
+      <a href="../Digest/CRC16Modbus.html">CRC16Modbus</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/postmodern/digest-crc.cr/Digest/CRC16QT" data-name="digest::crc16qt">
+      <a href="../Digest/CRC16QT.html">CRC16QT</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/postmodern/digest-crc.cr/Digest/CRC16USB" data-name="digest::crc16usb">
+      <a href="../Digest/CRC16USB.html">CRC16USB</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/postmodern/digest-crc.cr/Digest/CRC16XModem" data-name="digest::crc16xmodem">
+      <a href="../Digest/CRC16XModem.html">CRC16XModem</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/postmodern/digest-crc.cr/Digest/CRC16ZModem" data-name="digest::crc16zmodem">
+      <a href="../Digest/CRC16ZModem.html">CRC16ZModem</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/postmodern/digest-crc.cr/Digest/CRC24" data-name="digest::crc24">
+      <a href="../Digest/CRC24.html">CRC24</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/postmodern/digest-crc.cr/Digest/CRC32" data-name="digest::crc32">
+      <a href="../Digest/CRC32.html">CRC32</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/postmodern/digest-crc.cr/Digest/CRC32c" data-name="digest::crc32c">
+      <a href="../Digest/CRC32c.html">CRC32c</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/postmodern/digest-crc.cr/Digest/CRC32Mpeg" data-name="digest::crc32mpeg">
+      <a href="../Digest/CRC32Mpeg.html">CRC32Mpeg</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/postmodern/digest-crc.cr/Digest/CRC5" data-name="digest::crc5">
+      <a href="../Digest/CRC5.html">CRC5</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/postmodern/digest-crc.cr/Digest/CRC64" data-name="digest::crc64">
+      <a href="../Digest/CRC64.html">CRC64</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/postmodern/digest-crc.cr/Digest/CRC8" data-name="digest::crc8">
+      <a href="../Digest/CRC8.html">CRC8</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/postmodern/digest-crc.cr/Digest/CRC81Wire" data-name="digest::crc81wire">
+      <a href="../Digest/CRC81Wire.html">CRC81Wire</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Digest::CRC16Modbus
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Digest/CRC16Modbus.html">Digest::CRC16Modbus</a></li><li class="superclass"><a href="../Digest/CRC16.html">Digest::CRC16</a></li><li class="superclass"><a href="../Digest/CRC.html">Digest::CRC(UInt16)</a></li><li class="superclass">Digest::Base</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Implements the CRC16 Modbus algorithm.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/postmodern/digest-crc.cr/blob/36ff307a17d880c4d2ffbaad24b715e05db40809/src/digest/crc16_modbus.cr#L7" target="_blank">
+        digest/crc16_modbus.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="TABLE">
+        <strong>TABLE</strong> = <code>[<span class="n">0</span>, <span class="n">49345</span>, <span class="n">49537</span>, <span class="n">320</span>, <span class="n">49921</span>, <span class="n">960</span>, <span class="n">640</span>, <span class="n">49729</span>, <span class="n">50689</span>, <span class="n">1728</span>, <span class="n">1920</span>, <span class="n">51009</span>, <span class="n">1280</span>, <span class="n">50625</span>, <span class="n">50305</span>, <span class="n">1088</span>, <span class="n">52225</span>, <span class="n">3264</span>, <span class="n">3456</span>, <span class="n">52545</span>, <span class="n">3840</span>, <span class="n">53185</span>, <span class="n">52865</span>, <span class="n">3648</span>, <span class="n">2560</span>, <span class="n">51905</span>, <span class="n">52097</span>, <span class="n">2880</span>, <span class="n">51457</span>, <span class="n">2496</span>, <span class="n">2176</span>, <span class="n">51265</span>, <span class="n">55297</span>, <span class="n">6336</span>, <span class="n">6528</span>, <span class="n">55617</span>, <span class="n">6912</span>, <span class="n">56257</span>, <span class="n">55937</span>, <span class="n">6720</span>, <span class="n">7680</span>, <span class="n">57025</span>, <span class="n">57217</span>, <span class="n">8000</span>, <span class="n">56577</span>, <span class="n">7616</span>, <span class="n">7296</span>, <span class="n">56385</span>, <span class="n">5120</span>, <span class="n">54465</span>, <span class="n">54657</span>, <span class="n">5440</span>, <span class="n">55041</span>, <span class="n">6080</span>, <span class="n">5760</span>, <span class="n">54849</span>, <span class="n">53761</span>, <span class="n">4800</span>, <span class="n">4992</span>, <span class="n">54081</span>, <span class="n">4352</span>, <span class="n">53697</span>, <span class="n">53377</span>, <span class="n">4160</span>, <span class="n">61441</span>, <span class="n">12480</span>, <span class="n">12672</span>, <span class="n">61761</span>, <span class="n">13056</span>, <span class="n">62401</span>, <span class="n">62081</span>, <span class="n">12864</span>, <span class="n">13824</span>, <span class="n">63169</span>, <span class="n">63361</span>, <span class="n">14144</span>, <span class="n">62721</span>, <span class="n">13760</span>, <span class="n">13440</span>, <span class="n">62529</span>, <span class="n">15360</span>, <span class="n">64705</span>, <span class="n">64897</span>, <span class="n">15680</span>, <span class="n">65281</span>, <span class="n">16320</span>, <span class="n">16000</span>, <span class="n">65089</span>, <span class="n">64001</span>, <span class="n">15040</span>, <span class="n">15232</span>, <span class="n">64321</span>, <span class="n">14592</span>, <span class="n">63937</span>, <span class="n">63617</span>, <span class="n">14400</span>, <span class="n">10240</span>, <span class="n">59585</span>, <span class="n">59777</span>, <span class="n">10560</span>, <span class="n">60161</span>, <span class="n">11200</span>, <span class="n">10880</span>, <span class="n">59969</span>, <span class="n">60929</span>, <span class="n">11968</span>, <span class="n">12160</span>, <span class="n">61249</span>, <span class="n">11520</span>, <span class="n">60865</span>, <span class="n">60545</span>, <span class="n">11328</span>, <span class="n">58369</span>, <span class="n">9408</span>, <span class="n">9600</span>, <span class="n">58689</span>, <span class="n">9984</span>, <span class="n">59329</span>, <span class="n">59009</span>, <span class="n">9792</span>, <span class="n">8704</span>, <span class="n">58049</span>, <span class="n">58241</span>, <span class="n">9024</span>, <span class="n">57601</span>, <span class="n">8640</span>, <span class="n">8320</span>, <span class="n">57409</span>, <span class="n">40961</span>, <span class="n">24768</span>, <span class="n">24960</span>, <span class="n">41281</span>, <span class="n">25344</span>, <span class="n">41921</span>, <span class="n">41601</span>, <span class="n">25152</span>, <span class="n">26112</span>, <span class="n">42689</span>, <span class="n">42881</span>, <span class="n">26432</span>, <span class="n">42241</span>, <span class="n">26048</span>, <span class="n">25728</span>, <span class="n">42049</span>, <span class="n">27648</span>, <span class="n">44225</span>, <span class="n">44417</span>, <span class="n">27968</span>, <span class="n">44801</span>, <span class="n">28608</span>, <span class="n">28288</span>, <span class="n">44609</span>, <span class="n">43521</span>, <span class="n">27328</span>, <span class="n">27520</span>, <span class="n">43841</span>, <span class="n">26880</span>, <span class="n">43457</span>, <span class="n">43137</span>, <span class="n">26688</span>, <span class="n">30720</span>, <span class="n">47297</span>, <span class="n">47489</span>, <span class="n">31040</span>, <span class="n">47873</span>, <span class="n">31680</span>, <span class="n">31360</span>, <span class="n">47681</span>, <span class="n">48641</span>, <span class="n">32448</span>, <span class="n">32640</span>, <span class="n">48961</span>, <span class="n">32000</span>, <span class="n">48577</span>, <span class="n">48257</span>, <span class="n">31808</span>, <span class="n">46081</span>, <span class="n">29888</span>, <span class="n">30080</span>, <span class="n">46401</span>, <span class="n">30464</span>, <span class="n">47041</span>, <span class="n">46721</span>, <span class="n">30272</span>, <span class="n">29184</span>, <span class="n">45761</span>, <span class="n">45953</span>, <span class="n">29504</span>, <span class="n">45313</span>, <span class="n">29120</span>, <span class="n">28800</span>, <span class="n">45121</span>, <span class="n">20480</span>, <span class="n">37057</span>, <span class="n">37249</span>, <span class="n">20800</span>, <span class="n">37633</span>, <span class="n">21440</span>, <span class="n">21120</span>, <span class="n">37441</span>, <span class="n">38401</span>, <span class="n">22208</span>, <span class="n">22400</span>, <span class="n">38721</span>, <span class="n">21760</span>, <span class="n">38337</span>, <span class="n">38017</span>, <span class="n">21568</span>, <span class="n">39937</span>, <span class="n">23744</span>, <span class="n">23936</span>, <span class="n">40257</span>, <span class="n">24320</span>, <span class="n">40897</span>, <span class="n">40577</span>, <span class="n">24128</span>, <span class="n">23040</span>, <span class="n">39617</span>, <span class="n">39809</span>, <span class="n">23360</span>, <span class="n">39169</span>, <span class="n">22976</span>, <span class="n">22656</span>, <span class="n">38977</span>, <span class="n">34817</span>, <span class="n">18624</span>, <span class="n">18816</span>, <span class="n">35137</span>, <span class="n">19200</span>, <span class="n">35777</span>, <span class="n">35457</span>, <span class="n">19008</span>, <span class="n">19968</span>, <span class="n">36545</span>, <span class="n">36737</span>, <span class="n">20288</span>, <span class="n">36097</span>, <span class="n">19904</span>, <span class="n">19584</span>, <span class="n">35905</span>, <span class="n">17408</span>, <span class="n">33985</span>, <span class="n">34177</span>, <span class="n">17728</span>, <span class="n">34561</span>, <span class="n">18368</span>, <span class="n">18048</span>, <span class="n">34369</span>, <span class="n">33281</span>, <span class="n">17088</span>, <span class="n">17280</span>, <span class="n">33601</span>, <span class="n">16640</span>, <span class="n">33217</span>, <span class="n">32897</span>, <span class="n">16448</span>] <span class="k">of</span> <span class="t">UInt16</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Generated by <code>./pycrc.py --algorithm=table-driven --model=crc-16-modbus --generate=c</code></p>
+      </dd>
+      
+    
+  </dl>
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(crc:UINT=self.class.init_crc)-class-method" class="signature"><strong>.new</strong>(crc : UINT = <span class="k">self</span>.<span class="k">class</span>.init_crc)</a>
+        
+          <div class="summary"><p>Initializes the CRC instance.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#init_crc-class-method" class="signature"><strong>.init_crc</strong></a>
+        
+          <div class="summary"><p>Initial CRC value.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../Digest/CRC16.html">Digest::CRC16</a></code></h3>
+  
+  
+    <a href="../Digest/CRC16.html#result:::StaticArray(UInt8,2)-instance-method" class="tooltip">
+      <span>result : ::StaticArray(UInt8, <span class="n">2</span>)</span>
+    result</a>, 
+    
+  
+    <a href="../Digest/CRC16.html#update(data)-instance-method" class="tooltip">
+      <span>update(data)</span>
+    update</a>
+    
+  
+
+
+    
+
+  <h3>Constructor methods inherited from class <code><a href="../Digest/CRC16.html">Digest::CRC16</a></code></h3>
+  
+  
+    <a href="../Digest/CRC16.html#new(crc:UINT=self.class.init_crc)-class-method" class="tooltip">
+      <span>new(crc : UINT = <span class="k">self</span>.<span class="k">class</span>.init_crc)</span>
+    new</a>
+    
+  
+
+
+    
+
+  <h3>Class methods inherited from class <code><a href="../Digest/CRC16.html">Digest::CRC16</a></code></h3>
+  
+  
+    <a href="../Digest/CRC16.html#init_crc-class-method" class="tooltip">
+      <span>init_crc</span>
+    init_crc</a>
+    
+  
+
+
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../Digest/CRC.html">Digest::CRC(UInt16)</a></code></h3>
+  
+  
+    <a href="../Digest/CRC.html#%3C%3C(data)-instance-method" class="tooltip">
+      <span><<(data)</span>
+    <<</a>, 
+    
+  
+    <a href="../Digest/CRC.html#checksum:UINT-instance-method" class="tooltip">
+      <span>checksum : UINT</span>
+    checksum</a>, 
+    
+  
+    <a href="../Digest/CRC.html#final-instance-method" class="tooltip">
+      <span>final</span>
+    final</a>, 
+    
+  
+    <a href="../Digest/CRC.html#reset-instance-method" class="tooltip">
+      <span>reset</span>
+    reset</a>, 
+    
+  
+    <a href="../Digest/CRC.html#result-instance-method" class="tooltip">
+      <span>result</span>
+    result</a>, 
+    
+  
+    <a href="../Digest/CRC.html#update(data)-instance-method" class="tooltip">
+      <span>update(data)</span>
+    update</a>
+    
+  
+
+
+    
+
+  <h3>Constructor methods inherited from class <code><a href="../Digest/CRC.html">Digest::CRC(UInt16)</a></code></h3>
+  
+  
+    <a href="../Digest/CRC.html#new(crc:UINT=self.class.init_crc)-class-method" class="tooltip">
+      <span>new(crc : UINT = <span class="k">self</span>.<span class="k">class</span>.init_crc)</span>
+    new</a>
+    
+  
+
+
+    
+
+  <h3>Class methods inherited from class <code><a href="../Digest/CRC.html">Digest::CRC(UInt16)</a></code></h3>
+  
+  
+    <a href="../Digest/CRC.html#checksum(data)-class-method" class="tooltip">
+      <span>checksum(data)</span>
+    checksum</a>, 
+    
+  
+    <a href="../Digest/CRC.html#init_crc:UINT-class-method" class="tooltip">
+      <span>init_crc : UINT</span>
+    init_crc</a>, 
+    
+  
+    <a href="../Digest/CRC.html#xor_mask:UINT-class-method" class="tooltip">
+      <span>xor_mask : UINT</span>
+    xor_mask</a>
+    
+  
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(crc:UINT=self.class.init_crc)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(crc : UINT = <span class="k">self</span>.<span class="k">class</span>.init_crc)
+
+        <a class="method-permalink" href="#new(crc:UINT=self.class.init_crc)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Initializes the CRC instance.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/digest-crc.cr/blob/36ff307a17d880c4d2ffbaad24b715e05db40809/src/digest/crc.cr#L23" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="init_crc-class-method">
+      <div class="signature">
+        
+        def self.<strong>init_crc</strong>
+
+        <a class="method-permalink" href="#init_crc-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Initial CRC value.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/digest-crc.cr/blob/36ff307a17d880c4d2ffbaad24b715e05db40809/src/digest/crc16_modbus.cr#L46" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+
+</div>
+
+</body>
+</html>
