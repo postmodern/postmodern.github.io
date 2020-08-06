@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.34.0">
+<meta name="crystal_docs.project_version" content="master">
+<meta name="crystal_docs.project_name" content="extractor">
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="extractor">
+  <title>Extractor::MetadataProcessor::MetaFormat - extractor master</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../../";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../../index.html">
+          extractor
+        </a>
+      </h1>
+
+      <span class="project-version">
+        master
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="extractor/Extractor" data-name="extractor">
+      <a href="../../Extractor.html">Extractor</a>
+      
+        <ul>
+  
+  <li class=" " data-id="extractor/Extractor/Abort" data-name="extractor::abort">
+      <a href="../../Extractor/Abort.html">Abort</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/MetaData" data-name="extractor::metadata">
+      <a href="../../Extractor/MetaData.html">MetaData</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="extractor/Extractor/MetadataProcessor" data-name="extractor::metadataprocessor">
+      <a href="../../Extractor/MetadataProcessor.html">MetadataProcessor</a>
+      
+        <ul>
+  
+  <li class=" " data-id="extractor/Extractor/MetadataProcessor/Abort" data-name="extractor::metadataprocessor::abort">
+      <a href="../../Extractor/MetadataProcessor/Abort.html">Abort</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/MetadataProcessor/Callback" data-name="extractor::metadataprocessor::callback">
+      <a href="../../Extractor/MetadataProcessor/Callback.html">Callback</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/MetadataProcessor/Char" data-name="extractor::metadataprocessor::char">
+      <a href="../../Extractor/MetadataProcessor/Char.html">Char</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/MetadataProcessor/MetaData" data-name="extractor::metadataprocessor::metadata">
+      <a href="../../Extractor/MetadataProcessor/MetaData.html">MetaData</a>
+      
+    </li>
+  
+  <li class=" current" data-id="extractor/Extractor/MetadataProcessor/MetaFormat" data-name="extractor::metadataprocessor::metaformat">
+      <a href="../../Extractor/MetadataProcessor/MetaFormat.html">MetaFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/MetadataProcessor/MetaType" data-name="extractor::metadataprocessor::metatype">
+      <a href="../../Extractor/MetadataProcessor/MetaType.html">MetaType</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/MetadataProcessor/SizeT" data-name="extractor::metadataprocessor::sizet">
+      <a href="../../Extractor/MetadataProcessor/SizeT.html">SizeT</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/MetaFormat" data-name="extractor::metaformat">
+      <a href="../../Extractor/MetaFormat.html">MetaFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/MetaType" data-name="extractor::metatype">
+      <a href="../../Extractor/MetaType.html">MetaType</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/Options" data-name="extractor::options">
+      <a href="../../Extractor/Options.html">Options</a>
+      
+    </li>
+  
+  <li class="parent " data-id="extractor/Extractor/PluginList" data-name="extractor::pluginlist">
+      <a href="../../Extractor/PluginList.html">PluginList</a>
+      
+        <ul>
+  
+  <li class=" " data-id="extractor/Extractor/PluginList/Options" data-name="extractor::pluginlist::options">
+      <a href="../../Extractor/PluginList/Options.html">Options</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/PluginList/PluginName" data-name="extractor::pluginlist::pluginname">
+      <a href="../../Extractor/PluginList/PluginName.html">PluginName</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/PluginNotFound" data-name="extractor::pluginnotfound">
+      <a href="../../Extractor/PluginNotFound.html">PluginNotFound</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/PluginsLoadError" data-name="extractor::pluginsloaderror">
+      <a href="../../Extractor/PluginsLoadError.html">PluginsLoadError</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/UnknownPlugin" data-name="extractor::unknownplugin">
+      <a href="../../Extractor/UnknownPlugin.html">UnknownPlugin</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">alias</span> Extractor::MetadataProcessor::MetaFormat
+
+</h1>
+
+
+
+
+
+
+
+  <h2>
+    <a id="alias-definition" class="anchor" href="#alias-definition">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Alias Definition
+  </h2>
+  <code>LibExtractor::MetaFormat</code>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/postmodern/extractor.cr/blob/1ce58fa1435e8a8028a4ca82778833b07773e60d/src/extractor/metadata_processor.cr#L26" target="_blank">
+        extractor/metadata_processor.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="BINARY">
+        <strong>BINARY</strong> = <code><span class="n">2</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Some kind of binary format, see given Mime type.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="C_STRING">
+        <strong>C_STRING</strong> = <code><span class="n">3</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>0-terminated string.  The specific encoding is unknown.
+"data_len" is strlen (data)+1.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="UNKNOWN">
+        <strong>UNKNOWN</strong> = <code><span class="n">0</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Format is unknown.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="UTF8">
+        <strong>UTF8</strong> = <code><span class="n">1</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>0-terminated, UTF-8 encoded string.  "data_len"
+is strlen(data)+1.</p>
+      </dd>
+      
+    
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>
