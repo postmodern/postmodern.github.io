@@ -206,7 +206,7 @@
   </h2>
   
     
-      <a href="https://github.com/postmodern/extractor.cr/blob/1ce58fa1435e8a8028a4ca82778833b07773e60d/src/extractor/metadata_processor.cr#L21" target="_blank">
+      <a href="https://github.com/postmodern/extractor.cr/blob/714e11bc48b347482594491dbd8a56e90d5e1a3b/src/extractor/metadata_processor.cr#L21" target="_blank">
         extractor/metadata_processor.cr
       </a>
     
@@ -279,7 +279,9 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#box(closure:Callback)-class-method" class="signature"><strong>.box</strong>(closure : Callback)</a>
+        <a href="#box(closure:Callback):Pointer(Void)-class-method" class="signature"><strong>.box</strong>(closure : Callback) : Pointer(Void)</a>
+        
+          <div class="summary"><p>Wraps a closure in a box.</p></div>
         
       </li>
     
@@ -291,7 +293,9 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#unbox(cls:Pointer(Void))-class-method" class="signature"><strong>.unbox</strong>(cls : Pointer(Void))</a>
+        <a href="#unbox(cls:Pointer(Void)):Callback-class-method" class="signature"><strong>.unbox</strong>(cls : Pointer(Void)) : Callback</a>
+        
+          <div class="summary"><p>Unwraps a boxed closure.</p></div>
         
       </li>
     
@@ -319,18 +323,23 @@
     Class Method Detail
   </h2>
   
-    <div class="entry-detail" id="box(closure:Callback)-class-method">
+    <div class="entry-detail" id="box(closure:Callback):Pointer(Void)-class-method">
       <div class="signature">
         
-        def self.<strong>box</strong>(closure : <a href="../Extractor/MetadataProcessor/Callback.html">Callback</a>)
+        def self.<strong>box</strong>(closure : <a href="../Extractor/MetadataProcessor/Callback.html">Callback</a>) : Pointer(Void)
 
-        <a class="method-permalink" href="#box(closure:Callback)-class-method">#</a>
+        <a class="method-permalink" href="#box(closure:Callback):Pointer(Void)-class-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Wraps a closure in a box.</p>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/postmodern/extractor.cr/blob/1ce58fa1435e8a8028a4ca82778833b07773e60d/src/extractor/metadata_processor.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/postmodern/extractor.cr/blob/714e11bc48b347482594491dbd8a56e90d5e1a3b/src/extractor/metadata_processor.cr#L65" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -351,23 +360,28 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/postmodern/extractor.cr/blob/1ce58fa1435e8a8028a4ca82778833b07773e60d/src/extractor/metadata_processor.cr#L73" target="_blank">View source</a>]
+          [<a href="https://github.com/postmodern/extractor.cr/blob/714e11bc48b347482594491dbd8a56e90d5e1a3b/src/extractor/metadata_processor.cr#L79" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="unbox(cls:Pointer(Void))-class-method">
+    <div class="entry-detail" id="unbox(cls:Pointer(Void)):Callback-class-method">
       <div class="signature">
         
-        def self.<strong>unbox</strong>(cls : Pointer(Void))
+        def self.<strong>unbox</strong>(cls : Pointer(Void)) : <a href="../Extractor/MetadataProcessor/Callback.html">Callback</a>
 
-        <a class="method-permalink" href="#unbox(cls:Pointer(Void))-class-method">#</a>
+        <a class="method-permalink" href="#unbox(cls:Pointer(Void)):Callback-class-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Unwraps a boxed closure.</p>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/postmodern/extractor.cr/blob/1ce58fa1435e8a8028a4ca82778833b07773e60d/src/extractor/metadata_processor.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/postmodern/extractor.cr/blob/714e11bc48b347482594491dbd8a56e90d5e1a3b/src/extractor/metadata_processor.cr#L72" target="_blank">View source</a>]
         
       </div>
     </div>
