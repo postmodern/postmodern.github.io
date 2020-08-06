@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.34.0">
+<meta name="crystal_docs.project_version" content="master">
+<meta name="crystal_docs.project_name" content="extractor">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="extractor">
+  <title>Extractor::MetaType - extractor master</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          extractor
+        </a>
+      </h1>
+
+      <span class="project-version">
+        master
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="extractor/Extractor" data-name="extractor">
+      <a href="../Extractor.html">Extractor</a>
+      
+        <ul>
+  
+  <li class=" " data-id="extractor/Extractor/Abort" data-name="extractor::abort">
+      <a href="../Extractor/Abort.html">Abort</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/MetaData" data-name="extractor::metadata">
+      <a href="../Extractor/MetaData.html">MetaData</a>
+      
+    </li>
+  
+  <li class="parent " data-id="extractor/Extractor/MetadataProcessor" data-name="extractor::metadataprocessor">
+      <a href="../Extractor/MetadataProcessor.html">MetadataProcessor</a>
+      
+        <ul>
+  
+  <li class=" " data-id="extractor/Extractor/MetadataProcessor/Abort" data-name="extractor::metadataprocessor::abort">
+      <a href="../Extractor/MetadataProcessor/Abort.html">Abort</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/MetadataProcessor/Callback" data-name="extractor::metadataprocessor::callback">
+      <a href="../Extractor/MetadataProcessor/Callback.html">Callback</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/MetadataProcessor/Char" data-name="extractor::metadataprocessor::char">
+      <a href="../Extractor/MetadataProcessor/Char.html">Char</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/MetadataProcessor/MetaData" data-name="extractor::metadataprocessor::metadata">
+      <a href="../Extractor/MetadataProcessor/MetaData.html">MetaData</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/MetadataProcessor/MetaFormat" data-name="extractor::metadataprocessor::metaformat">
+      <a href="../Extractor/MetadataProcessor/MetaFormat.html">MetaFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/MetadataProcessor/MetaType" data-name="extractor::metadataprocessor::metatype">
+      <a href="../Extractor/MetadataProcessor/MetaType.html">MetaType</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/MetadataProcessor/SizeT" data-name="extractor::metadataprocessor::sizet">
+      <a href="../Extractor/MetadataProcessor/SizeT.html">SizeT</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/MetaFormat" data-name="extractor::metaformat">
+      <a href="../Extractor/MetaFormat.html">MetaFormat</a>
+      
+    </li>
+  
+  <li class=" current" data-id="extractor/Extractor/MetaType" data-name="extractor::metatype">
+      <a href="../Extractor/MetaType.html">MetaType</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/Options" data-name="extractor::options">
+      <a href="../Extractor/Options.html">Options</a>
+      
+    </li>
+  
+  <li class="parent " data-id="extractor/Extractor/PluginList" data-name="extractor::pluginlist">
+      <a href="../Extractor/PluginList.html">PluginList</a>
+      
+        <ul>
+  
+  <li class=" " data-id="extractor/Extractor/PluginList/Options" data-name="extractor::pluginlist::options">
+      <a href="../Extractor/PluginList/Options.html">Options</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/PluginList/PluginName" data-name="extractor::pluginlist::pluginname">
+      <a href="../Extractor/PluginList/PluginName.html">PluginName</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/PluginNotFound" data-name="extractor::pluginnotfound">
+      <a href="../Extractor/PluginNotFound.html">PluginNotFound</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/PluginsLoadError" data-name="extractor::pluginsloaderror">
+      <a href="../Extractor/PluginsLoadError.html">PluginsLoadError</a>
+      
+    </li>
+  
+  <li class=" " data-id="extractor/Extractor/UnknownPlugin" data-name="extractor::unknownplugin">
+      <a href="../Extractor/UnknownPlugin.html">UnknownPlugin</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">alias</span> Extractor::MetaType
+
+</h1>
+
+
+
+
+
+
+
+  <h2>
+    <a id="alias-definition" class="anchor" href="#alias-definition">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Alias Definition
+  </h2>
+  <code>LibExtractor::MetaType</code>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/postmodern/extractor.cr/blob/1ce58fa1435e8a8028a4ca82778833b07773e60d/src/extractor.cr#L28" target="_blank">
+        extractor.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="ABSTRACT">
+        <strong>ABSTRACT</strong> = <code><span class="n">50</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ALBUM">
+        <strong>ALBUM</strong> = <code><span class="n">129</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ALBUM_GAIN">
+        <strong>ALBUM_GAIN</strong> = <code><span class="n">196</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ALBUM_PEAK">
+        <strong>ALBUM_PEAK</strong> = <code><span class="n">197</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="APERTURE">
+        <strong>APERTURE</strong> = <code><span class="n">98</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ARTIST">
+        <strong>ARTIST</strong> = <code><span class="n">130</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="AUDIO_BITRATE">
+        <strong>AUDIO_BITRATE</strong> = <code><span class="n">214</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="AUDIO_CODEC">
+        <strong>AUDIO_CODEC</strong> = <code><span class="n">184</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="AUDIO_DEPTH">
+        <strong>AUDIO_DEPTH</strong> = <code><span class="n">213</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="AUDIO_DURATION">
+        <strong>AUDIO_DURATION</strong> = <code><span class="n">226</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="AUDIO_LANGUAGE">
+        <strong>AUDIO_LANGUAGE</strong> = <code><span class="n">210</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="AUDIO_PREVIEW">
+        <strong>AUDIO_PREVIEW</strong> = <code><span class="n">228</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="AUTHOR_EMAIL">
+        <strong>AUTHOR_EMAIL</strong> = <code><span class="n">14</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="AUTHOR_INSTITUTION">
+        <strong>AUTHOR_INSTITUTION</strong> = <code><span class="n">15</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="AUTHOR_NAME">
+        <strong>AUTHOR_NAME</strong> = <code><span class="n">13</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BEATS_PER_MINUTE">
+        <strong>BEATS_PER_MINUTE</strong> = <code><span class="n">160</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BIBTEX_ENTRY_TYPE">
+        <strong>BIBTEX_ENTRY_TYPE</strong> = <code><span class="n">26</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BIBTEX_EPRINT">
+        <strong>BIBTEX_EPRINT</strong> = <code><span class="n">25</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BITRATE">
+        <strong>BITRATE</strong> = <code><span class="n">187</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BOOK_CHAPTER_NUMBER">
+        <strong>BOOK_CHAPTER_NUMBER</strong> = <code><span class="n">7</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BOOK_EDITION">
+        <strong>BOOK_EDITION</strong> = <code><span class="n">6</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BOOK_TITLE">
+        <strong>BOOK_TITLE</strong> = <code><span class="n">5</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BROADCAST_TELEVISION_SYSTEM">
+        <strong>BROADCAST_TELEVISION_SYSTEM</strong> = <code><span class="n">142</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BUILDHOST">
+        <strong>BUILDHOST</strong> = <code><span class="n">87</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CAMERA_MAKE">
+        <strong>CAMERA_MAKE</strong> = <code><span class="n">95</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>photography specifics</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="CAMERA_MODEL">
+        <strong>CAMERA_MODEL</strong> = <code><span class="n">96</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CHANNELS">
+        <strong>CHANNELS</strong> = <code><span class="n">211</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CHAPTER_NAME">
+        <strong>CHAPTER_NAME</strong> = <code><span class="n">153</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CHARACTER_COUNT">
+        <strong>CHARACTER_COUNT</strong> = <code><span class="n">121</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CHARACTER_SET">
+        <strong>CHARACTER_SET</strong> = <code><span class="n">117</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>(text) document processing specifics</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="CODEC">
+        <strong>CODEC</strong> = <code><span class="n">182</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="COMMENT">
+        <strong>COMMENT</strong> = <code><span class="n">3</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="COMPANY">
+        <strong>COMPANY</strong> = <code><span class="n">125</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="COMPOSER">
+        <strong>COMPOSER</strong> = <code><span class="n">159</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CONDUCTOR">
+        <strong>CONDUCTOR</strong> = <code><span class="n">157</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CONTACT_INFORMATION">
+        <strong>CONTACT_INFORMATION</strong> = <code><span class="n">135</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CONTAINER_FORMAT">
+        <strong>CONTAINER_FORMAT</strong> = <code><span class="n">186</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CONTRIBUTOR_NAME">
+        <strong>CONTRIBUTOR_NAME</strong> = <code><span class="n">149</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CONTRIBUTOR_PICTURE">
+        <strong>CONTRIBUTOR_PICTURE</strong> = <code><span class="n">139</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="COPYRIGHT">
+        <strong>COPYRIGHT</strong> = <code><span class="n">47</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="COVER_PICTURE">
+        <strong>COVER_PICTURE</strong> = <code><span class="n">138</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CREATED_BY_SOFTWARE">
+        <strong>CREATED_BY_SOFTWARE</strong> = <code><span class="n">56</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>processing history</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="CREATION_DATE">
+        <strong>CREATION_DATE</strong> = <code><span class="n">58</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CREATION_TIME">
+        <strong>CREATION_TIME</strong> = <code><span class="n">28</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CREATOR">
+        <strong>CREATOR</strong> = <code><span class="n">53</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="DESCRIPTION">
+        <strong>DESCRIPTION</strong> = <code><span class="n">46</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="DEVICE_MANUFACTURER">
+        <strong>DEVICE_MANUFACTURER</strong> = <code><span class="n">208</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="DEVICE_MODEL">
+        <strong>DEVICE_MODEL</strong> = <code><span class="n">209</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="DISC_COUNT">
+        <strong>DISC_COUNT</strong> = <code><span class="n">181</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="DISC_NUMBER">
+        <strong>DISC_NUMBER</strong> = <code><span class="n">133</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="DISCLAIMER">
+        <strong>DISCLAIMER</strong> = <code><span class="n">144</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="DURATION">
+        <strong>DURATION</strong> = <code><span class="n">128</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>music / video specifics</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="EDITING_CYCLES">
+        <strong>EDITING_CYCLES</strong> = <code><span class="n">63</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="EMBEDDED_FILE_SIZE">
+        <strong>EMBEDDED_FILE_SIZE</strong> = <code><span class="n">66</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ENCODED_BY">
+        <strong>ENCODED_BY</strong> = <code><span class="n">161</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ENCODER">
+        <strong>ENCODER</strong> = <code><span class="n">192</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ENCODER_VERSION">
+        <strong>ENCODER_VERSION</strong> = <code><span class="n">193</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="EVENT_PICTURE">
+        <strong>EVENT_PICTURE</strong> = <code><span class="n">140</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="EXPOSURE">
+        <strong>EXPOSURE</strong> = <code><span class="n">97</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="EXPOSURE_BIAS">
+        <strong>EXPOSURE_BIAS</strong> = <code><span class="n">99</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="EXPOSURE_MODE">
+        <strong>EXPOSURE_MODE</strong> = <code><span class="n">105</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="FILENAME">
+        <strong>FILENAME</strong> = <code><span class="n">2</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="FINDER_FILE_CREATOR">
+        <strong>FINDER_FILE_CREATOR</strong> = <code><span class="n">68</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="FINDER_FILE_TYPE">
+        <strong>FINDER_FILE_TYPE</strong> = <code><span class="n">67</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="FLASH">
+        <strong>FLASH</strong> = <code><span class="n">100</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="FLASH_BIAS">
+        <strong>FLASH_BIAS</strong> = <code><span class="n">101</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="FOCAL_LENGTH">
+        <strong>FOCAL_LENGTH</strong> = <code><span class="n">102</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="FOCAL_LENGTH_35MM">
+        <strong>FOCAL_LENGTH_35MM</strong> = <code><span class="n">103</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="FORMAT">
+        <strong>FORMAT</strong> = <code><span class="n">54</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="FORMAT_VERSION">
+        <strong>FORMAT_VERSION</strong> = <code><span class="n">55</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="FRAME_RATE">
+        <strong>FRAME_RATE</strong> = <code><span class="n">218</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="GENRE">
+        <strong>GENRE</strong> = <code><span class="n">131</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="GNUNET_DISPLAY_TYPE">
+        <strong>GNUNET_DISPLAY_TYPE</strong> = <code><span class="n">173</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>GNUnet specific values (never extracted)</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="GNUNET_FULL_DATA">
+        <strong>GNUNET_FULL_DATA</strong> = <code><span class="n">174</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="GNUNET_ORIGINAL_FILENAME">
+        <strong>GNUNET_ORIGINAL_FILENAME</strong> = <code><span class="n">180</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="GPS_LATITUDE">
+        <strong>GPS_LATITUDE</strong> = <code><span class="n">38</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="GPS_LATITUDE_REF">
+        <strong>GPS_LATITUDE_REF</strong> = <code><span class="n">37</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>identifiers of a location</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="GPS_LONGITUDE">
+        <strong>GPS_LONGITUDE</strong> = <code><span class="n">40</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="GPS_LONGITUDE_REF">
+        <strong>GPS_LONGITUDE_REF</strong> = <code><span class="n">39</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="GROUP">
+        <strong>GROUP</strong> = <code><span class="n">179</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="GROUPING">
+        <strong>GROUPING</strong> = <code><span class="n">207</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="HASH_MD4">
+        <strong>HASH_MD4</strong> = <code><span class="n">32</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="HASH_MD5">
+        <strong>HASH_MD5</strong> = <code><span class="n">33</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="HASH_RMD160">
+        <strong>HASH_RMD160</strong> = <code><span class="n">36</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="HASH_SHA0">
+        <strong>HASH_SHA0</strong> = <code><span class="n">34</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="HASH_SHA1">
+        <strong>HASH_SHA1</strong> = <code><span class="n">35</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="IMAGE_DIMENSIONS">
+        <strong>IMAGE_DIMENSIONS</strong> = <code><span class="n">112</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>image specifics</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="IMAGE_QUALITY">
+        <strong>IMAGE_QUALITY</strong> = <code><span class="n">108</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="IMAGE_RESOLUTION">
+        <strong>IMAGE_RESOLUTION</strong> = <code><span class="n">115</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="INTERPRETATION">
+        <strong>INTERPRETATION</strong> = <code><span class="n">158</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ISO_SPEED">
+        <strong>ISO_SPEED</strong> = <code><span class="n">104</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ISRC">
+        <strong>ISRC</strong> = <code><span class="n">31</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="JOURNAL_NAME">
+        <strong>JOURNAL_NAME</strong> = <code><span class="n">8</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="JOURNAL_NUMBER">
+        <strong>JOURNAL_NUMBER</strong> = <code><span class="n">10</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="JOURNAL_VOLUME">
+        <strong>JOURNAL_VOLUME</strong> = <code><span class="n">9</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="KEYWORDS">
+        <strong>KEYWORDS</strong> = <code><span class="n">49</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LANGUAGE">
+        <strong>LANGUAGE</strong> = <code><span class="n">27</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LAST">
+        <strong>LAST</strong> = <code><span class="n">231</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LAST_PRINTED">
+        <strong>LAST_PRINTED</strong> = <code><span class="n">60</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LAST_SAVED_BY">
+        <strong>LAST_SAVED_BY</strong> = <code><span class="n">61</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LIBRARY_DEPENDENCY">
+        <strong>LIBRARY_DEPENDENCY</strong> = <code><span class="n">94</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LIBRARY_SEARCH_PATH">
+        <strong>LIBRARY_SEARCH_PATH</strong> = <code><span class="n">93</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LICENSE">
+        <strong>LICENSE</strong> = <code><span class="n">85</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LICENSEE">
+        <strong>LICENSEE</strong> = <code><span class="n">169</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LINE_COUNT">
+        <strong>LINE_COUNT</strong> = <code><span class="n">118</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LOCATION_CAPTURE_DIRECTION">
+        <strong>LOCATION_CAPTURE_DIRECTION</strong> = <code><span class="n">204</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LOCATION_CITY">
+        <strong>LOCATION_CITY</strong> = <code><span class="n">41</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LOCATION_COUNTRY">
+        <strong>LOCATION_COUNTRY</strong> = <code><span class="n">43</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LOCATION_COUNTRY_CODE">
+        <strong>LOCATION_COUNTRY_CODE</strong> = <code><span class="n">44</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LOCATION_ELEVATION">
+        <strong>LOCATION_ELEVATION</strong> = <code><span class="n">200</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LOCATION_HORIZONTAL_ERROR">
+        <strong>LOCATION_HORIZONTAL_ERROR</strong> = <code><span class="n">201</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LOCATION_MOVEMENT_DIRECTION">
+        <strong>LOCATION_MOVEMENT_DIRECTION</strong> = <code><span class="n">203</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LOCATION_MOVEMENT_SPEED">
+        <strong>LOCATION_MOVEMENT_SPEED</strong> = <code><span class="n">202</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LOCATION_NAME">
+        <strong>LOCATION_NAME</strong> = <code><span class="n">199</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LOCATION_SUBLOCATION">
+        <strong>LOCATION_SUBLOCATION</strong> = <code><span class="n">42</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LOGO">
+        <strong>LOGO</strong> = <code><span class="n">141</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LYRICS">
+        <strong>LYRICS</strong> = <code><span class="n">167</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MACRO_MODE">
+        <strong>MACRO_MODE</strong> = <code><span class="n">107</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MAGNIFICATION">
+        <strong>MAGNIFICATION</strong> = <code><span class="n">111</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MANAGER">
+        <strong>MANAGER</strong> = <code><span class="n">126</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MAXIMUM_AUDIO_BITRATE">
+        <strong>MAXIMUM_AUDIO_BITRATE</strong> = <code><span class="n">215</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MAXIMUM_BITRATE">
+        <strong>MAXIMUM_BITRATE</strong> = <code><span class="n">190</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MAXIMUM_VIDEO_BITRATE">
+        <strong>MAXIMUM_VIDEO_BITRATE</strong> = <code><span class="n">221</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="METERING_MODE">
+        <strong>METERING_MODE</strong> = <code><span class="n">106</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MIMETYPE">
+        <strong>MIMETYPE</strong> = <code><span class="n">1</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MINIMUM_BITRATE">
+        <strong>MINIMUM_BITRATE</strong> = <code><span class="n">189</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MODIFICATION_DATE">
+        <strong>MODIFICATION_DATE</strong> = <code><span class="n">59</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MODIFIED_BY_SOFTWARE">
+        <strong>MODIFIED_BY_SOFTWARE</strong> = <code><span class="n">64</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MOOD">
+        <strong>MOOD</strong> = <code><span class="n">171</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MOVIE_DIRECTOR">
+        <strong>MOVIE_DIRECTOR</strong> = <code><span class="n">150</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MUSICIAN_CREDITS_LIST">
+        <strong>MUSICIAN_CREDITS_LIST</strong> = <code><span class="n">170</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="NAR">
+        <strong>NAR</strong> = <code><span class="n">230</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="NARINFO">
+        <strong>NARINFO</strong> = <code><span class="n">229</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="NETWORK_NAME">
+        <strong>NETWORK_NAME</strong> = <code><span class="n">151</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="NOMINAL_BITRATE">
+        <strong>NOMINAL_BITRATE</strong> = <code><span class="n">188</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ORGANIZATION">
+        <strong>ORGANIZATION</strong> = <code><span class="n">176</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ORIENTATION">
+        <strong>ORIENTATION</strong> = <code><span class="n">110</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ORIGINAL_ARTIST">
+        <strong>ORIGINAL_ARTIST</strong> = <code><span class="n">163</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ORIGINAL_PERFORMER">
+        <strong>ORIGINAL_PERFORMER</strong> = <code><span class="n">166</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ORIGINAL_RELEASE_YEAR">
+        <strong>ORIGINAL_RELEASE_YEAR</strong> = <code><span class="n">165</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ORIGINAL_TITLE">
+        <strong>ORIGINAL_TITLE</strong> = <code><span class="n">162</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ORIGINAL_WRITER">
+        <strong>ORIGINAL_WRITER</strong> = <code><span class="n">164</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PACKAGE_CONFLICTS">
+        <strong>PACKAGE_CONFLICTS</strong> = <code><span class="n">74</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PACKAGE_DEPENDENCY">
+        <strong>PACKAGE_DEPENDENCY</strong> = <code><span class="n">73</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PACKAGE_DISTRIBUTION">
+        <strong>PACKAGE_DISTRIBUTION</strong> = <code><span class="n">86</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PACKAGE_ESSENTIAL">
+        <strong>PACKAGE_ESSENTIAL</strong> = <code><span class="n">82</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PACKAGE_INSTALLED_SIZE">
+        <strong>PACKAGE_INSTALLED_SIZE</strong> = <code><span class="n">80</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PACKAGE_MAINTAINER">
+        <strong>PACKAGE_MAINTAINER</strong> = <code><span class="n">79</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PACKAGE_NAME">
+        <strong>PACKAGE_NAME</strong> = <code><span class="n">69</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>software package specifics (deb, rpm, tgz, elf)</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="PACKAGE_PRE_DEPENDENCY">
+        <strong>PACKAGE_PRE_DEPENDENCY</strong> = <code><span class="n">84</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PACKAGE_PROVIDES">
+        <strong>PACKAGE_PROVIDES</strong> = <code><span class="n">76</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PACKAGE_RECOMMENDS">
+        <strong>PACKAGE_RECOMMENDS</strong> = <code><span class="n">77</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PACKAGE_REPLACES">
+        <strong>PACKAGE_REPLACES</strong> = <code><span class="n">75</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PACKAGE_SOURCE">
+        <strong>PACKAGE_SOURCE</strong> = <code><span class="n">81</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PACKAGE_SUGGESTS">
+        <strong>PACKAGE_SUGGESTS</strong> = <code><span class="n">78</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PACKAGE_VERSION">
+        <strong>PACKAGE_VERSION</strong> = <code><span class="n">70</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PAGE_COUNT">
+        <strong>PAGE_COUNT</strong> = <code><span class="n">11</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PAGE_ORDER">
+        <strong>PAGE_ORDER</strong> = <code><span class="n">146</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PAGE_ORIENTATION">
+        <strong>PAGE_ORIENTATION</strong> = <code><span class="n">122</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PAGE_RANGE">
+        <strong>PAGE_RANGE</strong> = <code><span class="n">12</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PAPER_SIZE">
+        <strong>PAPER_SIZE</strong> = <code><span class="n">123</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PARAGRAPH_COUNT">
+        <strong>PARAGRAPH_COUNT</strong> = <code><span class="n">119</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PERFORMER">
+        <strong>PERFORMER</strong> = <code><span class="n">134</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PICTURE">
+        <strong>PICTURE</strong> = <code><span class="n">137</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PIXEL_ASPECT_RATIO">
+        <strong>PIXEL_ASPECT_RATIO</strong> = <code><span class="n">219</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PLAY_COUNTER">
+        <strong>PLAY_COUNTER</strong> = <code><span class="n">156</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="POPULARITY_METER">
+        <strong>POPULARITY_METER</strong> = <code><span class="n">168</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PRODUCED_BY_SOFTWARE">
+        <strong>PRODUCED_BY_SOFTWARE</strong> = <code><span class="n">113</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PRODUCER">
+        <strong>PRODUCER</strong> = <code><span class="n">178</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PRODUCT_VERSION">
+        <strong>PRODUCT_VERSION</strong> = <code><span class="n">148</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PUBLICATION_DATE">
+        <strong>PUBLICATION_DATE</strong> = <code><span class="n">24</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PUBLICATION_DAY">
+        <strong>PUBLICATION_DAY</strong> = <code><span class="n">23</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PUBLICATION_MONTH">
+        <strong>PUBLICATION_MONTH</strong> = <code><span class="n">22</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PUBLICATION_TYPE">
+        <strong>PUBLICATION_TYPE</strong> = <code><span class="n">20</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PUBLICATION_YEAR">
+        <strong>PUBLICATION_YEAR</strong> = <code><span class="n">21</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PUBLISHER">
+        <strong>PUBLISHER</strong> = <code><span class="n">16</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PUBLISHER_ADDRESS">
+        <strong>PUBLISHER_ADDRESS</strong> = <code><span class="n">17</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PUBLISHER_INSTITUTION">
+        <strong>PUBLISHER_INSTITUTION</strong> = <code><span class="n">18</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PUBLISHER_SERIES">
+        <strong>PUBLISHER_SERIES</strong> = <code><span class="n">19</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="RATING">
+        <strong>RATING</strong> = <code><span class="n">175</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="REFERENCE_LEVEL">
+        <strong>REFERENCE_LEVEL</strong> = <code><span class="n">198</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="RESERVED">
+        <strong>RESERVED</strong> = <code><span class="n">0</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>fundamental types</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="RESOURCE_TYPE">
+        <strong>RESOURCE_TYPE</strong> = <code><span class="n">92</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="REVISION_HISTORY">
+        <strong>REVISION_HISTORY</strong> = <code><span class="n">65</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="REVISION_NUMBER">
+        <strong>REVISION_NUMBER</strong> = <code><span class="n">127</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="RIGHTS">
+        <strong>RIGHTS</strong> = <code><span class="n">48</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="RIPPER">
+        <strong>RIPPER</strong> = <code><span class="n">177</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SAMPLE_RATE">
+        <strong>SAMPLE_RATE</strong> = <code><span class="n">212</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SECTION">
+        <strong>SECTION</strong> = <code><span class="n">71</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SERIAL">
+        <strong>SERIAL</strong> = <code><span class="n">191</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SHOW_EPISODE_NUMBER">
+        <strong>SHOW_EPISODE_NUMBER</strong> = <code><span class="n">205</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SHOW_NAME">
+        <strong>SHOW_NAME</strong> = <code><span class="n">152</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SHOW_SEASON_NUMBER">
+        <strong>SHOW_SEASON_NUMBER</strong> = <code><span class="n">206</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SOFTWARE_VERSION">
+        <strong>SOFTWARE_VERSION</strong> = <code><span class="n">90</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SONG_COUNT">
+        <strong>SONG_COUNT</strong> = <code><span class="n">154</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SONG_VERSION">
+        <strong>SONG_VERSION</strong> = <code><span class="n">136</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SOURCE">
+        <strong>SOURCE</strong> = <code><span class="n">116</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SOURCE_DEVICE">
+        <strong>SOURCE_DEVICE</strong> = <code><span class="n">143</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="STARTING_SONG">
+        <strong>STARTING_SONG</strong> = <code><span class="n">155</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SUBJECT">
+        <strong>SUBJECT</strong> = <code><span class="n">52</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SUBTITLE">
+        <strong>SUBTITLE</strong> = <code><span class="n">172</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SUBTITLE_CODEC">
+        <strong>SUBTITLE_CODEC</strong> = <code><span class="n">185</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SUBTITLE_DURATION">
+        <strong>SUBTITLE_DURATION</strong> = <code><span class="n">227</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SUBTITLE_LANGUAGE">
+        <strong>SUBTITLE_LANGUAGE</strong> = <code><span class="n">222</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SUMMARY">
+        <strong>SUMMARY</strong> = <code><span class="n">51</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="TARGET_ARCHITECTURE">
+        <strong>TARGET_ARCHITECTURE</strong> = <code><span class="n">83</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="TARGET_OS">
+        <strong>TARGET_OS</strong> = <code><span class="n">89</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="TARGET_PLATFORM">
+        <strong>TARGET_PLATFORM</strong> = <code><span class="n">91</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="TEMPLATE">
+        <strong>TEMPLATE</strong> = <code><span class="n">124</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="THUMBNAIL">
+        <strong>THUMBNAIL</strong> = <code><span class="n">114</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="TITLE">
+        <strong>TITLE</strong> = <code><span class="n">4</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Standard types from bibtex</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="TOC">
+        <strong>TOC</strong> = <code><span class="n">224</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="TOTAL_EDITING_TIME">
+        <strong>TOTAL_EDITING_TIME</strong> = <code><span class="n">62</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="TRACK_GAIN">
+        <strong>TRACK_GAIN</strong> = <code><span class="n">194</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="TRACK_NUMBER">
+        <strong>TRACK_NUMBER</strong> = <code><span class="n">132</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="TRACK_PEAK">
+        <strong>TRACK_PEAK</strong> = <code><span class="n">195</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="UNKNOWN">
+        <strong>UNKNOWN</strong> = <code><span class="n">45</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>generic attributes</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="UNKNOWN_DATE">
+        <strong>UNKNOWN_DATE</strong> = <code><span class="n">57</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="UPLOAD_PRIORITY">
+        <strong>UPLOAD_PRIORITY</strong> = <code><span class="n">72</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="URI">
+        <strong>URI</strong> = <code><span class="n">30</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>"unique" document identifiers</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="URL">
+        <strong>URL</strong> = <code><span class="n">29</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="VENDOR">
+        <strong>VENDOR</strong> = <code><span class="n">88</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="VIDEO_BITRATE">
+        <strong>VIDEO_BITRATE</strong> = <code><span class="n">220</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="VIDEO_CODEC">
+        <strong>VIDEO_CODEC</strong> = <code><span class="n">183</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="VIDEO_DEPTH">
+        <strong>VIDEO_DEPTH</strong> = <code><span class="n">217</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="VIDEO_DIMENSIONS">
+        <strong>VIDEO_DIMENSIONS</strong> = <code><span class="n">216</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="VIDEO_DURATION">
+        <strong>VIDEO_DURATION</strong> = <code><span class="n">225</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="VIDEO_LANGUAGE">
+        <strong>VIDEO_LANGUAGE</strong> = <code><span class="n">223</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="WARNING">
+        <strong>WARNING</strong> = <code><span class="n">145</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="WHITE_BALANCE">
+        <strong>WHITE_BALANCE</strong> = <code><span class="n">109</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="WORD_COUNT">
+        <strong>WORD_COUNT</strong> = <code><span class="n">120</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="WRITER">
+        <strong>WRITER</strong> = <code><span class="n">147</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>
