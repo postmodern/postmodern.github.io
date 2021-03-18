@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.35.1">
+<meta name="crystal_docs.project_version" content="master">
+<meta name="crystal_docs.project_name" content="crc">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="crc">
+  <title>CRC::CRC81Wire - crc master</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          crc
+        </a>
+      </h1>
+
+      <span class="project-version">
+        master
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="crc/CRC" data-name="crc">
+      <a href="../CRC.html">CRC</a>
+      
+        <ul>
+  
+  <li class=" " data-id="crc/CRC/Base" data-name="crc::base(uint)">
+      <a href="../CRC/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC1" data-name="crc::crc1">
+      <a href="../CRC/CRC1.html">CRC1</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC15" data-name="crc::crc15">
+      <a href="../CRC/CRC15.html">CRC15</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16" data-name="crc::crc16">
+      <a href="../CRC/CRC16.html">CRC16</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16CCITT" data-name="crc::crc16ccitt">
+      <a href="../CRC/CRC16CCITT.html">CRC16CCITT</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16DNP" data-name="crc::crc16dnp">
+      <a href="../CRC/CRC16DNP.html">CRC16DNP</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16Genibus" data-name="crc::crc16genibus">
+      <a href="../CRC/CRC16Genibus.html">CRC16Genibus</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16Kermit" data-name="crc::crc16kermit">
+      <a href="../CRC/CRC16Kermit.html">CRC16Kermit</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16Modbus" data-name="crc::crc16modbus">
+      <a href="../CRC/CRC16Modbus.html">CRC16Modbus</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16QT" data-name="crc::crc16qt">
+      <a href="../CRC/CRC16QT.html">CRC16QT</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16USB" data-name="crc::crc16usb">
+      <a href="../CRC/CRC16USB.html">CRC16USB</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16X25" data-name="crc::crc16x25">
+      <a href="../CRC/CRC16X25.html">CRC16X25</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16XModem" data-name="crc::crc16xmodem">
+      <a href="../CRC/CRC16XModem.html">CRC16XModem</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16ZModem" data-name="crc::crc16zmodem">
+      <a href="../CRC/CRC16ZModem.html">CRC16ZModem</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC24" data-name="crc::crc24">
+      <a href="../CRC/CRC24.html">CRC24</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC32" data-name="crc::crc32">
+      <a href="../CRC/CRC32.html">CRC32</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC32BZip2" data-name="crc::crc32bzip2">
+      <a href="../CRC/CRC32BZip2.html">CRC32BZip2</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC32c" data-name="crc::crc32c">
+      <a href="../CRC/CRC32c.html">CRC32c</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC32Jam" data-name="crc::crc32jam">
+      <a href="../CRC/CRC32Jam.html">CRC32Jam</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC32MPEG" data-name="crc::crc32mpeg">
+      <a href="../CRC/CRC32MPEG.html">CRC32MPEG</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC32Mpeg" data-name="crc::crc32mpeg">
+      <a href="../CRC/CRC32Mpeg.html">CRC32Mpeg</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC32POSIX" data-name="crc::crc32posix">
+      <a href="../CRC/CRC32POSIX.html">CRC32POSIX</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC32XFER" data-name="crc::crc32xfer">
+      <a href="../CRC/CRC32XFER.html">CRC32XFER</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC5" data-name="crc::crc5">
+      <a href="../CRC/CRC5.html">CRC5</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC64" data-name="crc::crc64">
+      <a href="../CRC/CRC64.html">CRC64</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC64Jones" data-name="crc::crc64jones">
+      <a href="../CRC/CRC64Jones.html">CRC64Jones</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC64XZ" data-name="crc::crc64xz">
+      <a href="../CRC/CRC64XZ.html">CRC64XZ</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC8" data-name="crc::crc8">
+      <a href="../CRC/CRC8.html">CRC8</a>
+      
+    </li>
+  
+  <li class=" current" data-id="crc/CRC/CRC81Wire" data-name="crc::crc81wire">
+      <a href="../CRC/CRC81Wire.html">CRC81Wire</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC8_1Wire" data-name="crc::crc8_1wire">
+      <a href="../CRC/CRC8_1Wire.html">CRC8_1Wire</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">alias</span> CRC::CRC81Wire
+
+</h1>
+
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Deprecated: please use CRC8_1Wire instead.</p>
+
+
+
+  <h2>
+    <a id="alias-definition" class="anchor" href="#alias-definition">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Alias Definition
+  </h2>
+  <code><a href="../CRC/CRC8_1Wire.html">CRC::CRC8_1Wire</a></code>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/postmodern/digest-crc.cr/blob/e34cf3d51f6ad50578ebfb35b0caea9920816fbc/src/crc/crc8_1wire.cr#L34" target="_blank">
+        crc/crc8_1wire.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="TABLE">
+        <strong>TABLE</strong> = <code>[<span class="n">0</span>, <span class="n">94</span>, <span class="n">188</span>, <span class="n">226</span>, <span class="n">97</span>, <span class="n">63</span>, <span class="n">221</span>, <span class="n">131</span>, <span class="n">194</span>, <span class="n">156</span>, <span class="n">126</span>, <span class="n">32</span>, <span class="n">163</span>, <span class="n">253</span>, <span class="n">31</span>, <span class="n">65</span>, <span class="n">157</span>, <span class="n">195</span>, <span class="n">33</span>, <span class="n">127</span>, <span class="n">252</span>, <span class="n">162</span>, <span class="n">64</span>, <span class="n">30</span>, <span class="n">95</span>, <span class="n">1</span>, <span class="n">227</span>, <span class="n">189</span>, <span class="n">62</span>, <span class="n">96</span>, <span class="n">130</span>, <span class="n">220</span>, <span class="n">35</span>, <span class="n">125</span>, <span class="n">159</span>, <span class="n">193</span>, <span class="n">66</span>, <span class="n">28</span>, <span class="n">254</span>, <span class="n">160</span>, <span class="n">225</span>, <span class="n">191</span>, <span class="n">93</span>, <span class="n">3</span>, <span class="n">128</span>, <span class="n">222</span>, <span class="n">60</span>, <span class="n">98</span>, <span class="n">190</span>, <span class="n">224</span>, <span class="n">2</span>, <span class="n">92</span>, <span class="n">223</span>, <span class="n">129</span>, <span class="n">99</span>, <span class="n">61</span>, <span class="n">124</span>, <span class="n">34</span>, <span class="n">192</span>, <span class="n">158</span>, <span class="n">29</span>, <span class="n">67</span>, <span class="n">161</span>, <span class="n">255</span>, <span class="n">70</span>, <span class="n">24</span>, <span class="n">250</span>, <span class="n">164</span>, <span class="n">39</span>, <span class="n">121</span>, <span class="n">155</span>, <span class="n">197</span>, <span class="n">132</span>, <span class="n">218</span>, <span class="n">56</span>, <span class="n">102</span>, <span class="n">229</span>, <span class="n">187</span>, <span class="n">89</span>, <span class="n">7</span>, <span class="n">219</span>, <span class="n">133</span>, <span class="n">103</span>, <span class="n">57</span>, <span class="n">186</span>, <span class="n">228</span>, <span class="n">6</span>, <span class="n">88</span>, <span class="n">25</span>, <span class="n">71</span>, <span class="n">165</span>, <span class="n">251</span>, <span class="n">120</span>, <span class="n">38</span>, <span class="n">196</span>, <span class="n">154</span>, <span class="n">101</span>, <span class="n">59</span>, <span class="n">217</span>, <span class="n">135</span>, <span class="n">4</span>, <span class="n">90</span>, <span class="n">184</span>, <span class="n">230</span>, <span class="n">167</span>, <span class="n">249</span>, <span class="n">27</span>, <span class="n">69</span>, <span class="n">198</span>, <span class="n">152</span>, <span class="n">122</span>, <span class="n">36</span>, <span class="n">248</span>, <span class="n">166</span>, <span class="n">68</span>, <span class="n">26</span>, <span class="n">153</span>, <span class="n">199</span>, <span class="n">37</span>, <span class="n">123</span>, <span class="n">58</span>, <span class="n">100</span>, <span class="n">134</span>, <span class="n">216</span>, <span class="n">91</span>, <span class="n">5</span>, <span class="n">231</span>, <span class="n">185</span>, <span class="n">140</span>, <span class="n">210</span>, <span class="n">48</span>, <span class="n">110</span>, <span class="n">237</span>, <span class="n">179</span>, <span class="n">81</span>, <span class="n">15</span>, <span class="n">78</span>, <span class="n">16</span>, <span class="n">242</span>, <span class="n">172</span>, <span class="n">47</span>, <span class="n">113</span>, <span class="n">147</span>, <span class="n">205</span>, <span class="n">17</span>, <span class="n">79</span>, <span class="n">173</span>, <span class="n">243</span>, <span class="n">112</span>, <span class="n">46</span>, <span class="n">204</span>, <span class="n">146</span>, <span class="n">211</span>, <span class="n">141</span>, <span class="n">111</span>, <span class="n">49</span>, <span class="n">178</span>, <span class="n">236</span>, <span class="n">14</span>, <span class="n">80</span>, <span class="n">175</span>, <span class="n">241</span>, <span class="n">19</span>, <span class="n">77</span>, <span class="n">206</span>, <span class="n">144</span>, <span class="n">114</span>, <span class="n">44</span>, <span class="n">109</span>, <span class="n">51</span>, <span class="n">209</span>, <span class="n">143</span>, <span class="n">12</span>, <span class="n">82</span>, <span class="n">176</span>, <span class="n">238</span>, <span class="n">50</span>, <span class="n">108</span>, <span class="n">142</span>, <span class="n">208</span>, <span class="n">83</span>, <span class="n">13</span>, <span class="n">239</span>, <span class="n">177</span>, <span class="n">240</span>, <span class="n">174</span>, <span class="n">76</span>, <span class="n">18</span>, <span class="n">145</span>, <span class="n">207</span>, <span class="n">45</span>, <span class="n">115</span>, <span class="n">202</span>, <span class="n">148</span>, <span class="n">118</span>, <span class="n">40</span>, <span class="n">171</span>, <span class="n">245</span>, <span class="n">23</span>, <span class="n">73</span>, <span class="n">8</span>, <span class="n">86</span>, <span class="n">180</span>, <span class="n">234</span>, <span class="n">105</span>, <span class="n">55</span>, <span class="n">213</span>, <span class="n">139</span>, <span class="n">87</span>, <span class="n">9</span>, <span class="n">235</span>, <span class="n">181</span>, <span class="n">54</span>, <span class="n">104</span>, <span class="n">138</span>, <span class="n">212</span>, <span class="n">149</span>, <span class="n">203</span>, <span class="n">41</span>, <span class="n">119</span>, <span class="n">244</span>, <span class="n">170</span>, <span class="n">72</span>, <span class="n">22</span>, <span class="n">233</span>, <span class="n">183</span>, <span class="n">85</span>, <span class="n">11</span>, <span class="n">136</span>, <span class="n">214</span>, <span class="n">52</span>, <span class="n">106</span>, <span class="n">43</span>, <span class="n">117</span>, <span class="n">151</span>, <span class="n">201</span>, <span class="n">74</span>, <span class="n">20</span>, <span class="n">246</span>, <span class="n">168</span>, <span class="n">116</span>, <span class="n">42</span>, <span class="n">200</span>, <span class="n">150</span>, <span class="n">21</span>, <span class="n">75</span>, <span class="n">169</span>, <span class="n">247</span>, <span class="n">182</span>, <span class="n">232</span>, <span class="n">10</span>, <span class="n">84</span>, <span class="n">215</span>, <span class="n">137</span>, <span class="n">107</span>, <span class="n">53</span>] <span class="k">of</span> <span class="t">UInt8</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Generated by <code>./pycrc.py --algorithm=table-driven --model=dallas-1-wire --generate=c</code></p>
+      </dd>
+      
+    
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

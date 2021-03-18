@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.35.1">
+<meta name="crystal_docs.project_version" content="master">
+<meta name="crystal_docs.project_name" content="crc">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="crc">
+  <title>CRC::CRC15 - crc master</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          crc
+        </a>
+      </h1>
+
+      <span class="project-version">
+        master
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="crc/CRC" data-name="crc">
+      <a href="../CRC.html">CRC</a>
+      
+        <ul>
+  
+  <li class=" " data-id="crc/CRC/Base" data-name="crc::base(uint)">
+      <a href="../CRC/Base.html">Base</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC1" data-name="crc::crc1">
+      <a href="../CRC/CRC1.html">CRC1</a>
+      
+    </li>
+  
+  <li class=" current" data-id="crc/CRC/CRC15" data-name="crc::crc15">
+      <a href="../CRC/CRC15.html">CRC15</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16" data-name="crc::crc16">
+      <a href="../CRC/CRC16.html">CRC16</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16CCITT" data-name="crc::crc16ccitt">
+      <a href="../CRC/CRC16CCITT.html">CRC16CCITT</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16DNP" data-name="crc::crc16dnp">
+      <a href="../CRC/CRC16DNP.html">CRC16DNP</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16Genibus" data-name="crc::crc16genibus">
+      <a href="../CRC/CRC16Genibus.html">CRC16Genibus</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16Kermit" data-name="crc::crc16kermit">
+      <a href="../CRC/CRC16Kermit.html">CRC16Kermit</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16Modbus" data-name="crc::crc16modbus">
+      <a href="../CRC/CRC16Modbus.html">CRC16Modbus</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16QT" data-name="crc::crc16qt">
+      <a href="../CRC/CRC16QT.html">CRC16QT</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16USB" data-name="crc::crc16usb">
+      <a href="../CRC/CRC16USB.html">CRC16USB</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16X25" data-name="crc::crc16x25">
+      <a href="../CRC/CRC16X25.html">CRC16X25</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16XModem" data-name="crc::crc16xmodem">
+      <a href="../CRC/CRC16XModem.html">CRC16XModem</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC16ZModem" data-name="crc::crc16zmodem">
+      <a href="../CRC/CRC16ZModem.html">CRC16ZModem</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC24" data-name="crc::crc24">
+      <a href="../CRC/CRC24.html">CRC24</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC32" data-name="crc::crc32">
+      <a href="../CRC/CRC32.html">CRC32</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC32BZip2" data-name="crc::crc32bzip2">
+      <a href="../CRC/CRC32BZip2.html">CRC32BZip2</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC32c" data-name="crc::crc32c">
+      <a href="../CRC/CRC32c.html">CRC32c</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC32Jam" data-name="crc::crc32jam">
+      <a href="../CRC/CRC32Jam.html">CRC32Jam</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC32MPEG" data-name="crc::crc32mpeg">
+      <a href="../CRC/CRC32MPEG.html">CRC32MPEG</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC32Mpeg" data-name="crc::crc32mpeg">
+      <a href="../CRC/CRC32Mpeg.html">CRC32Mpeg</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC32POSIX" data-name="crc::crc32posix">
+      <a href="../CRC/CRC32POSIX.html">CRC32POSIX</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC32XFER" data-name="crc::crc32xfer">
+      <a href="../CRC/CRC32XFER.html">CRC32XFER</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC5" data-name="crc::crc5">
+      <a href="../CRC/CRC5.html">CRC5</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC64" data-name="crc::crc64">
+      <a href="../CRC/CRC64.html">CRC64</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC64Jones" data-name="crc::crc64jones">
+      <a href="../CRC/CRC64Jones.html">CRC64Jones</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC64XZ" data-name="crc::crc64xz">
+      <a href="../CRC/CRC64XZ.html">CRC64XZ</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC8" data-name="crc::crc8">
+      <a href="../CRC/CRC8.html">CRC8</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC81Wire" data-name="crc::crc81wire">
+      <a href="../CRC/CRC81Wire.html">CRC81Wire</a>
+      
+    </li>
+  
+  <li class=" " data-id="crc/CRC/CRC8_1Wire" data-name="crc::crc8_1wire">
+      <a href="../CRC/CRC8_1Wire.html">CRC8_1Wire</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> CRC::CRC15
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../CRC/CRC15.html">CRC::CRC15</a></li><li class="superclass"><a href="../CRC/Base.html">CRC::Base(UInt16)</a></li><li class="superclass">Digest</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Implements the CRC15 algorithm.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/postmodern/digest-crc.cr/blob/e34cf3d51f6ad50578ebfb35b0caea9920816fbc/src/crc/crc15.cr#L7" target="_blank">
+        crc/crc15.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="TABLE">
+        <strong>TABLE</strong> = <code>[<span class="n">0</span>, <span class="n">17817</span>, <span class="n">20139</span>, <span class="n">2866</span>, <span class="n">22735</span>, <span class="n">7510</span>, <span class="n">5732</span>, <span class="n">21501</span>, <span class="n">29703</span>, <span class="n">12702</span>, <span class="n">15020</span>, <span class="n">32565</span>, <span class="n">11464</span>, <span class="n">26961</span>, <span class="n">25187</span>, <span class="n">10234</span>, <span class="n">11671</span>, <span class="n">26638</span>, <span class="n">25404</span>, <span class="n">9893</span>, <span class="n">30040</span>, <span class="n">12481</span>, <span class="n">15347</span>, <span class="n">32362</span>, <span class="n">22928</span>, <span class="n">7177</span>, <span class="n">5947</span>, <span class="n">21154</span>, <span class="n">351</span>, <span class="n">17606</span>, <span class="n">20468</span>, <span class="n">2669</span>, <span class="n">23342</span>, <span class="n">7863</span>, <span class="n">5509</span>, <span class="n">20508</span>, <span class="n">993</span>, <span class="n">18040</span>, <span class="n">19786</span>, <span class="n">2259</span>, <span class="n">12073</span>, <span class="n">27312</span>, <span class="n">24962</span>, <span class="n">9243</span>, <span class="n">30694</span>, <span class="n">12927</span>, <span class="n">14669</span>, <span class="n">31956</span>, <span class="n">30393</span>, <span class="n">13088</span>, <span class="n">14354</span>, <span class="n">32139</span>, <span class="n">11894</span>, <span class="n">27631</span>, <span class="n">24797</span>, <span class="n">9540</span>, <span class="n">702</span>, <span class="n">18215</span>, <span class="n">19477</span>, <span class="n">2444</span>, <span class="n">23153</span>, <span class="n">8168</span>, <span class="n">5338</span>, <span class="n">20803</span>, <span class="n">29637</span>, <span class="n">13916</span>, <span class="n">15726</span>, <span class="n">30967</span>, <span class="n">11018</span>, <span class="n">28307</span>, <span class="n">26017</span>, <span class="n">8248</span>, <span class="n">1986</span>, <span class="n">16987</span>, <span class="n">18793</span>, <span class="n">3312</span>, <span class="n">24333</span>, <span class="n">6804</span>, <span class="n">4518</span>, <span class="n">21567</span>, <span class="n">24146</span>, <span class="n">7115</span>, <span class="n">4345</span>, <span class="n">21856</span>, <span class="n">1693</span>, <span class="n">17156</span>, <span class="n">18486</span>, <span class="n">3503</span>, <span class="n">10837</span>, <span class="n">28620</span>, <span class="n">25854</span>, <span class="n">8551</span>, <span class="n">29338</span>, <span class="n">14083</span>, <span class="n">15409</span>, <span class="n">31144</span>, <span class="n">10475</span>, <span class="n">28018</span>, <span class="n">26176</span>, <span class="n">9177</span>, <span class="n">28708</span>, <span class="n">13757</span>, <span class="n">16015</span>, <span class="n">31510</span>, <span class="n">23788</span>, <span class="n">6517</span>, <span class="n">4679</span>, <span class="n">22494</span>, <span class="n">1059</span>, <span class="n">16826</span>, <span class="n">19080</span>, <span class="n">3857</span>, <span class="n">1404</span>, <span class="n">16613</span>, <span class="n">19415</span>, <span class="n">3662</span>, <span class="n">23987</span>, <span class="n">6186</span>, <span class="n">4888</span>, <span class="n">22145</span>, <span class="n">29051</span>, <span class="n">13538</span>, <span class="n">16336</span>, <span class="n">31305</span>, <span class="n">10676</span>, <span class="n">27693</span>, <span class="n">26399</span>, <span class="n">8838</span>, <span class="n">8723</span>, <span class="n">26506</span>, <span class="n">27832</span>, <span class="n">10529</span>, <span class="n">31452</span>, <span class="n">16197</span>, <span class="n">13431</span>, <span class="n">29166</span>, <span class="n">22036</span>, <span class="n">5005</span>, <span class="n">6335</span>, <span class="n">23846</span>, <span class="n">3803</span>, <span class="n">19266</span>, <span class="n">16496</span>, <span class="n">1513</span>, <span class="n">3972</span>, <span class="n">18973</span>, <span class="n">16687</span>, <span class="n">1206</span>, <span class="n">22347</span>, <span class="n">4818</span>, <span class="n">6624</span>, <span class="n">23673</span>, <span class="n">31619</span>, <span class="n">15898</span>, <span class="n">13608</span>, <span class="n">28849</span>, <span class="n">9036</span>, <span class="n">26325</span>, <span class="n">28135</span>, <span class="n">10366</span>, <span class="n">31037</span>, <span class="n">15524</span>, <span class="n">14230</span>, <span class="n">29199</span>, <span class="n">8690</span>, <span class="n">25707</span>, <span class="n">28505</span>, <span class="n">10944</span>, <span class="n">3386</span>, <span class="n">18595</span>, <span class="n">17297</span>, <span class="n">1544</span>, <span class="n">22005</span>, <span class="n">4204</span>, <span class="n">7006</span>, <span class="n">24263</span>, <span class="n">21674</span>, <span class="n">4403</span>, <span class="n">6657</span>, <span class="n">24472</span>, <span class="n">3173</span>, <span class="n">18940</span>, <span class="n">17102</span>, <span class="n">1879</span>, <span class="n">8365</span>, <span class="n">25908</span>, <span class="n">28166</span>, <span class="n">11167</span>, <span class="n">30818</span>, <span class="n">15867</span>, <span class="n">14025</span>, <span class="n">29520</span>, <span class="n">20950</span>, <span class="n">5199</span>, <span class="n">8061</span>, <span class="n">23268</span>, <span class="n">2329</span>, <span class="n">19584</span>, <span class="n">18354</span>, <span class="n">555</span>, <span class="n">9681</span>, <span class="n">24648</span>, <span class="n">27514</span>, <span class="n">12003</span>, <span class="n">32030</span>, <span class="n">14471</span>, <span class="n">13237</span>, <span class="n">30252</span>, <span class="n">31809</span>, <span class="n">14808</span>, <span class="n">13034</span>, <span class="n">30579</span>, <span class="n">9358</span>, <span class="n">24855</span>, <span class="n">27173</span>, <span class="n">12220</span>, <span class="n">2118</span>, <span class="n">19935</span>, <span class="n">18157</span>, <span class="n">884</span>, <span class="n">20617</span>, <span class="n">5392</span>, <span class="n">7714</span>, <span class="n">23483</span>, <span class="n">2808</span>, <span class="n">20321</span>, <span class="n">17491</span>, <span class="n">458</span>, <span class="n">21047</span>, <span class="n">6062</span>, <span class="n">7324</span>, <span class="n">22789</span>, <span class="n">32511</span>, <span class="n">15206</span>, <span class="n">12372</span>, <span class="n">30157</span>, <span class="n">9776</span>, <span class="n">25513</span>, <span class="n">26779</span>, <span class="n">11522</span>, <span class="n">10095</span>, <span class="n">25334</span>, <span class="n">27076</span>, <span class="n">11357</span>, <span class="n">32672</span>, <span class="n">14905</span>, <span class="n">12555</span>, <span class="n">29842</span>, <span class="n">21352</span>, <span class="n">5873</span>, <span class="n">7619</span>, <span class="n">22618</span>, <span class="n">2983</span>, <span class="n">20030</span>, <span class="n">17676</span>, <span class="n">149</span>] <span class="k">of</span> <span class="t">UInt16</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Generated by <code>./pycrc.py --algorithm=table-driven --model=crc-16 --generate=c</code></p>
+      </dd>
+      
+    
+  </dl>
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(crc:UINT=self.class.init_crc)-class-method" class="signature"><strong>.new</strong>(crc : UINT = <span class="k">self</span>.<span class="k">class</span>.init_crc)</a>
+        
+          <div class="summary"><p>Initializes the CRC instance.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#final_impl(dst:Bytes):Nil-instance-method" class="signature"><strong>#final_impl</strong>(dst : Bytes) : Nil</a>
+        
+          <div class="summary"><p>The packed CRC15 result.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#update_impl(data:Bytes):Nil-instance-method" class="signature"><strong>#update_impl</strong>(data : Bytes) : Nil</a>
+        
+          <div class="summary"><p>Updates the CRC15 checksum.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../CRC/Base.html">CRC::Base(UInt16)</a></code></h3>
+  
+  
+    <a href="../CRC/Base.html#%3C%3C(data)-instance-method" class="tooltip">
+      <span><<(data)</span>
+    <<</a>, 
+    
+  
+    <a href="../CRC/Base.html#checksum:UINT-instance-method" class="tooltip">
+      <span>checksum : UINT</span>
+    checksum</a>, 
+    
+  
+    <a href="../CRC/Base.html#digest_size:Int32-instance-method" class="tooltip">
+      <span>digest_size : Int32</span>
+    digest_size</a>, 
+    
+  
+    <a href="../CRC/Base.html#final_impl(dst:Bytes):Nil-instance-method" class="tooltip">
+      <span>final_impl(dst : Bytes) : Nil</span>
+    final_impl</a>, 
+    
+  
+    <a href="../CRC/Base.html#reset_impl:Nil-instance-method" class="tooltip">
+      <span>reset_impl : Nil</span>
+    reset_impl</a>, 
+    
+  
+    <a href="../CRC/Base.html#update_impl(data:Bytes):Nil-instance-method" class="tooltip">
+      <span>update_impl(data : Bytes) : Nil</span>
+    update_impl</a>
+    
+  
+
+
+    
+
+  <h3>Constructor methods inherited from class <code><a href="../CRC/Base.html">CRC::Base(UInt16)</a></code></h3>
+  
+  
+    <a href="../CRC/Base.html#new(crc:UINT=self.class.init_crc)-class-method" class="tooltip">
+      <span>new(crc : UINT = <span class="k">self</span>.<span class="k">class</span>.init_crc)</span>
+    new</a>
+    
+  
+
+
+    
+
+  <h3>Class methods inherited from class <code><a href="../CRC/Base.html">CRC::Base(UInt16)</a></code></h3>
+  
+  
+    <a href="../CRC/Base.html#checksum(data):UINT-class-method" class="tooltip">
+      <span>checksum(data) : UINT</span>
+    checksum</a>, 
+    
+  
+    <a href="../CRC/Base.html#init_crc:UINT-class-method" class="tooltip">
+      <span>init_crc : UINT</span>
+    init_crc</a>, 
+    
+  
+    <a href="../CRC/Base.html#xor_mask:UINT-class-method" class="tooltip">
+      <span>xor_mask : UINT</span>
+    xor_mask</a>
+    
+  
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(crc:UINT=self.class.init_crc)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(crc : UINT = <span class="k">self</span>.<span class="k">class</span>.init_crc)
+
+        <a class="method-permalink" href="#new(crc:UINT=self.class.init_crc)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Initializes the CRC instance.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/digest-crc.cr/blob/e34cf3d51f6ad50578ebfb35b0caea9920816fbc/src/crc/base.cr#L25" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="final_impl(dst:Bytes):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>final_impl</strong>(dst : Bytes) : Nil
+
+        <a class="method-permalink" href="#final_impl(dst:Bytes):Nil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The packed CRC15 result.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/digest-crc.cr/blob/e34cf3d51f6ad50578ebfb35b0caea9920816fbc/src/crc/crc15.cr#L46" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="update_impl(data:Bytes):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>update_impl</strong>(data : Bytes) : Nil
+
+        <a class="method-permalink" href="#update_impl(data:Bytes):Nil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Updates the CRC15 checksum.</p>
+
+<p>@param [String] data
+  The data to update the checksum with.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/digest-crc.cr/blob/e34cf3d51f6ad50578ebfb35b0caea9920816fbc/src/crc/crc15.cr#L37" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
