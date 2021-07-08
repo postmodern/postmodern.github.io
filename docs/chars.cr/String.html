@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="0.1.0">
+<meta name="crystal_docs.project_name" content="chars">
+
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+  <meta name="repository-name" content="chars">
+  <title>String - chars 0.1.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          chars
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.1.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="chars/Chars" data-name="chars">
+      <a href="Chars.html">Chars</a>
+      
+        <ul>
+  
+  <li class=" " data-id="chars/Chars/CharSet" data-name="chars::charset">
+      <a href="Chars/CharSet.html">CharSet</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="chars/Int" data-name="int">
+      <a href="Int.html">Int</a>
+      
+    </li>
+  
+  <li class=" current" data-id="chars/String" data-name="string">
+      <a href="String.html">String</a>
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> String
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="String.html">String</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>A <code><a href="String.html">String</a></code> represents an immutable sequence of UTF-8 characters.</p>
+
+<p>A <code><a href="String.html">String</a></code> is typically created with a string literal, enclosing UTF-8 characters
+in double quotes:</p>
+
+<pre><code class="language-crystal"><span class="s">&quot;hello world&quot;</span></code></pre>
+
+<p>A backslash can be used to denote some characters inside the string:</p>
+
+<pre><code class="language-crystal"><span class="s">&quot;\&quot;&quot;</span> <span class="c"># double quote</span>
+<span class="s">&quot;\\&quot;</span> <span class="c"># backslash</span>
+<span class="s">&quot;\e&quot;</span> <span class="c"># escape</span>
+<span class="s">&quot;\f&quot;</span> <span class="c"># form feed</span>
+<span class="s">&quot;\n&quot;</span> <span class="c"># newline</span>
+<span class="s">&quot;\r&quot;</span> <span class="c"># carriage return</span>
+<span class="s">&quot;\t&quot;</span> <span class="c"># tab</span>
+<span class="s">&quot;\v&quot;</span> <span class="c"># vertical tab</span></code></pre>
+
+<p>You can use a backslash followed by an <em>u</em> and four hexadecimal characters to denote a unicode codepoint written:</p>
+
+<pre><code class="language-crystal"><span class="s">&quot;\u0041&quot;</span> <span class="c"># == &quot;A&quot;</span></code></pre>
+
+<p>Or you can use curly braces and specify up to six hexadecimal numbers (0 to 10FFFF):</p>
+
+<pre><code class="language-crystal"><span class="s">&quot;\u{41}&quot;</span> <span class="c"># == &quot;A&quot;</span></code></pre>
+
+<p>A string can span multiple lines:</p>
+
+<pre><code class="language-crystal"><span class="s">&quot;hello
+      world&quot;</span> <span class="c"># same as &quot;hello\n      world&quot;</span></code></pre>
+
+<p>Note that in the above example trailing and leading spaces, as well as newlines,
+end up in the resulting string. To avoid this, you can split a string into multiple lines
+by joining multiple literals with a backslash:</p>
+
+<pre><code class="language-crystal"><span class="s">&quot;hello &quot;</span> \
+<span class="s">&quot;world, &quot;</span> \
+<span class="s">&quot;no newlines&quot;</span> <span class="c"># same as &quot;hello world, no newlines&quot;</span></code></pre>
+
+<p>Alternatively, a backslash followed by a newline can be inserted inside the string literal:</p>
+
+<pre><code class="language-crystal"><span class="s">&quot;hello \
+     world, \
+     no newlines&quot;</span> <span class="c"># same as &quot;hello world, no newlines&quot;</span></code></pre>
+
+<p>In this case, leading whitespace is not included in the resulting string.</p>
+
+<p>If you need to write a string that has many double quotes, parentheses, or similar
+characters, you can use alternative literals:</p>
+
+<pre><code class="language-crystal"><span class="c"># Supports double quotes and nested parentheses</span>
+<span class="s">%(hello (&quot;world&quot;))</span> <span class="c"># same as &quot;hello (\&quot;world\&quot;)&quot;</span>
+
+<span class="c"># Supports double quotes and nested brackets</span>
+<span class="s">%[hello [&quot;world&quot;]]</span> <span class="c"># same as &quot;hello [\&quot;world\&quot;]&quot;</span>
+
+<span class="c"># Supports double quotes and nested curlies</span>
+<span class="s">%{hello {&quot;world&quot;}}</span> <span class="c"># same as &quot;hello {\&quot;world\&quot;}&quot;</span>
+
+<span class="c"># Supports double quotes and nested angles</span>
+<span class="s">%&lt;hello &lt;&quot;world&quot;&gt;&gt;</span> <span class="c"># same as &quot;hello &lt;\&quot;world\&quot;&gt;&quot;</span></code></pre>
+
+<p>To create a <code><a href="String.html">String</a></code> with embedded expressions, you can use string interpolation:</p>
+
+<pre><code class="language-crystal">a <span class="o">=</span> <span class="n">1</span>
+b <span class="o">=</span> <span class="n">2</span>
+<span class="s">&quot;sum = </span><span class="i">#{</span>a <span class="o">+</span> b<span class="i">}</span><span class="s">&quot;</span> <span class="c"># &quot;sum = 3&quot;</span></code></pre>
+
+<p>This ends up invoking <code>Object#to_s(IO)</code> on each expression enclosed by <code>#{...}</code>.</p>
+
+<p>If you need to dynamically build a string, use <code>String#build</code> or <code>IO::Memory</code>.</p>
+
+<h3><a id="non-utf-8-valid-strings" class="anchor" href="#non-utf-8-valid-strings">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Non UTF-8 valid strings</h3>
+
+<p>String might end up being conformed of bytes which are an invalid
+byte sequence according to UTF-8. This can happen if the string is created
+via one of the constructors that accept bytes, or when getting a string
+from <code>String.build</code> or <code>IO::Memory</code>. No exception will be raised, but
+invalid byte sequences, when asked as chars, will use the unicode replacement
+char (value 0xFFFD). For example:</p>
+
+<pre><code class="language-crystal"><span class="c"># here 255 is not a valid byte value in the UTF-8 encoding</span>
+string <span class="o">=</span> <span class="t">String</span>.<span class="k">new</span>(<span class="t">Bytes</span>[<span class="n">255</span>, <span class="n">97</span>])
+string.valid_encoding? <span class="c"># =&gt; false</span>
+
+<span class="c"># The first char here is the unicode replacement char</span>
+string.chars <span class="c"># =&gt; [&#39;�&#39;, &#39;a&#39;]</span></code></pre>
+
+<p>One can also create strings with specific byte value in them by
+using octal and hexadecimal escape sequences:</p>
+
+<pre><code class="language-crystal"><span class="c"># Octal escape sequences</span>
+<span class="s">&quot;\101&quot;</span> <span class="c"># # =&gt; &quot;A&quot;</span>
+<span class="s">&quot;\12&quot;</span>  <span class="c"># # =&gt; &quot;\n&quot;</span>
+<span class="s">&quot;\1&quot;</span>   <span class="c"># string with one character with code point 1</span>
+<span class="s">&quot;\377&quot;</span> <span class="c"># string with one byte with value 255</span>
+
+<span class="c"># Hexadecimal escape sequences</span>
+<span class="s">&quot;\x41&quot;</span> <span class="c"># # =&gt; &quot;A&quot;</span>
+<span class="s">&quot;\xFF&quot;</span> <span class="c"># string with one byte with value 255</span></code></pre>
+
+<p>The reason for allowing strings that don't have a valid UTF-8 sequence
+is that the world is full of content that isn't properly encoded,
+and having a program raise an exception or stop because of this
+is not good. It's better if programs are more resilient, but
+show a replacement character when there's an error in incoming data.</p>
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">Comparable(<a href="String.html">String</a>)</li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/core_ext/string.cr#L3" target="_blank">
+        chars/core_ext/string.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#alpha?-instance-method" class="signature"><strong>#alpha?</strong></a>
+        
+          <div class="summary"><p>Determines whether the String belongs to the alphabetic character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#alpha_numeric?-instance-method" class="signature"><strong>#alpha_numeric?</strong></a>
+        
+          <div class="summary"><p>Determines whether the String belongs to the alpha-numeric character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ascii?-instance-method" class="signature"><strong>#ascii?</strong></a>
+        
+          <div class="summary"><p>Determines whether the String belongs to the ASCII character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#control?-instance-method" class="signature"><strong>#control?</strong></a>
+        
+          <div class="summary"><p>Determines whether the String belongs to the control-character character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hex?-instance-method" class="signature"><strong>#hex?</strong></a>
+        
+          <div class="summary"><p>Determines whether the String belongs to the hexadecimal character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#lowercase_alpha?-instance-method" class="signature"><strong>#lowercase_alpha?</strong></a>
+        
+          <div class="summary"><p>Determines whether the String belongs to the lower-case alphabetic character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#lowercase_hex?-instance-method" class="signature"><strong>#lowercase_hex?</strong></a>
+        
+          <div class="summary"><p>Determines whether the String belongs to the lower-case hexadecimal character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#numeric?-instance-method" class="signature"><strong>#numeric?</strong></a>
+        
+          <div class="summary"><p>Determines whether the String belongs to the decimal-digit character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#octal?-instance-method" class="signature"><strong>#octal?</strong></a>
+        
+          <div class="summary"><p>Determines whether the String belongs to the octal-digit character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#printable?-instance-method" class="signature"><strong>#printable?</strong></a>
+        
+          <div class="summary"><p>Determines whether the String belongs to the printable character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#punctuation?-instance-method" class="signature"><strong>#punctuation?</strong></a>
+        
+          <div class="summary"><p>Determines whether the String belongs to the punctuation character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#signed_ascii?-instance-method" class="signature"><strong>#signed_ascii?</strong></a>
+        
+          <div class="summary"><p>Determines whether the String belongs to the signed-ASCII character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#space?-instance-method" class="signature"><strong>#space?</strong></a>
+        
+          <div class="summary"><p>Determines whether the String belongs to the white-space character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#symbolic?-instance-method" class="signature"><strong>#symbolic?</strong></a>
+        
+          <div class="summary"><p>Determines whether the String belongs to the symbolic character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#uppercase_alpha?-instance-method" class="signature"><strong>#uppercase_alpha?</strong></a>
+        
+          <div class="summary"><p>Determines whether the String belongs to the upper-case alphabetic character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#uppercase_hex?-instance-method" class="signature"><strong>#uppercase_hex?</strong></a>
+        
+          <div class="summary"><p>Determines whether the String belongs to the upper-case hexadecimal character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#visible?-instance-method" class="signature"><strong>#visible?</strong></a>
+        
+          <div class="summary"><p>Determines whether the String belongs to the visible character set.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="alpha?-instance-method">
+      <div class="signature">
+        
+        def <strong>alpha?</strong>
+
+        <a class="method-permalink" href="#alpha?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the String belongs to the alphabetic character set.</p>
+
+<p>See <code><a href="Chars.html#ALPHA">Chars::ALPHA</a></code> and <code><a href="Chars/CharSet.html#===(other:String):Bool-instance-method">Chars::CharSet#===</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/core_ext/string.cr#L77" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="alpha_numeric?-instance-method">
+      <div class="signature">
+        
+        def <strong>alpha_numeric?</strong>
+
+        <a class="method-permalink" href="#alpha_numeric?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the String belongs to the alpha-numeric character
+set.</p>
+
+<p>See <code><a href="Chars.html#ALPHA_NUMERIC">Chars::ALPHA_NUMERIC</a></code> and <code><a href="Chars/CharSet.html#===(other:String):Bool-instance-method">Chars::CharSet#===</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/core_ext/string.cr#L87" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ascii?-instance-method">
+      <div class="signature">
+        
+        def <strong>ascii?</strong>
+
+        <a class="method-permalink" href="#ascii?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the String belongs to the ASCII character set.</p>
+
+<p>See <code><a href="Chars.html#ASCII">Chars::ASCII</a></code> and <code><a href="Chars/CharSet.html#===(other:String):Bool-instance-method">Chars::CharSet#===</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/core_ext/string.cr#L160" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="control?-instance-method">
+      <div class="signature">
+        
+        def <strong>control?</strong>
+
+        <a class="method-permalink" href="#control?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the String belongs to the control-character
+character set.</p>
+
+<p>See <code><a href="Chars.html#CONTROL">Chars::CONTROL</a></code> and <code><a href="Chars/CharSet.html#===(other:String):Bool-instance-method">Chars::CharSet#===</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/core_ext/string.cr#L142" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hex?-instance-method">
+      <div class="signature">
+        
+        def <strong>hex?</strong>
+
+        <a class="method-permalink" href="#hex?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the String belongs to the hexadecimal character set.</p>
+
+<p>See <code><a href="Chars.html#HEXADECIMAL">Chars::HEXADECIMAL</a></code> and <code><a href="Chars/CharSet.html#===(other:String):Bool-instance-method">Chars::CharSet#===</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/core_ext/string.cr#L48" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="lowercase_alpha?-instance-method">
+      <div class="signature">
+        
+        def <strong>lowercase_alpha?</strong>
+
+        <a class="method-permalink" href="#lowercase_alpha?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the String belongs to the lower-case alphabetic
+character set.</p>
+
+<p>See <code><a href="Chars.html#LOWERCASE_ALPHA">Chars::LOWERCASE_ALPHA</a></code> and <code><a href="Chars/CharSet.html#===(other:String):Bool-instance-method">Chars::CharSet#===</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/core_ext/string.cr#L68" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="lowercase_hex?-instance-method">
+      <div class="signature">
+        
+        def <strong>lowercase_hex?</strong>
+
+        <a class="method-permalink" href="#lowercase_hex?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the String belongs to the lower-case hexadecimal
+character set.</p>
+
+<p>See <code><a href="Chars.html#LOWERCASE_HEXADECIMAL">Chars::LOWERCASE_HEXADECIMAL</a></code> and <code><a href="Chars/CharSet.html#===(other:String):Bool-instance-method">Chars::CharSet#===</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/core_ext/string.cr#L39" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="numeric?-instance-method">
+      <div class="signature">
+        
+        def <strong>numeric?</strong>
+
+        <a class="method-permalink" href="#numeric?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the String belongs to the decimal-digit character set.</p>
+
+<p>See <code><a href="Chars.html#NUMERIC">Chars::NUMERIC</a></code> and <code><a href="Chars/CharSet.html#===(other:String):Bool-instance-method">Chars::CharSet#===</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/core_ext/string.cr#L10" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="octal?-instance-method">
+      <div class="signature">
+        
+        def <strong>octal?</strong>
+
+        <a class="method-permalink" href="#octal?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the String belongs to the octal-digit character set.</p>
+
+<p>See <code><a href="Chars.html#OCTAL">Chars::OCTAL</a></code> and <code><a href="Chars/CharSet.html#===(other:String):Bool-instance-method">Chars::CharSet#===</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/core_ext/string.cr#L19" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="printable?-instance-method">
+      <div class="signature">
+        
+        def <strong>printable?</strong>
+
+        <a class="method-permalink" href="#printable?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the String belongs to the printable character set.</p>
+
+<p>See <code><a href="Chars.html#PRINTABLE">Chars::PRINTABLE</a></code> and <code><a href="Chars/CharSet.html#===(other:String):Bool-instance-method">Chars::CharSet#===</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/core_ext/string.cr#L132" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="punctuation?-instance-method">
+      <div class="signature">
+        
+        def <strong>punctuation?</strong>
+
+        <a class="method-permalink" href="#punctuation?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the String belongs to the punctuation character set.</p>
+
+<p>See <code><a href="Chars.html#PUNCTUATION">Chars::PUNCTUATION</a></code> and <code><a href="Chars/CharSet.html#===(other:String):Bool-instance-method">Chars::CharSet#===</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/core_ext/string.cr#L96" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="signed_ascii?-instance-method">
+      <div class="signature">
+        
+        def <strong>signed_ascii?</strong>
+
+        <a class="method-permalink" href="#signed_ascii?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the String belongs to the signed-ASCII character set.</p>
+
+<p>See <code><a href="Chars.html#SIGNED_ASCII">Chars::SIGNED_ASCII</a></code> and <code><a href="Chars/CharSet.html#===(other:String):Bool-instance-method">Chars::CharSet#===</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/core_ext/string.cr#L151" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="space?-instance-method">
+      <div class="signature">
+        
+        def <strong>space?</strong>
+
+        <a class="method-permalink" href="#space?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the String belongs to the white-space character set.</p>
+
+<p>See <code><a href="Chars.html#SPACE">Chars::SPACE</a></code> and <code><a href="Chars/CharSet.html#===(other:String):Bool-instance-method">Chars::CharSet#===</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/core_ext/string.cr#L114" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="symbolic?-instance-method">
+      <div class="signature">
+        
+        def <strong>symbolic?</strong>
+
+        <a class="method-permalink" href="#symbolic?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the String belongs to the symbolic character set.</p>
+
+<p>See <code><a href="Chars.html#SYMBOLS">Chars::SYMBOLS</a></code> and <code><a href="Chars/CharSet.html#===(other:String):Bool-instance-method">Chars::CharSet#===</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/core_ext/string.cr#L105" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="uppercase_alpha?-instance-method">
+      <div class="signature">
+        
+        def <strong>uppercase_alpha?</strong>
+
+        <a class="method-permalink" href="#uppercase_alpha?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the String belongs to the upper-case alphabetic
+character set.</p>
+
+<p>See <code><a href="Chars.html#UPPERCASE_ALPHA">Chars::UPPERCASE_ALPHA</a></code> and <code><a href="Chars/CharSet.html#===(other:String):Bool-instance-method">Chars::CharSet#===</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/core_ext/string.cr#L58" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="uppercase_hex?-instance-method">
+      <div class="signature">
+        
+        def <strong>uppercase_hex?</strong>
+
+        <a class="method-permalink" href="#uppercase_hex?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the String belongs to the upper-case hexadecimal
+character set.</p>
+
+<p>See <code><a href="Chars.html#UPPERCASE_HEXADECIMAL">Chars::UPPERCASE_HEXADECIMAL</a></code> and <code><a href="Chars/CharSet.html#===(other:String):Bool-instance-method">Chars::CharSet#===</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/core_ext/string.cr#L29" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="visible?-instance-method">
+      <div class="signature">
+        
+        def <strong>visible?</strong>
+
+        <a class="method-permalink" href="#visible?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the String belongs to the visible character set.</p>
+
+<p>See <code><a href="Chars.html#VISIBLE">Chars::VISIBLE</a></code> and <code><a href="Chars/CharSet.html#===(other:String):Bool-instance-method">Chars::CharSet#===</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/core_ext/string.cr#L123" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
