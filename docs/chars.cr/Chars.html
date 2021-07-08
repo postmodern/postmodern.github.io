@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="0.1.0">
+<meta name="crystal_docs.project_name" content="chars">
+
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+  <meta name="repository-name" content="chars">
+  <title>Chars - chars 0.1.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          chars
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.1.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="chars/Chars" data-name="chars">
+      <a href="Chars.html">Chars</a>
+      
+        <ul>
+  
+  <li class=" " data-id="chars/Chars/CharSet" data-name="chars::charset">
+      <a href="Chars/CharSet.html">CharSet</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="chars/Int" data-name="int">
+      <a href="Int.html">Int</a>
+      
+    </li>
+  
+  <li class=" " data-id="chars/String" data-name="string">
+      <a href="String.html">String</a>
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Chars
+
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars.cr#L3" target="_blank">
+        chars.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L1" target="_blank">
+        chars/char_set.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="ALPHA">
+        <strong>ALPHA</strong> = <code><span class="t">UPPERCASE_ALPHA</span> <span class="o">|</span> <span class="t">LOWERCASE_ALPHA</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The alpha character set</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="ALPHA_NUMERIC">
+        <strong>ALPHA_NUMERIC</strong> = <code><span class="t">ALPHA</span> <span class="o">|</span> <span class="t">NUMERIC</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The alpha-numeric character set</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="ASCII">
+        <strong>ASCII</strong> = <code><span class="t">CharSet</span>[<span class="n">0</span>..<span class="n">255</span>]</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The full 8-bit character set</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="CONTROL">
+        <strong>CONTROL</strong> = <code><span class="t">CharSet</span>[<span class="n">0</span>..<span class="n">31</span>, <span class="n">127</span>]</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The control-char character set</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="HEXADECIMAL">
+        <strong>HEXADECIMAL</strong> = <code><span class="t">UPPERCASE_HEXADECIMAL</span> <span class="o">|</span> <span class="t">LOWERCASE_HEXADECIMAL</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The hexadecimal character set</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="LOWERCASE_ALPHA">
+        <strong>LOWERCASE_ALPHA</strong> = <code><span class="t">CharSet</span>[<span class="s">&#39;a&#39;</span>..<span class="s">&#39;z&#39;</span>]</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The lower-case alpha character set</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="LOWERCASE_HEXADECIMAL">
+        <strong>LOWERCASE_HEXADECIMAL</strong> = <code><span class="t">NUMERIC</span> <span class="o">|</span> <span class="t">CharSet</span>[<span class="s">&#39;a&#39;</span>..<span class="s">&#39;f&#39;</span>]</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The lower-case hexadecimal character set</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="NUMERIC">
+        <strong>NUMERIC</strong> = <code><span class="t">CharSet</span>[<span class="s">&#39;0&#39;</span>..<span class="s">&#39;9&#39;</span>]</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The numeric decimal character set</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="OCTAL">
+        <strong>OCTAL</strong> = <code><span class="t">CharSet</span>[<span class="s">&#39;0&#39;</span>..<span class="s">&#39;7&#39;</span>]</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The octal character set</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="PRINTABLE">
+        <strong>PRINTABLE</strong> = <code>((<span class="t">ALPHA_NUMERIC</span> <span class="o">|</span> <span class="t">PUNCTUATION</span>) <span class="o">|</span> <span class="t">SYMBOLS</span>) <span class="o">|</span> <span class="t">SPACE</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The set of printable characters (including spaces)</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="PUNCTUATION">
+        <strong>PUNCTUATION</strong> = <code><span class="t">CharSet</span>[<span class="s">&#39; &#39;</span>, <span class="s">&#39;\&#39;&#39;</span>, <span class="s">&#39;&quot;&#39;</span>, <span class="s">&#39;`&#39;</span>, <span class="s">&#39;,&#39;</span>, <span class="s">&#39;;&#39;</span>, <span class="s">&#39;:&#39;</span>, <span class="s">&#39;~&#39;</span>, <span class="s">&#39;-&#39;</span>, <span class="s">&#39;(&#39;</span>, <span class="s">&#39;)&#39;</span>, <span class="s">&#39;[&#39;</span>, <span class="s">&#39;]&#39;</span>, <span class="s">&#39;{&#39;</span>, <span class="s">&#39;}&#39;</span>, <span class="s">&#39;.&#39;</span>, <span class="s">&#39;?&#39;</span>, <span class="s">&#39;!&#39;</span>]</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The punctuation character set</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="SIGNED_ASCII">
+        <strong>SIGNED_ASCII</strong> = <code><span class="t">CharSet</span>[<span class="n">0</span>..<span class="n">127</span>]</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The signed ASCII character set</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="SPACE">
+        <strong>SPACE</strong> = <code><span class="t">CharSet</span>[<span class="s">&#39; &#39;</span>, <span class="s">&#39;\f&#39;</span>, <span class="s">&#39;\n&#39;</span>, <span class="s">&#39;\r&#39;</span>, <span class="s">&#39;\t&#39;</span>, <span class="s">&#39;\v&#39;</span>]</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The space character set</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="SYMBOLS">
+        <strong>SYMBOLS</strong> = <code><span class="t">PUNCTUATION</span> <span class="o">|</span> <span class="t">CharSet</span>[<span class="s">&#39;@&#39;</span>, <span class="s">&#39;#&#39;</span>, <span class="s">&#39;$&#39;</span>, <span class="s">&#39;%&#39;</span>, <span class="s">&#39;^&#39;</span>, <span class="s">&#39;&amp;&#39;</span>, <span class="s">&#39;*&#39;</span>, <span class="s">&#39;_&#39;</span>, <span class="s">&#39;+&#39;</span>, <span class="s">&#39;=&#39;</span>, <span class="s">&#39;|&#39;</span>, <span class="s">&#39;\\&#39;</span>, <span class="s">&#39;&lt;&#39;</span>, <span class="s">&#39;&gt;&#39;</span>, <span class="s">&#39;/&#39;</span>]</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The symbolic character set</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="UPPERCASE_ALPHA">
+        <strong>UPPERCASE_ALPHA</strong> = <code><span class="t">CharSet</span>[<span class="s">&#39;A&#39;</span>..<span class="s">&#39;Z&#39;</span>]</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The upper-case alpha character set</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="UPPERCASE_HEXADECIMAL">
+        <strong>UPPERCASE_HEXADECIMAL</strong> = <code><span class="t">NUMERIC</span> <span class="o">|</span> <span class="t">CharSet</span>[<span class="s">&#39;A&#39;</span>..<span class="s">&#39;F&#39;</span>]</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The upper-case hexadecimal character set</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="VISIBLE">
+        <strong>VISIBLE</strong> = <code><span class="t">ALPHA_NUMERIC</span> <span class="o">|</span> <span class="t">CharSet</span>[<span class="s">&#39;\&#39;&#39;</span>, <span class="s">&#39;&quot;&#39;</span>, <span class="s">&#39;`&#39;</span>, <span class="s">&#39;,&#39;</span>, <span class="s">&#39;;&#39;</span>, <span class="s">&#39;:&#39;</span>, <span class="s">&#39;~&#39;</span>, <span class="s">&#39;-&#39;</span>, <span class="s">&#39;(&#39;</span>, <span class="s">&#39;)&#39;</span>, <span class="s">&#39;[&#39;</span>, <span class="s">&#39;]&#39;</span>, <span class="s">&#39;{&#39;</span>, <span class="s">&#39;}&#39;</span>, <span class="s">&#39;.&#39;</span>, <span class="s">&#39;?&#39;</span>, <span class="s">&#39;!&#39;</span>, <span class="s">&#39;@&#39;</span>, <span class="s">&#39;#&#39;</span>, <span class="s">&#39;$&#39;</span>, <span class="s">&#39;%&#39;</span>, <span class="s">&#39;^&#39;</span>, <span class="s">&#39;&amp;&#39;</span>, <span class="s">&#39;*&#39;</span>, <span class="s">&#39;_&#39;</span>, <span class="s">&#39;+&#39;</span>, <span class="s">&#39;=&#39;</span>, <span class="s">&#39;|&#39;</span>, <span class="s">&#39;\\&#39;</span>, <span class="s">&#39;&lt;&#39;</span>, <span class="s">&#39;&gt;&#39;</span>, <span class="s">&#39;/&#39;</span>]</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The set of printable characters (not including spaces)</p>
+      </dd>
+      
+    
+  </dl>
+
+
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#alpha-class-method" class="signature"><strong>.alpha</strong></a>
+        
+          <div class="summary"><p>The alphabetic character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#alpha_numeric-class-method" class="signature"><strong>.alpha_numeric</strong></a>
+        
+          <div class="summary"><p>The alpha-numeric character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ascii-class-method" class="signature"><strong>.ascii</strong></a>
+        
+          <div class="summary"><p>The ASCII character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#control-class-method" class="signature"><strong>.control</strong></a>
+        
+          <div class="summary"><p>The control-character character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hexadecimal-class-method" class="signature"><strong>.hexadecimal</strong></a>
+        
+          <div class="summary"><p>The hexadecimal character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#lowercase_alpha-class-method" class="signature"><strong>.lowercase_alpha</strong></a>
+        
+          <div class="summary"><p>The lower-case alphabetic character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#lowercase_hexadecimal-class-method" class="signature"><strong>.lowercase_hexadecimal</strong></a>
+        
+          <div class="summary"><p>The lower-case hexadecimal character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#numeric-class-method" class="signature"><strong>.numeric</strong></a>
+        
+          <div class="summary"><p>The decimal-digit character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#octal-class-method" class="signature"><strong>.octal</strong></a>
+        
+          <div class="summary"><p>The octal-digit character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#printable-class-method" class="signature"><strong>.printable</strong></a>
+        
+          <div class="summary"><p>The set of printable characters, including spaces.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#punctuation-class-method" class="signature"><strong>.punctuation</strong></a>
+        
+          <div class="summary"><p>The punctuation character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#signed_ascii-class-method" class="signature"><strong>.signed_ascii</strong></a>
+        
+          <div class="summary"><p>The signed ASCII character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#space-class-method" class="signature"><strong>.space</strong></a>
+        
+          <div class="summary"><p>The white-space character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#symbols-class-method" class="signature"><strong>.symbols</strong></a>
+        
+          <div class="summary"><p>The symbolic character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#uppercase_alpha-class-method" class="signature"><strong>.uppercase_alpha</strong></a>
+        
+          <div class="summary"><p>The upper-case alphabetic character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#uppercase_hexadecimal-class-method" class="signature"><strong>.uppercase_hexadecimal</strong></a>
+        
+          <div class="summary"><p>The upper-case hexadecimal character set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#visible-class-method" class="signature"><strong>.visible</strong></a>
+        
+          <div class="summary"><p>The set of printable characters, not including spaces.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="alpha-class-method">
+      <div class="signature">
+        
+        def self.<strong>alpha</strong>
+
+        <a class="method-permalink" href="#alpha-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The alphabetic character set. See <code><a href="Chars.html#ALPHA">ALPHA</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars.cr#L115" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="alpha_numeric-class-method">
+      <div class="signature">
+        
+        def self.<strong>alpha_numeric</strong>
+
+        <a class="method-permalink" href="#alpha_numeric-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The alpha-numeric character set. See <code><a href="Chars.html#ALPHA_NUMERIC">ALPHA_NUMERIC</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars.cr#L122" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ascii-class-method">
+      <div class="signature">
+        
+        def self.<strong>ascii</strong>
+
+        <a class="method-permalink" href="#ascii-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The ASCII character set. See <code><a href="Chars.html#ASCII">ASCII</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars.cr#L178" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="control-class-method">
+      <div class="signature">
+        
+        def self.<strong>control</strong>
+
+        <a class="method-permalink" href="#control-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The control-character character set. See <code><a href="Chars.html#CONTROL">CONTROL</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars.cr#L164" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hexadecimal-class-method">
+      <div class="signature">
+        
+        def self.<strong>hexadecimal</strong>
+
+        <a class="method-permalink" href="#hexadecimal-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The hexadecimal character set. See <code><a href="Chars.html#HEXADECIMAL">HEXADECIMAL</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars.cr#L94" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="lowercase_alpha-class-method">
+      <div class="signature">
+        
+        def self.<strong>lowercase_alpha</strong>
+
+        <a class="method-permalink" href="#lowercase_alpha-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The lower-case alphabetic character set. See <code><a href="Chars.html#LOWERCASE_ALPHA">LOWERCASE_ALPHA</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars.cr#L108" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="lowercase_hexadecimal-class-method">
+      <div class="signature">
+        
+        def self.<strong>lowercase_hexadecimal</strong>
+
+        <a class="method-permalink" href="#lowercase_hexadecimal-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The lower-case hexadecimal character set. See <code><a href="Chars.html#LOWERCASE_HEXADECIMAL">LOWERCASE_HEXADECIMAL</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars.cr#L87" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="numeric-class-method">
+      <div class="signature">
+        
+        def self.<strong>numeric</strong>
+
+        <a class="method-permalink" href="#numeric-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The decimal-digit character set. See <code><a href="Chars.html#NUMERIC">NUMERIC</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars.cr#L66" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="octal-class-method">
+      <div class="signature">
+        
+        def self.<strong>octal</strong>
+
+        <a class="method-permalink" href="#octal-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The octal-digit character set. See <code><a href="Chars.html#OCTAL">OCTAL</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars.cr#L73" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="printable-class-method">
+      <div class="signature">
+        
+        def self.<strong>printable</strong>
+
+        <a class="method-permalink" href="#printable-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The set of printable characters, including spaces. See <code><a href="Chars.html#PRINTABLE">PRINTABLE</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars.cr#L157" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="punctuation-class-method">
+      <div class="signature">
+        
+        def self.<strong>punctuation</strong>
+
+        <a class="method-permalink" href="#punctuation-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The punctuation character set. See <code><a href="Chars.html#PUNCTUATION">PUNCTUATION</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars.cr#L129" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="signed_ascii-class-method">
+      <div class="signature">
+        
+        def self.<strong>signed_ascii</strong>
+
+        <a class="method-permalink" href="#signed_ascii-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The signed ASCII character set. See <code><a href="Chars.html#SIGNED_ASCII">SIGNED_ASCII</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars.cr#L171" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="space-class-method">
+      <div class="signature">
+        
+        def self.<strong>space</strong>
+
+        <a class="method-permalink" href="#space-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The white-space character set. See <code><a href="Chars.html#SPACE">SPACE</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars.cr#L143" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="symbols-class-method">
+      <div class="signature">
+        
+        def self.<strong>symbols</strong>
+
+        <a class="method-permalink" href="#symbols-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The symbolic character set. See <code><a href="Chars.html#SYMBOLS">SYMBOLS</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars.cr#L136" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="uppercase_alpha-class-method">
+      <div class="signature">
+        
+        def self.<strong>uppercase_alpha</strong>
+
+        <a class="method-permalink" href="#uppercase_alpha-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The upper-case alphabetic character set. See <code><a href="Chars.html#UPPERCASE_ALPHA">UPPERCASE_ALPHA</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars.cr#L101" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="uppercase_hexadecimal-class-method">
+      <div class="signature">
+        
+        def self.<strong>uppercase_hexadecimal</strong>
+
+        <a class="method-permalink" href="#uppercase_hexadecimal-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The upper-case hexadecimal character set. See <code><a href="Chars.html#UPPERCASE_HEXADECIMAL">UPPERCASE_HEXADECIMAL</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars.cr#L80" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="visible-class-method">
+      <div class="signature">
+        
+        def self.<strong>visible</strong>
+
+        <a class="method-permalink" href="#visible-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The set of printable characters, not including spaces. See <code><a href="Chars.html#VISIBLE">VISIBLE</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars.cr#L150" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

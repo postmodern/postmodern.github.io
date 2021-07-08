@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="0.1.0">
+<meta name="crystal_docs.project_name" content="chars">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="chars">
+  <title>Chars::CharSet - chars 0.1.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          chars
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.1.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="chars/Chars" data-name="chars">
+      <a href="../Chars.html">Chars</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="chars/Chars/CharSet" data-name="chars::charset">
+      <a href="../Chars/CharSet.html">CharSet</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="chars/Int" data-name="int">
+      <a href="../Int.html">Int</a>
+      
+    </li>
+  
+  <li class=" " data-id="chars/String" data-name="string">
+      <a href="../String.html">String</a>
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Chars::CharSet
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Chars/CharSet.html">Chars::CharSet</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">Enumerable(Char)</li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L2" target="_blank">
+        chars/char_set.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#[](*values:UInt8%7CInt32%7CChar%7CRange(UInt8,UInt8)%7CRange(Int32,Int32)%7CRange(Char,Char)):CharSet-class-method" class="signature"><strong>.[]</strong>(*values : UInt8 | Int32 | Char | Range(UInt8, UInt8) | Range(Int32, Int32) | Range(Char, Char)) : CharSet</a>
+        
+          <div class="summary"><p>Creates a new <code><a href="../Chars/CharSet.html">CharSet</a></code> using the list of chars, bytes, or ranges of chars/bytes.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new(values:Enumerable(UInt8%7CInt32%7CChar))-class-method" class="signature"><strong>.new</strong>(values : Enumerable(UInt8 | Int32 | Char))</a>
+        
+          <div class="summary"><p>Initializes the <code><a href="../Chars/CharSet.html">CharSet</a></code> using the list of bytes or chars.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new(values:Indexable(UInt8%7CInt32%7CChar))-class-method" class="signature"><strong>.new</strong>(values : Indexable(UInt8 | Int32 | Char))</a>
+        
+          <div class="summary"><p>Initializes the <code><a href="../Chars/CharSet.html">CharSet</a></code> using the list of bytes or chars.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new-class-method" class="signature"><strong>.new</strong></a>
+        
+          <div class="summary"><p>Initializes an empty <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#&(other:CharSet):CharSet-instance-method" class="signature"><strong>#&</strong>(other : CharSet) : CharSet</a>
+        
+          <div class="summary"><p>Intersects the <code><a href="../Chars/CharSet.html">CharSet</a></code> with another <code><a href="../Chars/CharSet.html">CharSet</a></code>, returning a new <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#+(other:CharSet):CharSet-instance-method" class="signature"><strong>#+</strong>(other : CharSet) : CharSet</a>
+        
+          <div class="summary"><p>See <code><a href="../Chars/CharSet.html#+(other:CharSet):CharSet-instance-method">#+</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#-(other:CharSet):CharSet-instance-method" class="signature"><strong>#-</strong>(other : CharSet) : CharSet</a>
+        
+          <div class="summary"><p>Subtracts the characters of another <code><a href="../Chars/CharSet.html">CharSet</a></code> from the <code><a href="../Chars/CharSet.html">CharSet</a></code>, returning a new <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3C%3C(value:Char):CharSet-instance-method" class="signature"><strong>#<<</strong>(value : Char) : CharSet</a>
+        
+          <div class="summary"><p>Appends a new character to the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3C%3C(value:UInt8):CharSet-instance-method" class="signature"><strong>#<<</strong>(value : UInt8) : CharSet</a>
+        
+          <div class="summary"><p>Appends a new byte value to the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3C%3C(value:Int32):CharSet-instance-method" class="signature"><strong>#<<</strong>(value : Int32) : CharSet</a>
+        
+          <div class="summary"><p>Appends a new byte value to the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#==(other:CharSet):Bool-instance-method" class="signature"><strong>#==</strong>(other : CharSet) : Bool</a>
+        
+          <div class="summary"><p>Determines whether the <code><a href="../Chars/CharSet.html">CharSet</a></code> is equal to another <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#===(other:String):Bool-instance-method" class="signature"><strong>#===</strong>(other : String) : Bool</a>
+        
+          <div class="summary"><p>Determines whether all characters in a given string also belong to the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#=~(string:String)-instance-method" class="signature"><strong>#=~</strong>(string : String)</a>
+        
+          <div class="summary"><p>See <code><a href="../Chars/CharSet.html#===(other:String):Bool-instance-method">#===</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#byte_set:Set(Int32)-instance-method" class="signature"><strong>#byte_set</strong> : Set(Int32)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bytes:Array(Int32)-instance-method" class="signature"><strong>#bytes</strong> : Array(Int32)</a>
+        
+          <div class="summary"><p>The byte values within the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#char_set:Set(Char)-instance-method" class="signature"><strong>#char_set</strong> : Set(Char)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#chars:Array(Char)-instance-method" class="signature"><strong>#chars</strong> : Array(Char)</a>
+        
+          <div class="summary"><p>The character values within the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each(*args,**options)-instance-method" class="signature"><strong>#each</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each(*args,**options,&)-instance-method" class="signature"><strong>#each</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each_byte(&block:Int32-%3E)-instance-method" class="signature"><strong>#each_byte</strong>(&block : Int32 -> )</a>
+        
+          <div class="summary"><p>Enumerates over each byte within the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each_char(&block:Char-%3E)-instance-method" class="signature"><strong>#each_char</strong>(&block : Char -> )</a>
+        
+          <div class="summary"><p>Enumerates over each char within the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each_random_byte(n:Int,&block:Int32-%3E)-instance-method" class="signature"><strong>#each_random_byte</strong>(n : Int, &block : Int32 -> )</a>
+        
+          <div class="summary"><p>Enumerates over <code>n</code> random bytes from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each_random_char(n:Int,&block:Char-%3E)-instance-method" class="signature"><strong>#each_random_char</strong>(n : Int, &block : Char -> )</a>
+        
+          <div class="summary"><p>Enumerates over <code>n</code> random chars from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each_substring(data:String,min_length:Int=4,&block:String-%3E)-instance-method" class="signature"><strong>#each_substring</strong>(data : String, min_length : Int = <span class="n">4</span>, &block : String -> )</a>
+        
+          <div class="summary"><p>Enumerates over all substrings within the given string, of minimum length and that are made up of characters from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each_substring_with_index(data:String,min_length:Int=4,&block:String,Int32-%3E)-instance-method" class="signature"><strong>#each_substring_with_index</strong>(data : String, min_length : Int = <span class="n">4</span>, &block : String, Int32 -> )</a>
+        
+          <div class="summary"><p>Enumerates over all substrings and their indices within the given string, of minimum length and that are made up of characters from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#includes?(byte:UInt8%7CInt32):Bool-instance-method" class="signature"><strong>#includes?</strong>(byte : UInt8 | Int32) : Bool</a>
+        
+          <div class="summary"><p>See <code><a href="../Chars/CharSet.html#includes_byte?(byte:UInt8):Bool-instance-method">#includes_byte?</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#includes?(char:Char):Bool-instance-method" class="signature"><strong>#includes?</strong>(char : Char) : Bool</a>
+        
+          <div class="summary"><p>See <code><a href="../Chars/CharSet.html#includes_char?(char:Char):Bool-instance-method">#includes_char?</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#includes_byte?(byte:UInt8):Bool-instance-method" class="signature"><strong>#includes_byte?</strong>(byte : UInt8) : Bool</a>
+        
+          <div class="summary"><p>Determines if the given byte exists in the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#includes_byte?(byte:Int32):Bool-instance-method" class="signature"><strong>#includes_byte?</strong>(byte : Int32) : Bool</a>
+        
+          <div class="summary"><p>Determines if the given byte exists in the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#includes_char?(char:Char):Bool-instance-method" class="signature"><strong>#includes_char?</strong>(char : Char) : Bool</a>
+        
+          <div class="summary"><p>Determines if the given char exists in the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#intersects?(other:CharSet):Bool-instance-method" class="signature"><strong>#intersects?</strong>(other : CharSet) : Bool</a>
+        
+          <div class="summary"><p>Determines whether the <code><a href="../Chars/CharSet.html">CharSet</a></code> intersects with another <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#map(*args,**options)-instance-method" class="signature"><strong>#map</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#map(*args,**options,&)-instance-method" class="signature"><strong>#map</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#map_bytes(&block:Int32-%3ET):Array(T)forallT-instance-method" class="signature"><strong>#map_bytes</strong>(&block : Int32 -> T) : Array(T) forall T</a>
+        
+          <div class="summary"><p>Maps the bytes within the <code><a href="../Chars/CharSet.html">CharSet</a></code> using the given block.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#map_chars(&block:Char-%3ET):Array(T)forallT-instance-method" class="signature"><strong>#map_chars</strong>(&block : Char -> T) : Array(T) forall T</a>
+        
+          <div class="summary"><p>Maps the chars within the <code><a href="../Chars/CharSet.html">CharSet</a></code> using the given block.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#random_byte:Int32-instance-method" class="signature"><strong>#random_byte</strong> : Int32</a>
+        
+          <div class="summary"><p>Returns a random byte from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#random_bytes(lengths:Array(Int)%7CRange(Int,Int)):Array(Int32)-instance-method" class="signature"><strong>#random_bytes</strong>(lengths : Array(Int) | Range(Int, Int)) : Array(Int32)</a>
+        
+          <div class="summary"><p>Returns an Array of random bytes from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#random_bytes(length:Int):Array(Int32)-instance-method" class="signature"><strong>#random_bytes</strong>(length : Int) : Array(Int32)</a>
+        
+          <div class="summary"><p>Returns an Array of <code>n</code> random bytes from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#random_char:Char-instance-method" class="signature"><strong>#random_char</strong> : Char</a>
+        
+          <div class="summary"><p>Returns a random char from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#random_chars(lengths:Array(Int)%7CRange(Int,Int)):Array(Char)-instance-method" class="signature"><strong>#random_chars</strong>(lengths : Array(Int) | Range(Int, Int)) : Array(Char)</a>
+        
+          <div class="summary"><p>Returns an Array of random chars from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#random_chars(length:Int):Array(Char)-instance-method" class="signature"><strong>#random_chars</strong>(length : Int) : Array(Char)</a>
+        
+          <div class="summary"><p>Returns an Array of random chars from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#random_distinct_bytes(length:Int):Array(Int32)-instance-method" class="signature"><strong>#random_distinct_bytes</strong>(length : Int) : Array(Int32)</a>
+        
+          <div class="summary"><p>Returns an Array of random, but unique, bytes from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#random_distinct_bytes(length:Array(Int)):Array(Int32)-instance-method" class="signature"><strong>#random_distinct_bytes</strong>(length : Array(Int)) : Array(Int32)</a>
+        
+          <div class="summary"><p>Returns an Array of random, but unique, bytes from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#random_distinct_bytes(length:Range(Int,Int)):Array(Int32)-instance-method" class="signature"><strong>#random_distinct_bytes</strong>(length : Range(Int, Int)) : Array(Int32)</a>
+        
+          <div class="summary"><p>Returns an Array of random, but unique, bytes from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#random_distinct_chars(length:Int):Array(Char)-instance-method" class="signature"><strong>#random_distinct_chars</strong>(length : Int) : Array(Char)</a>
+        
+          <div class="summary"><p>Returns an Array of random, but unique, chars from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#random_distinct_chars(length:Array(Int)):Array(Char)-instance-method" class="signature"><strong>#random_distinct_chars</strong>(length : Array(Int)) : Array(Char)</a>
+        
+          <div class="summary"><p>Returns an Array of random, but unique, chars from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#random_distinct_chars(length:Range(Int,Int)):Array(Char)-instance-method" class="signature"><strong>#random_distinct_chars</strong>(length : Range(Int, Int)) : Array(Char)</a>
+        
+          <div class="summary"><p>Returns an Array of random, but unique, chars from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#random_distinct_string(length:Int%7CArray(Int)%7CRange(Int,Int)):String-instance-method" class="signature"><strong>#random_distinct_string</strong>(length : Int | Array(Int) | Range(Int, Int)) : String</a>
+        
+          <div class="summary"><p>Returns a String of random, but unique, chars from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#random_string(length:Int%7CArray(Int)%7CRange(Int,Int)):String-instance-method" class="signature"><strong>#random_string</strong>(length : Int | Array(Int) | Range(Int, Int)) : String</a>
+        
+          <div class="summary"><p>Returns a String of random chars from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select(*args,**options,&)-instance-method" class="signature"><strong>#select</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select(*args,**options)-instance-method" class="signature"><strong>#select</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select_bytes(&block:Int32-%3EBool):Array(Int32)-instance-method" class="signature"><strong>#select_bytes</strong>(&block : Int32 -> Bool) : Array(Int32)</a>
+        
+          <div class="summary"><p>Selects the bytes within the <code><a href="../Chars/CharSet.html">CharSet</a></code> that match the given block.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select_chars(&block:Char-%3EBool):Array(Char)-instance-method" class="signature"><strong>#select_chars</strong>(&block : Char -> Bool) : Array(Char)</a>
+        
+          <div class="summary"><p>Selects the chars within the <code><a href="../Chars/CharSet.html">CharSet</a></code> that match the given block.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subset_of?(other:CharSet):Bool-instance-method" class="signature"><strong>#subset_of?</strong>(other : CharSet) : Bool</a>
+        
+          <div class="summary"><p>Determines whether the other <code><a href="../Chars/CharSet.html">CharSet</a></code> is a sub-set of the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#substrings(data:String,min_length:Int=4):Array(String)-instance-method" class="signature"><strong>#substrings</strong>(data : String, min_length : Int = <span class="n">4</span>) : Array(String)</a>
+        
+          <div class="summary"><p>Returns an Array of all substrings within the given string, of minimum length and that are made up of characters from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#substrings_with_indexes(data:String,min_length:Int=4):Array(Tuple(String,Int32))-instance-method" class="signature"><strong>#substrings_with_indexes</strong>(data : String, min_length : Int = <span class="n">4</span>) : Array(Tuple(String, Int32))</a>
+        
+          <div class="summary"><p>Returns an Array of all substrings and their indices within the given string, of minimum length and that are made up of characters from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_a(*args,**options)-instance-method" class="signature"><strong>#to_a</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_a(*args,**options,&)-instance-method" class="signature"><strong>#to_a</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_set(*args,**options)-instance-method" class="signature"><strong>#to_set</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_set(*args,**options,&)-instance-method" class="signature"><strong>#to_set</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%7C(other:CharSet):CharSet-instance-method" class="signature"><strong>#|</strong>(other : CharSet) : CharSet</a>
+        
+          <div class="summary"><p>Unions the <code><a href="../Chars/CharSet.html">CharSet</a></code> with another <code><a href="../Chars/CharSet.html">CharSet</a></code>, returning a new <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="[](*values:UInt8|Int32|Char|Range(UInt8,UInt8)|Range(Int32,Int32)|Range(Char,Char)):CharSet-class-method">
+      <div class="signature">
+        
+        def self.<strong>[]</strong>(*values : UInt8 | Int32 | Char | Range(UInt8, UInt8) | Range(Int32, Int32) | Range(Char, Char)) : <a href="../Chars/CharSet.html">CharSet</a>
+
+        <a class="method-permalink" href="#[](*values:UInt8%7CInt32%7CChar%7CRange(UInt8,UInt8)%7CRange(Int32,Int32)%7CRange(Char,Char)):CharSet-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a new <code><a href="../Chars/CharSet.html">CharSet</a></code> using the list of chars, bytes, or ranges of
+chars/bytes.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L44" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(values:Enumerable(UInt8|Int32|Char))-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(values : Enumerable(UInt8 | Int32 | Char))
+
+        <a class="method-permalink" href="#new(values:Enumerable(UInt8%7CInt32%7CChar))-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Initializes the <code><a href="../Chars/CharSet.html">CharSet</a></code> using the list of bytes or chars.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L20" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(values:Indexable(UInt8|Int32|Char))-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(values : Indexable(UInt8 | Int32 | Char))
+
+        <a class="method-permalink" href="#new(values:Indexable(UInt8%7CInt32%7CChar))-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Initializes the <code><a href="../Chars/CharSet.html">CharSet</a></code> using the list of bytes or chars.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L31" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>
+
+        <a class="method-permalink" href="#new-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Initializes an empty <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="&(other:CharSet):CharSet-instance-method">
+      <div class="signature">
+        
+        def <strong>&</strong>(other : <a href="../Chars/CharSet.html">CharSet</a>) : <a href="../Chars/CharSet.html">CharSet</a>
+
+        <a class="method-permalink" href="#&(other:CharSet):CharSet-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Intersects the <code><a href="../Chars/CharSet.html">CharSet</a></code> with another <code><a href="../Chars/CharSet.html">CharSet</a></code>, returning a new <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L407" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="+(other:CharSet):CharSet-instance-method">
+      <div class="signature">
+        
+        def <strong>+</strong>(other : <a href="../Chars/CharSet.html">CharSet</a>) : <a href="../Chars/CharSet.html">CharSet</a>
+
+        <a class="method-permalink" href="#+(other:CharSet):CharSet-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>See <code><a href="../Chars/CharSet.html#+(other:CharSet):CharSet-instance-method">#+</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L392" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="-(other:CharSet):CharSet-instance-method">
+      <div class="signature">
+        
+        def <strong>-</strong>(other : <a href="../Chars/CharSet.html">CharSet</a>) : <a href="../Chars/CharSet.html">CharSet</a>
+
+        <a class="method-permalink" href="#-(other:CharSet):CharSet-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Subtracts the characters of another <code><a href="../Chars/CharSet.html">CharSet</a></code> from the <code><a href="../Chars/CharSet.html">CharSet</a></code>,
+returning a new <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L400" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="<<(value:Char):CharSet-instance-method">
+      <div class="signature">
+        
+        def <strong><<</strong>(value : Char) : <a href="../Chars/CharSet.html">CharSet</a>
+
+        <a class="method-permalink" href="#%3C%3C(value:Char):CharSet-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Appends a new character to the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L78" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="<<(value:UInt8):CharSet-instance-method">
+      <div class="signature">
+        
+        def <strong><<</strong>(value : UInt8) : <a href="../Chars/CharSet.html">CharSet</a>
+
+        <a class="method-permalink" href="#%3C%3C(value:UInt8):CharSet-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Appends a new byte value to the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L87" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="<<(value:Int32):CharSet-instance-method">
+      <div class="signature">
+        
+        def <strong><<</strong>(value : Int32) : <a href="../Chars/CharSet.html">CharSet</a>
+
+        <a class="method-permalink" href="#%3C%3C(value:Int32):CharSet-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Appends a new byte value to the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L94" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="==(other:CharSet):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>==</strong>(other : <a href="../Chars/CharSet.html">CharSet</a>) : Bool
+
+        <a class="method-permalink" href="#==(other:CharSet):Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the <code><a href="../Chars/CharSet.html">CharSet</a></code> is equal to another <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L428" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="===(other:String):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>===</strong>(other : <a href="../String.html">String</a>) : Bool
+
+        <a class="method-permalink" href="#===(other:String):Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether all characters in a given string also belong to the
+<code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L436" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="=~(string:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>=~</strong>(string : <a href="../String.html">String</a>)
+
+        <a class="method-permalink" href="#=~(string:String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>See <code><a href="../Chars/CharSet.html#===(other:String):Bool-instance-method">#===</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L448" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="byte_set:Set(Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>byte_set</strong> : Set(Int32)
+
+        <a class="method-permalink" href="#byte_set:Set(Int32)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bytes:Array(Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>bytes</strong> : Array(Int32)
+
+        <a class="method-permalink" href="#bytes:Array(Int32)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The byte values within the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L64" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="char_set:Set(Char)-instance-method">
+      <div class="signature">
+        
+        def <strong>char_set</strong> : Set(Char)
+
+        <a class="method-permalink" href="#char_set:Set(Char)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="chars:Array(Char)-instance-method">
+      <div class="signature">
+        
+        def <strong>chars</strong> : Array(Char)
+
+        <a class="method-permalink" href="#chars:Array(Char)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The character values within the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L71" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>each</strong>(*args, **options)
+
+        <a class="method-permalink" href="#each(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L151" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>each</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#each(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L151" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each_byte(&block:Int32->)-instance-method">
+      <div class="signature">
+        
+        def <strong>each_byte</strong>(&block : Int32 -> )
+
+        <a class="method-permalink" href="#each_byte(&block:Int32-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Enumerates over each byte within the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L140" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each_char(&block:Char->)-instance-method">
+      <div class="signature">
+        
+        def <strong>each_char</strong>(&block : Char -> )
+
+        <a class="method-permalink" href="#each_char(&block:Char-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Enumerates over each char within the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L147" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each_random_byte(n:Int,&block:Int32->)-instance-method">
+      <div class="signature">
+        
+        def <strong>each_random_byte</strong>(n : <a href="../Int.html">Int</a>, &block : Int32 -> )
+
+        <a class="method-permalink" href="#each_random_byte(n:Int,&block:Int32-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Enumerates over <code>n</code> random bytes from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L202" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each_random_char(n:Int,&block:Char->)-instance-method">
+      <div class="signature">
+        
+        def <strong>each_random_char</strong>(n : <a href="../Int.html">Int</a>, &block : Char -> )
+
+        <a class="method-permalink" href="#each_random_char(n:Int,&block:Char-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Enumerates over <code>n</code> random chars from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L209" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each_substring(data:String,min_length:Int=4,&block:String->)-instance-method">
+      <div class="signature">
+        
+        def <strong>each_substring</strong>(data : <a href="../String.html">String</a>, min_length : <a href="../Int.html">Int</a> = <span class="n">4</span>, &block : <a href="../String.html">String</a> -> )
+
+        <a class="method-permalink" href="#each_substring(data:String,min_length:Int=4,&block:String-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Enumerates over all substrings within the given string, of minimum length
+and that are made up of characters from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L361" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each_substring_with_index(data:String,min_length:Int=4,&block:String,Int32->)-instance-method">
+      <div class="signature">
+        
+        def <strong>each_substring_with_index</strong>(data : <a href="../String.html">String</a>, min_length : <a href="../Int.html">Int</a> = <span class="n">4</span>, &block : <a href="../String.html">String</a>, Int32 -> )
+
+        <a class="method-permalink" href="#each_substring_with_index(data:String,min_length:Int=4,&block:String,Int32-%3E)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Enumerates over all substrings and their indices within the given string,
+of minimum length and that are made up of characters from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L305" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="includes?(byte:UInt8|Int32):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>includes?</strong>(byte : UInt8 | Int32) : Bool
+
+        <a class="method-permalink" href="#includes?(byte:UInt8%7CInt32):Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>See <code><a href="../Chars/CharSet.html#includes_byte?(byte:UInt8):Bool-instance-method">#includes_byte?</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L125" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="includes?(char:Char):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>includes?</strong>(char : Char) : Bool
+
+        <a class="method-permalink" href="#includes?(char:Char):Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>See <code><a href="../Chars/CharSet.html#includes_char?(char:Char):Bool-instance-method">#includes_char?</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L133" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="includes_byte?(byte:UInt8):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>includes_byte?</strong>(byte : UInt8) : Bool
+
+        <a class="method-permalink" href="#includes_byte?(byte:UInt8):Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines if the given byte exists in the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L103" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="includes_byte?(byte:Int32):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>includes_byte?</strong>(byte : Int32) : Bool
+
+        <a class="method-permalink" href="#includes_byte?(byte:Int32):Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines if the given byte exists in the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L110" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="includes_char?(char:Char):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>includes_char?</strong>(char : Char) : Bool
+
+        <a class="method-permalink" href="#includes_char?(char:Char):Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines if the given char exists in the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L117" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="intersects?(other:CharSet):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>intersects?</strong>(other : <a href="../Chars/CharSet.html">CharSet</a>) : Bool
+
+        <a class="method-permalink" href="#intersects?(other:CharSet):Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the <code><a href="../Chars/CharSet.html">CharSet</a></code> intersects with another <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L414" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="map(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>map</strong>(*args, **options)
+
+        <a class="method-permalink" href="#map(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L183" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="map(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>map</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#map(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L183" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="map_bytes(&block:Int32->T):Array(T)forallT-instance-method">
+      <div class="signature">
+        
+        def <strong>map_bytes</strong>(&block : Int32 -> T) : Array(T) forall T
+
+        <a class="method-permalink" href="#map_bytes(&block:Int32-%3ET):Array(T)forallT-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Maps the bytes within the <code><a href="../Chars/CharSet.html">CharSet</a></code> using the given block.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L172" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="map_chars(&block:Char->T):Array(T)forallT-instance-method">
+      <div class="signature">
+        
+        def <strong>map_chars</strong>(&block : Char -> T) : Array(T) forall T
+
+        <a class="method-permalink" href="#map_chars(&block:Char-%3ET):Array(T)forallT-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Maps the chars within the <code><a href="../Chars/CharSet.html">CharSet</a></code> using the given block.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L179" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="random_byte:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>random_byte</strong> : Int32
+
+        <a class="method-permalink" href="#random_byte:Int32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a random byte from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L188" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="random_bytes(lengths:Array(Int)|Range(Int,Int)):Array(Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>random_bytes</strong>(lengths : Array(<a href="../Int.html">Int</a>) | Range(<a href="../Int.html">Int</a>, <a href="../Int.html">Int</a>)) : Array(Int32)
+
+        <a class="method-permalink" href="#random_bytes(lengths:Array(Int)%7CRange(Int,Int)):Array(Int32)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns an Array of random bytes from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L223" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="random_bytes(length:Int):Array(Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>random_bytes</strong>(length : <a href="../Int.html">Int</a>) : Array(Int32)
+
+        <a class="method-permalink" href="#random_bytes(length:Int):Array(Int32)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns an Array of <code>n</code> random bytes from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L216" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="random_char:Char-instance-method">
+      <div class="signature">
+        
+        def <strong>random_char</strong> : Char
+
+        <a class="method-permalink" href="#random_char:Char-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a random char from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L195" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="random_chars(lengths:Array(Int)|Range(Int,Int)):Array(Char)-instance-method">
+      <div class="signature">
+        
+        def <strong>random_chars</strong>(lengths : Array(<a href="../Int.html">Int</a>) | Range(<a href="../Int.html">Int</a>, <a href="../Int.html">Int</a>)) : Array(Char)
+
+        <a class="method-permalink" href="#random_chars(lengths:Array(Int)%7CRange(Int,Int)):Array(Char)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns an Array of random chars from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L239" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="random_chars(length:Int):Array(Char)-instance-method">
+      <div class="signature">
+        
+        def <strong>random_chars</strong>(length : <a href="../Int.html">Int</a>) : Array(Char)
+
+        <a class="method-permalink" href="#random_chars(length:Int):Array(Char)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns an Array of random chars from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L232" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="random_distinct_bytes(length:Int):Array(Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>random_distinct_bytes</strong>(length : <a href="../Int.html">Int</a>) : Array(Int32)
+
+        <a class="method-permalink" href="#random_distinct_bytes(length:Int):Array(Int32)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns an Array of random, but unique, bytes from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L255" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="random_distinct_bytes(length:Array(Int)):Array(Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>random_distinct_bytes</strong>(length : Array(<a href="../Int.html">Int</a>)) : Array(Int32)
+
+        <a class="method-permalink" href="#random_distinct_bytes(length:Array(Int)):Array(Int32)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns an Array of random, but unique, bytes from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L262" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="random_distinct_bytes(length:Range(Int,Int)):Array(Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>random_distinct_bytes</strong>(length : Range(<a href="../Int.html">Int</a>, <a href="../Int.html">Int</a>)) : Array(Int32)
+
+        <a class="method-permalink" href="#random_distinct_bytes(length:Range(Int,Int)):Array(Int32)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns an Array of random, but unique, bytes from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L269" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="random_distinct_chars(length:Int):Array(Char)-instance-method">
+      <div class="signature">
+        
+        def <strong>random_distinct_chars</strong>(length : <a href="../Int.html">Int</a>) : Array(Char)
+
+        <a class="method-permalink" href="#random_distinct_chars(length:Int):Array(Char)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns an Array of random, but unique, chars from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L276" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="random_distinct_chars(length:Array(Int)):Array(Char)-instance-method">
+      <div class="signature">
+        
+        def <strong>random_distinct_chars</strong>(length : Array(<a href="../Int.html">Int</a>)) : Array(Char)
+
+        <a class="method-permalink" href="#random_distinct_chars(length:Array(Int)):Array(Char)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns an Array of random, but unique, chars from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L283" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="random_distinct_chars(length:Range(Int,Int)):Array(Char)-instance-method">
+      <div class="signature">
+        
+        def <strong>random_distinct_chars</strong>(length : Range(<a href="../Int.html">Int</a>, <a href="../Int.html">Int</a>)) : Array(Char)
+
+        <a class="method-permalink" href="#random_distinct_chars(length:Range(Int,Int)):Array(Char)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns an Array of random, but unique, chars from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L290" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="random_distinct_string(length:Int|Array(Int)|Range(Int,Int)):String-instance-method">
+      <div class="signature">
+        
+        def <strong>random_distinct_string</strong>(length : <a href="../Int.html">Int</a> | Array(<a href="../Int.html">Int</a>) | Range(<a href="../Int.html">Int</a>, <a href="../Int.html">Int</a>)) : <a href="../String.html">String</a>
+
+        <a class="method-permalink" href="#random_distinct_string(length:Int%7CArray(Int)%7CRange(Int,Int)):String-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a String of random, but unique, chars from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L297" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="random_string(length:Int|Array(Int)|Range(Int,Int)):String-instance-method">
+      <div class="signature">
+        
+        def <strong>random_string</strong>(length : <a href="../Int.html">Int</a> | Array(<a href="../Int.html">Int</a>) | Range(<a href="../Int.html">Int</a>, <a href="../Int.html">Int</a>)) : <a href="../String.html">String</a>
+
+        <a class="method-permalink" href="#random_string(length:Int%7CArray(Int)%7CRange(Int,Int)):String-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a String of random chars from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L248" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>select</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#select(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L167" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>select</strong>(*args, **options)
+
+        <a class="method-permalink" href="#select(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L167" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select_bytes(&block:Int32->Bool):Array(Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>select_bytes</strong>(&block : Int32 -> Bool) : Array(Int32)
+
+        <a class="method-permalink" href="#select_bytes(&block:Int32-%3EBool):Array(Int32)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Selects the bytes within the <code><a href="../Chars/CharSet.html">CharSet</a></code> that match the given block.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L156" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select_chars(&block:Char->Bool):Array(Char)-instance-method">
+      <div class="signature">
+        
+        def <strong>select_chars</strong>(&block : Char -> Bool) : Array(Char)
+
+        <a class="method-permalink" href="#select_chars(&block:Char-%3EBool):Array(Char)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Selects the chars within the <code><a href="../Chars/CharSet.html">CharSet</a></code> that match the given block.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L163" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subset_of?(other:CharSet):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>subset_of?</strong>(other : <a href="../Chars/CharSet.html">CharSet</a>) : Bool
+
+        <a class="method-permalink" href="#subset_of?(other:CharSet):Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Determines whether the other <code><a href="../Chars/CharSet.html">CharSet</a></code> is a sub-set of the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L421" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="substrings(data:String,min_length:Int=4):Array(String)-instance-method">
+      <div class="signature">
+        
+        def <strong>substrings</strong>(data : <a href="../String.html">String</a>, min_length : <a href="../Int.html">Int</a> = <span class="n">4</span>) : Array(<a href="../String.html">String</a>)
+
+        <a class="method-permalink" href="#substrings(data:String,min_length:Int=4):Array(String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns an Array of all substrings within the given string,
+of minimum length and that are made up of characters from the <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L371" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="substrings_with_indexes(data:String,min_length:Int=4):Array(Tuple(String,Int32))-instance-method">
+      <div class="signature">
+        
+        def <strong>substrings_with_indexes</strong>(data : <a href="../String.html">String</a>, min_length : <a href="../Int.html">Int</a> = <span class="n">4</span>) : Array(Tuple(<a href="../String.html">String</a>, Int32))
+
+        <a class="method-permalink" href="#substrings_with_indexes(data:String,min_length:Int=4):Array(Tuple(String,Int32))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns an Array of all substrings and their indices within the given
+string, of minimum length and that are made up of characters from the
+<code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L347" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_a(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_a</strong>(*args, **options)
+
+        <a class="method-permalink" href="#to_a(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L452" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_a(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_a</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#to_a(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L452" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_set(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_set</strong>(*args, **options)
+
+        <a class="method-permalink" href="#to_set(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L453" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_set(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_set</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#to_set(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L453" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="|(other:CharSet):CharSet-instance-method">
+      <div class="signature">
+        
+        def <strong>|</strong>(other : <a href="../Chars/CharSet.html">CharSet</a>) : <a href="../Chars/CharSet.html">CharSet</a>
+
+        <a class="method-permalink" href="#%7C(other:CharSet):CharSet-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Unions the <code><a href="../Chars/CharSet.html">CharSet</a></code> with another <code><a href="../Chars/CharSet.html">CharSet</a></code>, returning a new <code><a href="../Chars/CharSet.html">CharSet</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/postmodern/chars.cr/blob/v0.1.0/src/chars/char_set.cr#L384" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
