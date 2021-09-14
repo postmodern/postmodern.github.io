@@ -2,20 +2,3 @@ auto: true
 server: true
 server_port: 2222
 markdown: kramdown
-projects:
-  - name: chruby
-    github: https://github.com/postmodern/chruby#readme
-  - name: ruby-install
-    github: https://github.com/postmodern/ruby-install#readme
-  - name: bundler-audit
-    github: https://github.com/rubysec/bundler-audit#readme
-  - name: rubygems-tasks
-    github: https://github.com/postmodern/rubygems-tasks#readme
-  - name: Ronin
-    website: https://ronin-rb.dev/
-    github: http://github.com/ronin-rb/
-  - name: spidr
-    github: http://github.com/postmodern/spidr#readme
-  - name: ruby-nmap
-    github: https://github.com/sophsec/ruby-nmap#readme
-
