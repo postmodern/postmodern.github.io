@@ -2,14 +2,14 @@
 layout: default
 ---
 
-<header>
-  {% include header.html %}
-</header>
+{% include header.html %}
 
-<main class="content">
+<main class="container">
+  {% include navbar.html %}
+
+  <section class="content">
   {{ content }}
+  </div>
 </main>
 
-<footer>
-  {% include footer.html %}
-</footer>
+{% include footer.html %}

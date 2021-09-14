@@ -2,17 +2,19 @@
 layout: page
 ---
 
-<article id="blog-post">
-  <h1 id="title">{{ page.title }}</h1>
+<div id="blog-post">
+  <h1 class="title">{{ page.title }}</h1>
 
-  <span id="subtitle">
-    {{ page.date | date: "%Y - %m - %d" }}
+  <h5 class="subtitle">
+    <time datetime="{{ page.date | date: "%Y-%m-%d" }}">
+      {{ page.date | date: "%Y-%m-%d" }}
+    </time>
     {% if page.tags != null %}
     &mdash; {{ page.tags | sort | join: ", " }}
     {% endif %}
-  </p>
+  </h5>
 
   <section id="content">
   {{ content }}
   </section>
-</article>
+</div>

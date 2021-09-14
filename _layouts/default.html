@@ -6,8 +6,9 @@
     {% else %}
     <title>postmodern</title>
     {% endif %}
-    <meta name="Author" value="postmodern">
-    <meta name="charset" value="utf-8">
+    <meta name="Author" value="postmodern" />
+    <meta name="charset" value="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="alternate" type="application/atom+xml" title="Blog Feed" href="/atom.xml" />
 
@@ -30,6 +31,26 @@
   </head>
 
   <body>
-  {{ content }}
+    <nav id="top-menu" class="navbar is-top-fixed">
+      <div class="navbar-menu">
+        <div class="navbar-start">
+        </div>
+        <div class="navbar-end">
+          <a class="navbar-item" href="{{ site.postmodern.github }}">
+            {% include icons/github.svg %}
+          </a>
+
+          <a class="navbar-item" href="{{ site.postmodern.twitter }}">
+            {% include icons/twitter.svg %}
+          </a>
+
+          <a class="navbar-item" href="{{ site.postmodern.email }}">
+            {% include icons/email.svg %}
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    {{ content }}
   </body>
 </html>

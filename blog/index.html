@@ -1,17 +1,19 @@
 ---
 layout: page
-title: /blog
+title: blog
 ---
 
 <section id="blog-posts">
+  <h1>Blog Posts</h1>
+
   <ul>
-  {% for post in site.posts %}
-  <li>
-  <article class="blog-post">
-    <span class="date">{{ post.date | date: "%Y - %m - %d" }}</span> -
-    <a href="{{ post.url }}">{{ post.title }}</a>
-  </article>
-  </li>
-  {% endfor %}
+    {% for post in site.posts %}
+    <li>
+      <article class="blog-post">
+        <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y-%m-%d" }}</span> -
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </article>
+    </li>
+    {% endfor %}
   </ul>
 </section>
