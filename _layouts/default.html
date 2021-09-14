@@ -1,21 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!Doctype html>
+<html lang="en">
   <head>
     {% if page.title != null %}
     <title>/ postmodern / {{ page.title | downcase }}</title>
     {% else %}
     <title>/ postmodern</title>
     {% endif %}
-    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8"/>
+    <meta name="Author" value="postmodern">
+    <meta name="charset" value="utf-8">
+
     <link rel="alternate" type="application/atom+xml" title="Blog Feed" href="/atom.xml" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" type="text/css" media="print" href="/css/print.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/screen.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/default.css"/>
-    {% if page.css != null %}
-    {% for name in page.css %}
-    <link rel="stylesheet" type="text/css" href="/css/{{ name }}.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/default.css"/>
+    {% if page.stylesheets != null %}
+    {% for name in page.stylesheets %}
+    <link rel="stylesheet" type="text/css" href="/stylesheets/{{ name }}.css" />
     {% endfor %}
     {% endif %}
     <script type="text/javascript" src="/javascripts/jquery-1.4.2.min.js"></script>
@@ -30,16 +30,16 @@
   </head>
 
   <body>
+    <header>
     {% include header.html %}
+    </header>
 
-    <div id="page" class="container">
-      {% include menu.html %}
-
-      <div id="content" class="span-18">
-        {{ content }}
-      </div>
-
-     {% include footer.html %}
-    </div>
+    <main class="content">
+    {{ content }}
+    </main>
+    
+    <footer>
+    {% include footer.html %}
+    </footer>
   </body>
 </html>

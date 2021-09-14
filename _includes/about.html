@@ -1,32 +1,38 @@
-<p>
-Postmodern is a Software Engineer by day, Security Researcher by night.
-</p>
+<table>
+  <tr>
+    <td>
+      <strong>about:</strong>
+    </td>
 
-<p>
-<strong>languages:</strong>
-<a href="http://ruby-lang.org">ruby</a>,
-javascript,
+    <td>Software Engineer, Open Source Maintainer</td>
+  </tr>
+
+  <tr>
+    <td><strong>languages:</strong></td>
+    <td>
+<a href="https://ruby-lang.org">Ruby</a>,
+<a href="https://crystal-lang.org">Crystal</a>,
+Bash,
 C/C++,
 ASM,
-bash,
+Java,
+JavaScript (ES6),
+CSS,
 XSL/XML
-<br/>
+    </td>
+  </tr>
 
-<strong>projects:</strong>
-<a href="https://github.com/postmodern/chruby#readme">chruby</a>,
-<a href="https://github.com/postmodern/ruby-install#readme">ruby-install</a>,
-<a href="http://ronin-ruby.github.io/">ronin</a>,
-<a href="https://github.com/postmodern/spidr#readme">spidr</a>,
-<a href="https://github.com/sophsec/ruby-nmap#readme">ruby-nmap</a>,
-<a href="https://github.com/postmodern/rubygems-tasks#readme">rubygems-tasks</a>,
-<a href="https://github.com/ruby-ore/ore#readme">ore</a>
-<br/>
-
-<strong>tools:</strong>
-
-<a href="http://padrinorb.com/">padrino</a>,
-<a href="http://sinatrarb.com/">sinatra</a>,
-<a href="http://datamapper.org/">datamapper</a>,
-<a href="https://github.com/ffi/ffi#readme">ffi</a>,
-<a href="https://yardoc.org/">yard</a>
-</p>
+  <tr>
+    <td><strong>projects:</strong></td>
+    <td>
+{% for project in site.projects %}
+{%   if project.website %}
+<a href="{{ project.website }}">{{ project.name }}</a>,
+{%   elsif project.github %}
+<a href="{{ project.github }}">{{ project.name }}</a>,
+{%   endif %}
+{% endfor %}
+<a href="https://github.com/postmodern">...</a>
+    </td>
+  </tr>
+</table>
