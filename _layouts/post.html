@@ -2,14 +2,18 @@
 layout: default
 ---
 
-<div id="post">
-  <h1>{{ page.title }}</h1>
-  <p class="subtitle">
+<article id="blog-post">
+  <h1 id="title">{{ page.title }}</h1>
+  <hr />
+
+  <span id="subtitle">
     {{ page.date | date: "%Y / %m / %d" }}
     {% if page.tags != null %}
     &mdash; {{ page.tags | sort | join: ", " }}
     {% endif %}
   </p>
 
+  <section id="content">
   {{ content }}
-</div>
+  </section>
+</article>

@@ -1,0 +1,146 @@
+body {
+	color: black;
+	background-color: white;
+	font-family: monospace;
+}
+
+header {
+	margin-top: 2em;
+	margin-bottom: 2em;
+	display: flex;
+	flex-direction: row;
+}
+
+header h1 {
+	text-decoration: bold;
+	font-size: 10em;
+	margin: 0;
+}
+
+header a {
+	color: black;
+	text-decoration: none;
+}
+
+header #icons {
+	display: inline-flex;
+}
+
+header #icons > .icon {
+	margin-left: 4em;
+}
+
+header #icons > .icon > svg {
+	position: relative;
+	top: 7.5em;
+	height: 2em;
+}
+
+main {
+	margin-bottom: 2em;
+}
+
+main section {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+main section h1,h2,h3,h4 {
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+
+main a {
+	color: black;
+	text-decoration: none;
+}
+
+main blockquote {
+	padding: 1em;
+	background-color: #c3c3c3;
+	font-style: italic;
+}
+
+main pre {
+	color: white;
+	background-color: black;
+	padding: 0.5em 1em;
+	overflow: auto;
+}
+
+main ul,ol {
+	list-style: square;
+}
+
+main a {
+	text-decoration: bold underline;
+}
+
+main a:hover {
+	color: white;
+	background-color: black;
+}
+
+main div.note, div.warning {
+	clear: right;
+	margin: 0.5em 0 0.5em 0;
+	padding: 0.5em;
+	border: 10px solid black;
+}
+
+main div.note {
+	background-color: #a8ffa8;
+}
+
+main div.warning {
+	background-color: #ffa8a8;
+}
+
+main nav.menu {
+	color: white;
+	background-color: black;
+}
+
+#blog-posts > ul {
+	list-style: none;
+}
+
+article#blog-post #subtitle { 
+	padding-left: 1em;
+}
+
+main nav.menu > ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+main nav.menu > ul > li {
+	float: left;
+	width: 25%;
+	text-align: center;
+	font-size: 200%;
+}
+
+main nav.menu > ul > li > a {
+	color: white;
+}
+
+main nav.menu > ul > li > a:hover {
+}
+
+footer {
+	clear: both;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding: 1em;
+	color: gray;
+	background-color: black;
+	font-size: x-small;
+}
+
+@media print {
+	a {
+		color: black;
+	}
+}
