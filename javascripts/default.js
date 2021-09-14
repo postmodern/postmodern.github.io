@@ -1,9 +1,7 @@
-var Blog = {
-  setup: function() {
-    $("div.warning").hide().slideDown(900);
-  }
+var ready = (callback) => {
+  if (document.readyState != "loading") callback();
+  else document.addEventListener("DOMContentLoaded", callback);
 }
 
-$(document).ready(function() {
-  Blog.setup();
+ready(() => {
 });
