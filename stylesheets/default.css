@@ -72,6 +72,10 @@ main ul,ol {
 	list-style: square;
 }
 
+main ul,ol > li {
+	padding-left: 2em;
+}
+
 main a {
 	text-decoration: bold underline;
 }
@@ -103,6 +107,24 @@ main nav.menu {
 
 #blog-posts > ul {
 	list-style: none;
+}
+
+#blog-posts > ul > li {
+	list-style: none;
+	padding-left: 1em;
+}
+
+#blog-posts > ul > li:hover {
+	padding-left: 0;
+}
+
+#blog-posts > ul > li:hover::before {
+	float: left;
+	position: relative;
+	content: '>';
+	width: 1em;
+	opacity: 1;
+	font-weight: bolder;
 }
 
 article#blog-post #subtitle { 
