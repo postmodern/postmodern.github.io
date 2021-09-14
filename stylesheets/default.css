@@ -9,6 +9,10 @@ body {
 	font-family: monospace;
 }
 
+nav#top-menu .navbar-item:hover {
+	filter: invert(100%);
+}
+
 header {
 	display: flex;
 	flex-direction: row;
