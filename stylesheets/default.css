@@ -4,11 +4,17 @@ body {
 	font-family: monospace;
 }
 
+#intor {
+}
+
 header {
-	margin-top: 2em;
-	margin-bottom: 2em;
 	display: flex;
 	flex-direction: row;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	padding-left: auto;
+	padding-right: auto;
+	text-align: center;
 }
 
 header h1 {
@@ -22,8 +28,9 @@ header a {
 	text-decoration: none;
 }
 
-header #icons {
+header #banner {
 	display: inline-flex;
+	clear: both;
 }
 
 header #icons > .icon {
@@ -34,6 +41,14 @@ header #icons > .icon > svg {
 	position: relative;
 	top: 7.5em;
 	height: 2em;
+}
+
+header #breadcrumbs {
+	
+}
+
+header #breadcrumbs > a {
+	font-weight: bold;
 }
 
 main {
@@ -91,7 +106,7 @@ main a {
 	text-decoration: underline;
 }
 
-main a:hover {
+main a:hover, nav a:hover {
 	color: white;
 	background-color: black;
 }
@@ -151,24 +166,25 @@ main nav.menu {
 	padding-left: 1em;
 }
 
-main nav.menu > ul {
+nav > ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-main nav.menu > ul > li {
+nav > ul > li {
 	float: left;
 	width: 25%;
 	text-align: center;
 	font-size: 200%;
 }
 
-main nav.menu > ul > li > a {
-	color: white;
+nav > ul > li > a {
+	color: black;
+	text-decoration: none;
 }
 
-main nav.menu > ul > li > a:hover {
+nav > ul > li > a:hover {
 }
 
 footer {
