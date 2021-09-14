@@ -36,16 +36,31 @@ main {
 
 main nav.navbar {
 	min-width: 50vw;
+	color: white;
 	background-color: black;
 }
 
-main nav.navbar a {
+main nav.navbar .navbar-item {
+	padding-left: 1em;
+}
+
+main nav.navbar .navbar-item:hover {
+	padding-left: 0;
+}
+
+main nav.navbar .navbar-item:hover::before {
+	color: white;
+	content: '>';
+	width: 1em;
+}
+
+main nav.navbar .navbar-item a {
 	color: white;
 	background-color: black;
 	text-decoration: none;
 }
 
-main nav.navbar a:hover {
+main nav.navbar .navbar-item:hover a {
 	color: black;
 	background-color: white;
 }
