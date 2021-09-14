@@ -3,6 +3,8 @@ layout: page
 title: /pgp
 ---
 
+# PGP
+
 My PGP key [0xB9515E77] can be securely downloaded from [GitHub](https://raw.github.com/postmodern/postmodern.github.io/master/postmodern.asc):
 
     $ wget https://raw.github.com/postmodern/postmodern.github.io/master/postmodern.asc

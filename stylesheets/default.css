@@ -1,10 +1,12 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
 body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 	color: black;
 	background-color: white;
 	font-family: monospace;
-}
-
-#intor {
 }
 
 header {
@@ -28,31 +30,24 @@ header a {
 	text-decoration: none;
 }
 
-header #banner {
-	display: inline-flex;
-	clear: both;
-}
-
-header #icons > .icon {
-	margin-left: 4em;
-}
-
-header #icons > .icon > svg {
-	position: relative;
-	top: 7.5em;
-	height: 2em;
-}
-
-header #breadcrumbs {
-	
-}
-
-header #breadcrumbs > a {
-	font-weight: bold;
-}
-
 main {
-	margin-bottom: 2em;
+	min-width: 50vw;
+}
+
+main nav.navbar {
+	min-width: 50vw;
+	background-color: black;
+}
+
+main nav.navbar a {
+	color: white;
+	background-color: black;
+	text-decoration: none;
+}
+
+main nav.navbar a:hover {
+	color: black;
+	background-color: white;
 }
 
 main section {
@@ -69,10 +64,7 @@ main h1:first-of-type {
 	margin-top: 0;
 	margin-bottom: 0.25em;
 	padding-top: 0.25em;
-	padding-left: 0.25em;
 	padding-bottom: 0.25em;
-	color: white;
-	background-color: black;
 }
 
 main a {
@@ -106,9 +98,10 @@ main a {
 	text-decoration: underline;
 }
 
-main a:hover, nav a:hover {
+main a:hover {
 	color: white;
 	background-color: black;
+	text-decoration: none;
 }
 
 main div.note, div.warning {
@@ -126,34 +119,21 @@ main div.warning {
 	background-color: #ffa8a8;
 }
 
-main nav.menu {
-	color: white;
-	background-color: black;
-}
-
-#about a {
-	font-weight: normal;
-	text-decoration: underline;
-}
-
-#about a:hover {
-	text-decoration: none;
-}
-
-#blog-posts > ul {
+#blog-posts ul {
+	padding: 0;
 	list-style: none;
 }
 
-#blog-posts > ul > li {
+#blog-posts ul > li {
 	list-style: none;
 	padding-left: 1em;
 }
 
-#blog-posts > ul > li:hover {
+#blog-posts ul > li:hover {
 	padding-left: 0;
 }
 
-#blog-posts > ul > li:hover::before {
+#blog-posts ul > li:hover::before {
 	float: left;
 	position: relative;
 	content: '>';
@@ -162,39 +142,39 @@ main nav.menu {
 	font-weight: bolder;
 }
 
-#blog-post #subtitle {
-	padding-left: 1em;
+#blog-post .subtitle {
+	font-weight: normal;
 }
 
-nav > ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-nav > ul > li {
-	float: left;
-	width: 25%;
-	text-align: center;
-	font-size: 200%;
-}
-
-nav > ul > li > a {
-	color: black;
-	text-decoration: none;
-}
-
-nav > ul > li > a:hover {
-}
-
-footer {
+footer.footer {
 	clear: both;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	padding: 1em;
+	padding-top: 3em;
+	padding-bottom: 3em;
+	padding-left: 25vw;
+	padding-left: 25vw;
 	color: gray;
 	background-color: black;
 	font-size: x-small;
+}
+
+footer.footer div.columns {
+	width: 50vw;
+}
+
+footer.footer div.columns > div.column > h5 {
+	color: white;
+	font-size: x-small;
+	font-weight: bold;
+}
+
+footer.footer a {
+	color: gray;
+}
+
+footer.footer svg {
+	display: inline-block;
+	vertical-align: middle;
+	filter: invert(100%);
 }
 
 @media print {
