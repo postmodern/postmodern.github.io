@@ -34,7 +34,7 @@ header a {
 
 @media only screen and (max-width: 1023px) {
 	header svg {
-		min-width: 87vw;
+		width: 87vw;
 	}
 
 	main {
@@ -49,7 +49,7 @@ header a {
 
 @media only screen and (min-width: 1024px) {
 	header svg {
-		min-width: 47vw;
+		width: 47vw;
 	}
 
 	main {
