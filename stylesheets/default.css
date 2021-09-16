@@ -227,6 +227,8 @@ footer.footer a {
 	display: inline-block;
 	width: 4em;
 	height: 2em;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
 	padding: 0.125em;
 	border: 0.125em solid black;
 }
