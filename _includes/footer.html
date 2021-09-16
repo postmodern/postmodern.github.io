@@ -1,10 +1,12 @@
 <footer class="footer">
-  <div class="columns is-mobile">
-    <div class="column">
+  <div class="columns">
+    <div class="column is-full">
       <span>(c) 2010-{{ 'now' | date: "%Y" }} Hal Brodigan</span>
     </div>
+  </div>
 
-    <div class="column">
+  <div class="columns">
+    <div class="column is-one-quarter">
       <h5>Pages</h5>
       <ul>
         <li><a href="/about/">about</a></li>
@@ -13,7 +15,7 @@
       </ul>
     </div>
 
-    <div class="column">
+    <div class="column is-one-quarter">
       <h5>Social</h5>
       <ul>
         <li><a href="{{ site.postmodern.github }}">GitHub</a></li>
@@ -21,11 +23,12 @@
       </ul>
     </div>
 
-    <div class="column">
+    <div class="column is-one-quarter">
       <h5>Contact</h5>
       <ul>
         <li><a href="{{ site.postmodern.email }}">Email</a></li>
       </ul>
     </div>
+  </div>
   </div>
 </footer>
