@@ -342,7 +342,7 @@ body.dark-mode main a:hover {
 }
 
 body.dark-mode main pre {
-	border: 2px solid white;
+	border: 0.125em solid white;
 }
 
 body.dark-mode div.note,
