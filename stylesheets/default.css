@@ -197,7 +197,7 @@ footer.footer {
 	padding-left: 25vw;
 	color: gray;
 	background-color: black;
-	font-size: x-small;
+	font-size: medium;
 }
 
 footer.footer div.columns {
@@ -331,6 +331,7 @@ body.dark-mode main h3,
 body.dark-mode main h4,
 body.dark-mode main h5,
 body.dark-mode main h6,
+body.dark-mode main strong,
 body.dark-mode main a {
 	color: white;
 }
