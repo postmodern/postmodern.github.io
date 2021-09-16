@@ -214,6 +214,11 @@ footer.footer a {
 	color: gray;
 }
 
+footer.footer a:hover {
+	color: black;
+	background-color: white;
+}
+
 @media print {
 	a {
 		color: black;
