@@ -36,7 +36,16 @@ header a {
 
 @media only screen and (max-width: 1024px) {
 	header img {
-		width: 100vw;
+		width: 87vw;
+	}
+
+	main {
+		min-width: 90vw;
+	}
+
+	main section.content {
+		padding-left: 1em;
+		padding-right: 1em;
 	}
 }
 
@@ -44,14 +53,13 @@ header a {
 	header img {
 		width: 47vw;
 	}
-}
 
-main {
-	min-width: 50vw;
+	main {
+		min-width: 50vw;
+	}
 }
 
 main nav#menu {
-	min-width: 50vw;
 	padding-top: 1em;
 	padding-bottom: 1em;
 	color: white;
