@@ -34,6 +34,18 @@ header a {
 	text-decoration: none;
 }
 
+@media only screen and (max-width: 1024px) {
+	header img {
+		width: 100vw;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	header img {
+		width: 47vw;
+	}
+}
+
 main {
 	min-width: 50vw;
 }
