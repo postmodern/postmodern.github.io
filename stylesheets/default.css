@@ -214,12 +214,6 @@ footer.footer a {
 	color: gray;
 }
 
-footer.footer svg {
-	display: inline-block;
-	vertical-align: middle;
-	filter: invert(100%);
-}
-
 @media print {
 	a {
 		color: black;
