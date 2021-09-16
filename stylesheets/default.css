@@ -33,7 +33,7 @@ header a {
 }
 
 @media only screen and (max-width: 1023px) {
-	header img {
+	header svg {
 		width: 87vw;
 	}
 
@@ -48,7 +48,7 @@ header a {
 }
 
 @media only screen and (min-width: 1024px) {
-	header img {
+	header svg {
 		width: 47vw;
 	}
 
@@ -275,7 +275,7 @@ body.dark-mode {
 	background-color: black;
 }
 
-body.dark-mode header img {
+body.dark-mode header svg {
 	filter: invert(100%);
 }
 
