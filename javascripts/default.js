@@ -52,7 +52,7 @@ class HeaderTitle {
 
   randomize() {
     this.set(
-      `P ${Digits.random()}  S T M ${Digits.random()}  D ${Digits.random()} R N`
+      `P ${Digits.random()} S T M ${Digits.random()} D ${Digits.random()} R N`
     );
   }
 
