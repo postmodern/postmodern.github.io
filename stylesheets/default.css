@@ -339,6 +339,10 @@ body.dark-mode main a:hover {
 	background-color: white;
 }
 
+body.dark-mode main pre {
+	border: 2px solid white;
+}
+
 body.dark-mode div.note,
 body.dark-mode div.note h1,
 body.dark-mode div.note h2,
