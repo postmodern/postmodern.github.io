@@ -52,7 +52,8 @@ main {
 
 main nav#menu {
 	min-width: 50vw;
-	padding: 1em;
+	padding-top: 1em;
+	padding-bottom: 1em;
 	color: white;
 	background-color: black;
 }
