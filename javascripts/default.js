@@ -12,17 +12,9 @@ class DarkModeSwitch {
     this.checkboxElem.addEventListener("change", this.toggle.bind(this));
   }
 
-  isEnabled() {
-    return localStorage.getItem("dark-mode") != null;
-  }
-
-  disable() {
-    localStorage.removeItem("dark-mode");
-  }
-
-  enable() {
-    return localStorage.setItem("dark-mode",true);
-  }
+  isEnabled() { return localStorage.getItem("dark-mode") != null; }
+  disable() { localStorage.removeItem("dark-mode"); }
+  enable() { return localStorage.setItem("dark-mode",true); }
 
   toggle(setting) {
     if (this.isEnabled()) { this.disable(); }
@@ -50,9 +42,7 @@ class HeaderTitle {
     this.textElem.addEventListener("mouseleave", this.stopRandomizer.bind(this));
   }
 
-  set(newTitle) {
-    this.textElem.textContent = newTitle;
-  }
+  set(newTitle) { this.textElem.textContent = newTitle; }
 
   startRandomizer() {
     if (this.intervalID == null) {
