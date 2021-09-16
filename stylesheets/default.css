@@ -273,6 +273,10 @@ body.dark-mode {
 	background-color: black;
 }
 
+body.dark-mode header img {
+	filter: invert(100%);
+}
+
 body.dark-mode nav#top-menu .navbar-item {
 	filter: invert(100%);
 }
@@ -301,21 +305,21 @@ body.dark-mode header a {
 	color: white;
 }
 
-body.dark-mode main nav.navbar {
+body.dark-mode main nav#menu {
 	color: black;
 	background-color: white;
 }
 
-body.dark-mode main nav.navbar .navbar-item:hover::before {
+body.dark-mode main nav#menu span:hover::before {
 	color: black;
 }
 
-body.dark-mode main nav.navbar .navbar-item a {
+body.dark-mode main nav#menu span a {
 	color: black;
 	background-color: white;
 }
 
-body.dark-mode main nav.navbar .navbar-item:hover a {
+body.dark-mode main nav#menu span:hover a {
 	color: white;
 	background-color: black;
 }
