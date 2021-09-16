@@ -9,6 +9,12 @@ body {
 	font-family: monospace;
 }
 
+/* HACK: couldn't get the switch to vertically align... */
+nav#top-menu .slider-switch {
+	position: relative;
+	top: 19%;
+}
+
 nav#top-menu .navbar-item:hover {
 	filter: invert(100%);
 }
@@ -74,7 +80,10 @@ main section {
 	margin-bottom: 1em;
 }
 
-main section h1,h2,h3,h4 {
+main section h1,
+main section h2,
+main section h3,
+main section h4 {
 	margin-top: 0;
 	margin-bottom: 0.5em;
 }
@@ -200,4 +209,138 @@ footer.footer svg {
 	a {
 		color: black;
 	}
+}
+
+/*
+ * Slider Switch
+ */
+.slider-switch {
+	display: inline-block;
+	width: 4em;
+	height: 2em;
+	padding: 0.125em;
+	border: 0.125em solid black;
+}
+
+.slider-switch > input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider-switch > .slider {
+	cursor: pointer;
+	margin: 0.125em;
+	background-color: white;
+}
+
+.slider-switch > .slider::before {
+	position: absolute;
+	content: "";
+	height: 1.5em;
+	width: 1.5em;
+}
+
+.slider-switch > input:checked + .slider {
+	background-color: white;
+}
+
+.slider-switch > input:checked + .slider:before {
+	background-color: black;
+	transform: translateX(26px);
+}
+
+/*
+ * Dark Mode
+ */
+
+body.dark-mode {
+	color: white;
+	background-color: black;
+}
+
+body.dark-mode nav#top-menu .navbar-item {
+	filter: invert(100%);
+}
+
+body.dark-mode nav#top-menu .navbar-item:hover {
+	filter: none;
+}
+
+body.dark-mode nav#top-menu {
+	background-color: black;
+}
+
+body.dark-mode .slider-switch {
+	border: 0.125em solid white;
+}
+
+body.dark-mode .slider-switch > .slider {
+	background-color: black;
+}
+
+body.dark-mode .slider-switch > .slider::before {
+	background-color: white;
+}
+
+body.dark-mode header a {
+	color: white;
+}
+
+body.dark-mode main nav.navbar {
+	color: black;
+	background-color: white;
+}
+
+body.dark-mode main nav.navbar .navbar-item:hover::before {
+	color: black;
+}
+
+body.dark-mode main nav.navbar .navbar-item a {
+	color: black;
+	background-color: white;
+}
+
+body.dark-mode main nav.navbar .navbar-item:hover a {
+	color: white;
+	background-color: black;
+}
+
+body.dark-mode main h1,
+body.dark-mode main h2,
+body.dark-mode main h3,
+body.dark-mode main h4,
+body.dark-mode main h5,
+body.dark-mode main h6,
+body.dark-mode main a {
+	color: white;
+}
+
+body.dark-mode main a:hover {
+	color: black;
+	background-color: white;
+}
+
+body.dark-mode div.note,
+body.dark-mode div.note h1,
+body.dark-mode div.note h2,
+body.dark-mode div.note h3,
+body.dark-mode div.note h4,
+body.dark-mode div.note h5,
+body.dark-mode div.note a,
+body.dark-mode div.warning,
+body.dark-mode div.warning h1,
+body.dark-mode div.warning h2,
+body.dark-mode div.warning h3,
+body.dark-mode div.warning h4,
+body.dark-mode div.warning h5,
+body.dark-mode div.warning a,
+body.dark-mode blockquote,
+body.dark-mode blockquote h1,
+body.dark-mode blockquote h2,
+body.dark-mode blockquote h3,
+body.dark-mode blockquote h4,
+body.dark-mode blockquote h5,
+body.dark-mode blockquote a {
+	color: black;
 }
