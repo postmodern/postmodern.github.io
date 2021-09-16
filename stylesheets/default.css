@@ -22,17 +22,11 @@ nav#top-menu .navbar-item:hover {
 header {
 	display: flex;
 	flex-direction: row;
-	margin-top: 2em;
-	margin-bottom: 2em;
+	margin-top: 6em;
+	margin-bottom: 6em;
 	padding-left: auto;
 	padding-right: auto;
 	text-align: center;
-}
-
-header h1 {
-	text-decoration: bold;
-	font-size: 10em;
-	margin: 0;
 }
 
 header a {
