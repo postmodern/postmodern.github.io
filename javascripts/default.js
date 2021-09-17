@@ -2,7 +2,7 @@ class DarkModeSwitch {
   constructor() {
     this.checkboxElem = document.querySelector("#dark-mode-switch > input[type=\"checkbox\"]");
 
-    if (this.isEnabled()) {
+    if (this.isEnabled() || this.darkModePreferred()) {
       // turning the switch off == dark mode
       this.checkboxElem.checked = false;
 
@@ -13,14 +13,24 @@ class DarkModeSwitch {
   }
 
   isEnabled() { return localStorage.getItem("dark-mode") != null; }
-  disable() { localStorage.removeItem("dark-mode"); }
-  enable() { return localStorage.setItem("dark-mode",true); }
+
+  darkModePreferred() {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  disable() {
+    localStorage.removeItem("dark-mode");
+    document.body.classList.remove("dark-mode");
+  }
+
+  enable() {
+    localStorage.setItem("dark-mode",true);
+    document.body.classList.add("dark-mode");
+  }
 
   toggle(setting) {
     if (this.isEnabled()) { this.disable(); }
     else                  { this.enable();  }
-
-    document.body.classList.toggle("dark-mode");
   }
 }
 
