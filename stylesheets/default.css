@@ -1,11 +1,16 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 
+:root {
+	--bg-color: white;
+	--fg-color: black;
+}
+
 body {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
-	color: black;
-	background-color: white;
+	color: var(--fg-color);
+	background-color: var(--bg-color);
 	font-family: monospace;
 }
 
@@ -24,7 +29,7 @@ nav#top-menu a {
 }
 
 nav#top-menu a:hover {
-	background-color: black;
+	background-color: var(--fg-color);
 }
 
 nav#top-menu a:hover svg {
@@ -40,7 +45,7 @@ header {
 }
 
 header a {
-	color: black;
+	color: var(--fg-color);
 	text-decoration: none;
 }
 
@@ -73,8 +78,8 @@ main nav#menu {
 	padding-top: 0.75em;
 	padding-bottom: 0.75em;
 	margin-bottom: 0.5em;
-	color: white;
-	background-color: black;
+	color: var(--bg-color);
+	background-color: var(--fg-color);
 }
 
 main nav#menu span {
@@ -86,20 +91,20 @@ main nav#menu span:hover {
 }
 
 main nav#menu span:hover::before {
-	color: white;
+	color: var(--bg-color);
 	content: '>';
 	width: 1em;
 }
 
 main nav#menu a {
-	color: white;
-	background-color: black;
+	color: var(--bg-color);
+	background-color: var(--fg-colo);
 	text-decoration: none;
 }
 
 main nav#menu span:hover a {
-	color: black;
-	background-color: white;
+	color: var(--fg-color);
+	background-color: var(--bg-color);
 }
 
 main section {
@@ -123,7 +128,7 @@ main h1:first-of-type {
 }
 
 main a {
-	color: black;
+	color: var(--fg-color);
 	text-decoration: none;
 }
 
@@ -134,8 +139,8 @@ main blockquote {
 }
 
 main pre {
-	color: white;
-	background-color: black;
+	color: var(--bg-color);
+	background-color: var(--fg-colo);
 	padding: 0.5em 1em;
 	margin-bottom: 1em;
 	overflow: auto;
@@ -155,8 +160,8 @@ main a {
 }
 
 main a:hover {
-	color: white;
-	background-color: black;
+	color: var(--bg-color);
+	background-color: var(--fg-color);
 	text-decoration: none;
 }
 
@@ -164,7 +169,7 @@ main div.note, div.warning {
 	clear: right;
 	margin: 0.5em 0 0.5em 0;
 	padding: 0.5em;
-	border: 0.5em solid black;
+	border: 0.5em solid var(--fg-color);
 }
 
 main div.note {
@@ -209,7 +214,7 @@ footer.footer {
 	padding-left: 25vw;
 	padding-left: 25vw;
 	color: gray;
-	background-color: black;
+	background-color: var(--fg-color);
 	font-size: medium;
 }
 
@@ -218,7 +223,7 @@ footer.footer div.columns {
 }
 
 footer.footer div.columns > div.column > h5 {
-	color: white;
+	color: var(--bg-color);
 	font-size: medium;
 	font-weight: bold;
 }
@@ -228,13 +233,13 @@ footer.footer a {
 }
 
 footer.footer a:hover {
-	color: black;
-	background-color: white;
+	color: var(--fg-color);
+	background-color: var(--bg-color);
 }
 
 @media print {
 	a {
-		color: black;
+		color: var(--fg-color);
 	}
 }
 
@@ -246,7 +251,7 @@ footer.footer a:hover {
 	width: 4em;
 	height: 2em;
 	padding: 0.125em;
-	border: 0.125em solid black;
+	border: 0.125em solid var(--fg-color);
 }
 
 .slider-switch > input {
@@ -258,7 +263,7 @@ footer.footer a:hover {
 .slider-switch > .slider {
 	cursor: pointer;
 	margin: 0.125em;
-	background-color: white;
+	background-color: var(--bg-color);
 }
 
 .slider-switch > .slider::before {
@@ -269,11 +274,11 @@ footer.footer a:hover {
 }
 
 .slider-switch > input:checked + .slider {
-	background-color: white;
+	background-color: var(--bg-color);
 }
 
 .slider-switch > input:checked + .slider:before {
-	background-color: black;
+	background-color: var(--fg-color);
 	transform: translateX(26px);
 }
 
@@ -282,8 +287,8 @@ footer.footer a:hover {
  */
 
 body.dark-mode {
-	color: white;
-	background-color: black;
+	color: var(--bg-color);
+	background-color: var(--fg-color);
 }
 
 body.dark-mode header svg {
@@ -295,7 +300,7 @@ body.dark-mode nav#top-menu a svg {
 }
 
 body.dark-mode nav#top-menu a:hover {
-	background-color: white;
+	background-color: var(--bg-color);
 }
 
 body.dark-mode nav#top-menu a:hover svg {
@@ -303,38 +308,38 @@ body.dark-mode nav#top-menu a:hover svg {
 }
 
 body.dark-mode .slider-switch {
-	border: 0.125em solid white;
+	border: 0.125em solid var(--bg-color);
 }
 
 body.dark-mode .slider-switch > .slider {
-	background-color: black;
+	background-color: var(--fg-color);
 }
 
 body.dark-mode .slider-switch > .slider::before {
-	background-color: white;
+	background-color: var(--bg-color);
 }
 
 body.dark-mode header a {
-	color: white;
+	color: var(--bg-color);
 }
 
 body.dark-mode main nav#menu {
-	color: black;
-	background-color: white;
+	color: var(--fg-color);
+	background-color: var(--bg-color);
 }
 
 body.dark-mode main nav#menu span:hover::before {
-	color: black;
+	color: var(--fg-color);
 }
 
 body.dark-mode main nav#menu span a {
-	color: black;
-	background-color: white;
+	color: var(--fg-color);
+	background-color: var(--bg-color);
 }
 
 body.dark-mode main nav#menu span:hover a {
-	color: white;
-	background-color: black;
+	color: var(--bg-color);
+	background-color: var(--fg-color);
 }
 
 body.dark-mode main h1,
@@ -345,16 +350,16 @@ body.dark-mode main h5,
 body.dark-mode main h6,
 body.dark-mode main strong,
 body.dark-mode main a {
-	color: white;
+	color: var(--bg-color);
 }
 
 body.dark-mode main a:hover {
-	color: black;
-	background-color: white;
+	color: var(--fg-color);
+	background-color: var(--bg-color);
 }
 
 body.dark-mode main pre {
-	border: 0.125em solid white;
+	border: 0.125em solid var(--bg-color);
 }
 
 body.dark-mode div.note,
@@ -383,5 +388,5 @@ body.dark-mode blockquote h3,
 body.dark-mode blockquote h4,
 body.dark-mode blockquote h5,
 body.dark-mode blockquote a {
-	color: black;
+	color: var(--fg-color);
 }
