@@ -10,7 +10,11 @@ layout: page
       {{ page.date | date: "%Y-%m-%d" }}
     </time>
     {% if page.tags != null %}
-    &mdash; {{ page.tags | sort | join: ", " }}
+    &mdash;
+      {% assign tags = page.tags | sort %}
+      {% for tag in tags %}
+        <a href="/blog/tags#tag-{{ tag }}">{{ tag }}</a>{% if forloop.last == false %},{% endif  %}
+      {% endfor %}
     {% endif %}
   </h5>
 
