@@ -30,6 +30,13 @@ Currently taking the rest of the year off to work on Open Source. See my
 * Math: [raingrams], [combinatorics]
 * Crystal: [chars.cr], [crystal-crc], [ioctl.cr], [extractor.cr], [udis86.cr], [v4l2.cr]
 
+## Contributions
+
+* Spearheaded the migration of [www.ruby-lang.orb](https://www.ruby-lang.orb/)
+  from Radiant CMS to a statically generated Jekyll website. [commits](https://github.com/ruby/www.ruby-lang.org/commits?author=postmodern).
+* Started [ruby-advisory-db] and [bundler-audit] in response to the growing
+  number of CVEs effecting ruby gems.
+
 [Ruby]: https://www.ruby-lang.org
 [Crystal]: https://www.ruby-lang.org
 [Bash]: https://mywiki.wooledge.org/BashGuide
