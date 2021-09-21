@@ -23,7 +23,7 @@ Currently taking the rest of the year off to work on Open Source. See my
 * Security: [bundler-audit], [ruby-advisory-db], [ronin], [ruby-masscan],
   [ruby-nmap], [ruby-sslyze], [gscraper] \(old\), [ffi-pcap], [ffi-udis86],
   [spf-query], [dkim-query], [http-security], [cvelist.rb], [nvd-json_feeds.rb],
-  [shodan-ruby] \(old\), [wordlist] \(old\)
+  [shodan-ruby] \(old\), [wordlist.rb] \(old\)
 * Web: [spidr], [nokogiri-diff], [net-http-server], [uri-query_params]
 * Util: [chars.rb], [command_kit.rb], [digest-crc], [ffi-hunspell],
   [ffi-extractor], [ffi-msgpack], [ffi-libc], [hexdump.rb]
@@ -60,7 +60,7 @@ Currently taking the rest of the year off to work on Open Source. See my
 [cvelist.rb]: https://github.com/postmodern/cvelist.rb#readme
 [nvd-json_feeds.rb]: https://github.com/postmodern/nvd-json_feeds.rb#readme
 [shodan-ruby]: https://github.com/postmodern/shodan-ruby#readme
-[wordlist]: https://github.com/sophsec/wordlist#readme
+[wordlist.rb]: https://github.com/postmodern/wordlist.rb#readme
 
 [spidr]: https://github.com/postmodern/spidr#readme
 [nokogiri-diff]: https://github.com/postmodern/nokogiri-diff#readme
