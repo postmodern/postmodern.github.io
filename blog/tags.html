@@ -1,0 +1,20 @@
+---
+layout: page
+title: Tags
+---
+
+<h1>Tags</h1>
+
+{% assign tags = site.tags | sort %}
+
+{% for tag in tags %}
+<p id="tag-{{ tag[0] }}">
+  <strong>{{ tag[0] }}</strong>
+
+  <ul>
+    {% for post in tag[1] %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</p>
+{% endfor %}
