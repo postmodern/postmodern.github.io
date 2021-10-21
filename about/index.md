@@ -32,7 +32,7 @@ Currently taking the rest of the year off to work on Open Source. See my
 
 ## Contributions
 
-* Spearheaded the migration of [www.ruby-lang.orb](https://www.ruby-lang.orb/)
+* Spearheaded the migration of [www.ruby-lang.org](https://www.ruby-lang.org/)
   from Radiant CMS to a statically generated Jekyll website. [commits](https://github.com/ruby/www.ruby-lang.org/commits?author=postmodern).
 * Started [ruby-advisory-db] and [bundler-audit] in response to the growing
   number of CVEs effecting ruby gems.
