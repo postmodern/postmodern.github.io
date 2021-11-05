@@ -3,3 +3,4 @@
 /images/originals
 /_site
 .jekyll-cache
+/blog/_posts/YYYY-MM-DD-*.md
