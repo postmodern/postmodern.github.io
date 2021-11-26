@@ -140,7 +140,7 @@ main blockquote {
 
 main pre {
 	color: var(--bg-color);
-	background-color: var(--fg-colo);
+	background-color: var(--fg-color);
 	padding: 0.5em 1em;
 	margin-bottom: 1em;
 	overflow: auto;
