@@ -417,4 +417,5 @@ and form your own opinions.
 
 Cheers
 
+[ruby]: https://www.ruby-lang.org/
 [try-ruby]: https://try.ruby-lang.org/
