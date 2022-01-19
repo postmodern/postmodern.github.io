@@ -246,7 +246,10 @@ this Ford vs. Chevy tribalism, but about Python vs. Ruby.
 ## Reason #7: Ford vs. Chevy Tribalism
 
 In the tech world there is no shortage of endless tribal debates over which
-thing is better than the other thing. Tabs vs. Spaces, Vim vs. Emacs, Linux vs. Windows, Linux vs. macOS, BSD vs. Linux, GNU vs. BSD, Chrome vs Firefox, Intel vs. AMD, NVIDIA vs. AMD, QWERTY vs. Dvorak, and yes even Ruby vs. Python.
+thing is better than the other thing. Tabs vs. Spaces, Vim vs. Emacs,
+Linux vs. Windows, Linux vs. macOS, BSD vs. Linux, GNU vs. BSD,
+Chrome vs Firefox, Intel vs. AMD, NVIDIA vs. AMD, QWERTY vs. Dvorak, and yes
+even Ruby vs. Python.
 
 The Ruby vs. Python debate is incredibly pointless, once you realize that both
 languages share a lot in common:
