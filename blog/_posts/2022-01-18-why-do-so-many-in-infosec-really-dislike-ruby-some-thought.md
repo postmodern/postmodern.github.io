@@ -150,12 +150,10 @@ testing.
 
 If you asked someone who strongly dislikes Ruby whether they actually tried
 learning Ruby, have they visited [ruby-lang.org][ruby], have they visited
-[try.ruby-lang.org], have they read any guides or tutorials, watched any
-screencasts, tried writing any Ruby, popped open `irb` (Ruby's interactive
+[try.ruby-lang.org][try-ruby], have they read any guides or tutorials, watched
+any screencasts, tried writing any Ruby, popped open `irb` (Ruby's interactive
 console), or do they know that Ruby supports most all of the same features
 that Python supports and then a few extra ones, the answer will usually be "No".
-
-[try.ruby-lang.org]: https://try.ruby-lang.org/
 
 Simply put, most people who dislike Ruby don't actually know why they dislike
 it. They most likely looked at some example code and thought it looked weird
