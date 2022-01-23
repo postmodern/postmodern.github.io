@@ -214,7 +214,9 @@ pony!december9999
 As you can see, we can easily enumerate complex password patterns using the
 [wordlist] and [chars] libraries, and it didn't take that much code! This can
 be incredibly powerful when combined with a login bruteforcing or password
-cracker.
+cracker. By combining wordlists and character sets, instead of bruteforce
+enumerating over every ASCII, we can also reduce the size of the search space
+and thus reduce the time it takes to bruteforce/crack a password.
 
 **tl;dr** Don't get your security advice from a web comic. Use a password
 manager that generates truly random passwords and turn on 2FA.
