@@ -39,7 +39,7 @@ we can enumerate over every possible mutation of "troubador".
 require 'wordlist'
 require 'chars'
 
-base_words = Wordlist::Words["trobador"]
+base_words = Wordlist::Words["troubador"]
 passwords  = base_words * Chars.punctuation.chars * Chars.digits.chars
 mutations  = passwords.mutate(/oa/, 'o' => '0', 'a' => '4').mutate_case
 
@@ -53,47 +53,47 @@ rules to mutate the case of letters and substitutes `o` for `0` and `a` for `4`.
 Now let's enumerate through all possible passwords. Let 'er rip!
 
 ```
-trobador 0
-Trobador 0
-tRobador 0
-trObador 0
-troBador 0
-trobAdor 0
-trobaDor 0
-trobadOr 0
-trobadoR 0
-TRobador 0
-TrObador 0
-TroBador 0
-TrobAdor 0
-TrobaDor 0
-TrobadOr 0
-TrobadoR 0
-tRObador 0
-tRoBador 0
-tRobAdor 0
-tRobaDor 0
+troubador 0
+Troubador 0
+tRoubador 0
+trOubador 0
+troUbador 0
+trouBador 0
+troubAdor 0
+troubaDor 0
+troubadOr 0
+troubadoR 0
+TRoubador 0
+TrOubador 0
+TroUbador 0
+TrouBador 0
+TroubAdor 0
+TroubaDor 0
+TroubadOr 0
+TroubadoR 0
+tROubador 0
+tRoUbador 0
 ...
-TrOBAdOR!9
-TrOBaDOR!9
-TrObADOR!9
-TroBADOR!9
-tROBADOr!9
-tROBADoR!9
-tROBAdOR!9
-tROBaDOR!9
-tRObADOR!9
-tRoBADOR!9
-trOBADOR!9
-TROBADOr!9
-TROBADoR!9
-TROBAdOR!9
-TROBaDOR!9
-TRObADOR!9
-TRoBADOR!9
-TrOBADOR!9
-tROBADOR!9
-TROBADOR!9
+TrOuBADOR!9
+TroUBADOR!9
+tROUBADOr!9
+tROUBADoR!9
+tROUBAdOR!9
+tROUBaDOR!9
+tROUbADOR!9
+tROuBADOR!9
+tRoUBADOR!9
+trOUBADOR!9
+TROUBADOr!9
+TROUBADoR!9
+TROUBAdOR!9
+TROUBaDOR!9
+TROUbADOR!9
+TROuBADOR!9
+TRoUBADOR!9
+TrOUBADOR!9
+tROUBADOR!9
+TROUBADOR!9
 ```
 
 ## correcthorsebatterystapler
