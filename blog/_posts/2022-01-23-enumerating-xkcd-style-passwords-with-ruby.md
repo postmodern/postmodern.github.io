@@ -98,7 +98,7 @@ TROUBADOR!9
 
 ## correcthorsebatterystapler
 
-The second XKCD password (`correcthorsebatterystapler`) is four random words
+The second XKCD password ("correcthorsebatterystapler") is four random words
 concatenated together. Assuming we have a wordlist of common English words,
 all we have to do is combine that wordlist with itself four times, then call
 `.each` like in the previous example.
