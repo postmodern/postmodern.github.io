@@ -114,7 +114,7 @@ passwords.each { |password| puts password }
 
 The above code opens a `.txt` wordlist file, then creates a new wordlist object
 (`passwords`) that is simply the wordlist multiplied by itself four times;
-in Ruby `\*\*` is the power operator.
+in Ruby `**` is the power operator.
 
 Let's see if it works. Let 'er rip!
 
