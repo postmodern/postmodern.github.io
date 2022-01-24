@@ -209,15 +209,61 @@ pony!december9998
 pony!december9999
 ```
 
+## The Math
+
+Using [Combinatorics], if we wanted to calculate the total search space of a
+password we would use the simple equation `n ** k`, where `n` is the number of
+possibilities and `k` is the number of times they are repeated in succession.
+Example: if a 32bit unsigned integer has 32 bits, and each bit has 2
+possibilities (`1` and `0`), then the total number of possible 32bit unsigned
+integers is `2 ** 32`.
+
+Assuming a password of length 26 (`"correcthorsebatterystapler".length # => 26`)
+composed entirely of printable ASCII characters, and there are 100 printable
+ASCII characters (`Chars.printable.length # => 100`), that would give us a
+search space of `100 ** 26` which is
+`10000000000000000000000000000000000000000000000000000`.
+
+Now what if we were a cunning hacker (or pentester), and guessed that the
+users password was probably four random English words? Then we would grab our
+trusty common English words wordlist, which happens to be 171,000 words long.
+This results in a search space of `171_000 ** 4`, which is
+`855036081000000000000`; much smaller than `10000000000000000000000000000000000000000000000000000`.
+
+The XKCD web comic made the assumption that a hacker (or pentester)
+would only resort to enumerating through every possible bit in a password
+string. Enumerating through every combination of bits of a 26 character long
+password would result in a search space of `2 ** (26 * 8)`
+(1 char = 1 byte = 8 bits) or
+`411376139330301510538742295639337626245683966408394965837152256`. This
+assumption is wrong as I have shown that one can use wordlists to reduce the
+search space to `855036081000000000000` which is visibly less than both
+`411376139330301510538742295639337626245683966408394965837152256` and
+`10000000000000000000000000000000000000000000000000000`.
+
+The smaller search space is the obvious winner, as it means **less work to
+do** and ultimately **less time spent**. Factor in the ever increasing speed of
+technology, the fact that you can distribute password bruteforcing across
+multiple IPs "in the cloud", or how [HashCat] supports GPU accelerated password
+cracking using [OpenCL] \(not to mention [FPGA]s and [ASIC]s\), and that further
+reduces the time it would take to bruteforce or crack a password using
+wordlists and common password patterns.
+
+[Combinatorics]: https://en.wikipedia.org/wiki/Combinatorics
+[HashCat]: https://hashcat.net/hashcat/
+[OpenCL]: https://www.khronos.org/opencl/
+[FPGA]: https://hackaday.com/2020/05/15/all-your-passwords-are-belong-to-fpga/
+[ASIC]: https://en.wikipedia.org/wiki/Application-specific_integrated_circuit
+
 ## Conclusion
 
 As you can see, we can easily enumerate complex password patterns using the
 [wordlist] and [chars] libraries, and it didn't take that much code! This can
 be incredibly powerful when combined with a login bruteforcing or password
 cracker. By combining wordlists and character sets, instead of bruteforce
-enumerating over every ASCII character one-by-one, we can also reduce the size
+enumerating over every ASCII character, we can reduce the size
 of the search space and thus reduce the time it takes to bruteforce/crack a
-password.
+password; fewer passwords to check means less time spent.
 
 **tl;dr** Don't get your security advice from a web comic. Use a password
 manager that generates truly random passwords and turn on 2FA.
