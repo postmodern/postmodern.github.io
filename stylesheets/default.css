@@ -138,6 +138,10 @@ main blockquote {
 	font-style: italic;
 }
 
+main code {
+	word-wrap: break-word;
+}
+
 main pre {
 	color: var(--bg-color);
 	background-color: var(--fg-color);
