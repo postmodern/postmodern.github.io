@@ -55,7 +55,7 @@ header a {
 	}
 
 	main {
-		min-width: 90vw;
+		width: 90vw !important;
 	}
 
 	main section.content {
