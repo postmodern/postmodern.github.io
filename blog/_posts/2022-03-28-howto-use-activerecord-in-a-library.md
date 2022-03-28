@@ -246,8 +246,8 @@ end
 ```
 
 To make it easy to load all models after establishing the database connection
-(ActiveRecord does not allow you to define any model classes without first
-calling `ActiveRecord::Base.establish_connection`), we also create a
+(ActiveRecord does not allow you to define any model classes before calling
+`ActiveRecord::Base.establish_connection`), we also create a
 `models.rb` file:
 
 ```ruby
@@ -268,8 +268,8 @@ end
 ### ActiveRecord::Base.connection
 
 In order for your model's `inspect` methods to work properly, the ActiveRecord
-models need to be "connected" to the established connection. This can be done
-by calling `connection` on the model.
+models need to be "connected" to the established database connection. This can
+be done by calling `connection` on each model class.
 
 ```ruby
 Library::Book.inspect
@@ -282,7 +282,7 @@ Library::Book.inspect
 ```
 
 **Note:** for some reason it appears that this extra step is not necessary if
-migrations are ran before loading the models.
+the migrations are ran before loading the models.
 
 I am not really sure why this extra step is necessary, as it seems like
 ActiveRecord could lazy-connect each model when `ActiveRecord::Base#inspect` is
