@@ -282,7 +282,7 @@ Library::Book.inspect
 ```
 
 **Note:** for some reason it appears that this extra step is not necessary if
-run migrations before loading the models.
+migrations are ran before loading the models.
 
 I am not really sure why this extra step is necessary, as it seems like
 ActiveRecord could lazy-connect each model when `ActiveRecord::Base#inspect` is
