@@ -287,7 +287,7 @@ grep.command_string
 
 [Shellwords]: https://rubydoc.info/stdlib/shellwords/Shellwords
 
-In order to prevent option injection, option will explicitly not
+In order to prevent option injection, options will explicitly not
 allow values that begin with a `-` character:
 
 ```ruby
