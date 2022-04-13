@@ -275,8 +275,20 @@ system(cmd)
 
 ## Security
 
-In order to prevent arbitrary option injection, option will explicitly not
-allow values that begin with a `-`:
+In order to prevent arbitrary command injection, any special shell characters
+in the command's option or argument values will automatically be escaped using
+[Shellwords]\:
+
+```ruby
+grep = Grep.new(patterns: ';injected_command#', file: 'test.txt')
+grep.command_string
+# => "grep \\;injected_command\\# test.txt"
+```
+
+[Shellwords]: https://rubydoc.info/stdlib/shellwords/Shellwords
+
+In order to prevent option injection, option will explicitly not
+allow values that begin with a `-` character:
 
 ```ruby
 Grep.run(label: '--injected-option', patterns: 'foo', file: 'test.txt')
@@ -289,17 +301,17 @@ Grep.run(label: '--injected-option', patterns: 'foo', file: 'test.txt')
 # 	from /home/postmodern/code/command_mapper.rb/lib/command_mapper/command.rb:108:in `run'
 ```
 
-In order to prevent arbitrary command injection, any special shell characters
-in the command's option or argument values will automatically be escaped using
-[Shellwords]\:
+In order to prevent arbitrary option injection via additional arguments, a `--`
+separator will be inserted between the options and the additional arguments to
+force the CLI utility to stop parsing options after the `--` separator, if any
+of the arguments starts with a `-` character. This prevents the CLI utility 
+from parsing the additional arguments as option flags:
 
 ```ruby
-grep = Grep.new(patterns: ';injected_command#', file: 'test.txt')
-grep.command_string
-# => "grep \\;injected_command\\# test.txt"
+grep = Grep.new(ignore_case: true, patterns: '-foo', file: 'test.txt')
+grep.command_argv
+# => ["grep", "--ignore-case", "--", "-foo", "test.txt"]
 ```
-
-[Shellwords]: https://rubydoc.info/stdlib/shellwords/Shellwords
 
 ## But Wait, There's More!
 
