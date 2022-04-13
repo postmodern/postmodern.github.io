@@ -11,6 +11,49 @@ tags:
  - command_mapper-gen
 ---
 
+## The Problem
+
+Normally in Ruby if you need to write a method which accepts one or more
+arguments and executes a command, you would write something like this:
+
+```ruby
+def git_pull(branch)
+  system("git pull origin #{branch}")
+end
+```
+
+However, there are a few problems with the above code:
+
+* Does not validate the input
+  (ex: `git_pull(nil)`, `git_pull("")`, `git_pull(true)`, `git_pull(false)`,
+  `git_pull([1,2,3])`, `git_pull({1=>2})`, etc).
+* Vulnerable to arbitrary command injection
+  (ex: `git_pull(";evil_command_here#")`).
+* Vulnerable to arbitrary option injection
+  (ex: `git_pull("--option-that-gives-an-attacker-control branch")`).
+
+A better version of the above code might look like this:
+
+```ruby
+def git_pull(branch)
+  args = %w[git pull origin]
+  args << branch.to_s if branch
+  system(*args)
+end
+```
+
+Better. We have fixed the arbitrary command injection by passing multiple
+arguments to [Kernel#system], which executes the command as its own sub-process,
+not in a sub-shell. We also added very basic validations for `branch`. However,
+those basic validations are not enough and the above code is still vulnerable to
+option injection via `branch` or any additional argument that is appended to
+`args`. It would take a lot of work to add support for all of `git pull`'s
+other options and arguments, and add validations for each of them.
+
+[Kernel#system]: https://rubydoc.info/stdlib/core/Kernel#system-instance_method
+
+## The Solution
+
 [command_mapper] is a new library for mapping external commands to Ruby classes.
 
 [command_mapper]: https://rubydoc.info/gems/command_mapper
