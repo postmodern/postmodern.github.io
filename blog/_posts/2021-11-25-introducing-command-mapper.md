@@ -387,8 +387,16 @@ end
 Beyond providing a Ruby interface to external commands, and preventing
 arbitrary command injection, [command_mapper] and [command_mapper-gen] allows
 Ruby to interface with other CLI utilities written in other programming
-language ecosystems that Ruby cannot bind to, such as Go or Rust.
+language ecosystems that Ruby cannot bind to, such as [Elixir], [Go], [Rust],
+[Crystal], [Nim], or [Zig].
 
-Using [command_mapper] we can automate other CLI utilities, written in Go or
-Rust, parse their output or output files, all seamlessly from Ruby as if you
-were calling another Ruby library.
+[Elixir]: https://elixir-lang.org/
+[Go]: https://go.dev/
+[Rust]: https://www.rust-lang.org/
+[Crystal]: https://crystal-lang.org/
+[Nim]: https://nim-lang.org/
+[Zig]: https://ziglang.org/
+
+Using [command_mapper] we can automate other CLI utilities, written in other
+languages, parse their output or output files, all seamlessly from Ruby as if
+you were calling another Ruby library.
