@@ -280,7 +280,13 @@ allow values that begin with a `-`:
 
 ```ruby
 Grep.run(label: '--injected-option', patterns: 'foo', file: 'test.txt')
-option label formatted value ("--injected-option") cannot start with a '-' (CommandMapper::ValidationError)
+# /home/postmodern/code/command_mapper.rb/lib/command_mapper/option.rb:273:in `emit_option_flag_and_value': option label formatted value ("--injected-option") cannot start with a '-' (CommandMapper::ValidationError)
+# 	from /home/postmodern/code/command_mapper.rb/lib/command_mapper/option.rb:164:in `argv'
+# 	from /home/postmodern/code/command_mapper.rb/lib/command_mapper/command.rb:485:in `block in command_argv'
+# 	from /home/postmodern/code/command_mapper.rb/lib/command_mapper/command.rb:483:in `each'
+# 	from /home/postmodern/code/command_mapper.rb/lib/command_mapper/command.rb:483:in `command_argv'
+# 	from /home/postmodern/code/command_mapper.rb/lib/command_mapper/command.rb:542:in `run_command'
+# 	from /home/postmodern/code/command_mapper.rb/lib/command_mapper/command.rb:108:in `run'
 ```
 
 In order to prevent arbitrary command injection, any special shell characters
