@@ -302,10 +302,10 @@ Grep.run(label: '--injected-option', patterns: 'foo', file: 'test.txt')
 ```
 
 In order to prevent arbitrary option injection via additional arguments, a `--`
-separator will be inserted between the options and the additional arguments to
-force the CLI utility to stop parsing options after the `--` separator, if any
-of the arguments starts with a `-` character. This prevents the CLI utility 
-from parsing the additional arguments as option flags:
+separator will be inserted between the options and the additional arguments if
+any of the arguments starts with a `-` character. This will force the CLI
+utility to stop parsing options after the `--` separator, and prevents the CLI
+utility from parsing the additional arguments as option flags:
 
 ```ruby
 grep = Grep.new(ignore_case: true, patterns: '-foo', file: 'test.txt')
