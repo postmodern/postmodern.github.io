@@ -6,6 +6,7 @@ tags:
  - command
  - shell
  - library
+ - security
  - command_mapper
  - command_mapper-gen
 ---
