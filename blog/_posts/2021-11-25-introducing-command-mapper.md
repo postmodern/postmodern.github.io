@@ -229,9 +229,25 @@ cmd = "#{grep} | less"
 system(cmd)
 ```
 
-**Note:** any special shell characters in the command's option or argument
-values will automatically be escaped using [Shellwords] to prevent arbitrary
-command injection via one of the command class's options or arguments.
+## Security
+
+In order to prevent arbitrary option injection, option will explicitly not
+allow values that begin with a `-`:
+
+```ruby
+Grep.run(label: '--injected-option', patterns: 'foo', file: 'test.txt')
+option label formatted value ("--injected-option") cannot start with a '-' (CommandMapper::ValidationError)
+```
+
+In order to prevent arbitrary command injection, any special shell characters
+in the command's option or argument values will automatically be escaped using
+[Shellwords]\:
+
+```ruby
+grep = Grep.new(patterns: ';injected_command#', file: 'test.txt')
+grep.command_string
+# => "grep \\;injected_command\\# test.txt"
+```
 
 [Shellwords]: https://rubydoc.info/stdlib/shellwords/Shellwords
 
