@@ -406,7 +406,7 @@ option (ex: `-I`).
 
 Beyond providing a Ruby interface to external commands, and preventing
 arbitrary command injection, [command_mapper] and [command_mapper-gen] allows
-Ruby to interface with other CLI utilities written in other programming
+Ruby to quickly interface with other CLI utilities written in other programming
 language ecosystems that Ruby cannot bind to, such as [Elixir], [Go], [Rust],
 [Crystal], [Nim], or [Zig].
 
