@@ -44,13 +44,17 @@ end
 
 Better. We have fixed the arbitrary command injection by passing multiple
 arguments to [Kernel#system], which executes the command as its own sub-process,
-not in a sub-shell. We also added very basic validations for `branch`. However,
-those basic validations are not enough and the above code is still vulnerable to
-option injection via `branch` or any additional argument that is appended to
-`args`. It would take a lot of work to add support for all of `git pull`'s
-other options and arguments, and add validations for each of them.
+not in a sub-shell. We also added very basic validations for `branch`.
 
 [Kernel#system]: https://rubydoc.info/stdlib/core/Kernel#system-instance_method
+
+However, those basic validations are not enough and the above code is still
+vulnerable to option injection via `branch` or any additional argument that is
+appended to `args`. While the above code might be suitable for a `Rakefile`
+where we only call `git_pull` with explicit literal values, if we were to pass
+user input to `git_pull`, possibly from say a web app, we would need stronger
+input validations. It would take a lot of work to add support for all of
+`git pull`'s other options and arguments, and add validations for each of them.
 
 ## The Solution
 
