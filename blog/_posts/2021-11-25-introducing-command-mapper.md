@@ -398,6 +398,10 @@ class Grep < CommandMapper::Command
 end
 ```
 
+**Note:** some keyword arguments are intentionally left blank with a
+`# FIXME` command because command_mapper-gen cannot infer the names of _every_
+option (ex: `-I`).
+
 ## Importance to the Ruby Ecosystem
 
 Beyond providing a Ruby interface to external commands, and preventing
