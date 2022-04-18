@@ -56,7 +56,7 @@ user input to `git_pull`, possibly from say a web app, we would need stronger
 input validations. It would take a lot of work to add support for all of
 `git pull`'s other options and arguments, and add validations for each of them.
 
-## Enter CommandMapper
+## Enter command_mapper
 
 [command_mapper] is a new library for mapping external commands to Ruby classes.
 
