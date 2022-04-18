@@ -137,8 +137,8 @@ own validation and formatting rules. The available types are:
 * [Str][CommandMapper::Types::Str]: string values
 * [Num][CommandMapper::Types::Num]: numeric values
 * [Hex][CommandMapper::Types::Hex]: hexadecimal values
-* [Map][CommandMapper::Types::Map]: maps `true`/`false` to `yes` or `no`, or
-  `enabled` or `disabled` (aka `--opt=yes|no` or `--opt=enabled|disabled`
+* [Map][CommandMapper::Types::Map]: maps `true`/`false` to `yes`/`no`, or
+  `enabled`/`disabled` (aka `--opt=yes|no` or `--opt=enabled|disabled`
   values).
 * [Enum][CommandMapper::Types::Enum]: maps a finite set of Symbols to
   a finite set of Strings (aka `--opt={foo|bar|baz}` values).
