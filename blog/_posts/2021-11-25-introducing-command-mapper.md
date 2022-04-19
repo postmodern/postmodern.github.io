@@ -27,9 +27,9 @@ However, there are a few problems with the above code:
 * Does not validate the input
   (ex: `git_pull(nil)`, `git_pull("")`, `git_pull(true)`, `git_pull(false)`,
   `git_pull([1,2,3])`, `git_pull({1=>2})`, etc).
-* Vulnerable to arbitrary command injection
+* Vulnerable to arbitrary [command injection]
   (ex: `git_pull(";evil_command_here#")`).
-* Vulnerable to arbitrary option injection
+* Vulnerable to arbitrary [option injection]
   (ex: `git_pull("--option-that-gives-an-attacker-control branch")`).
 
 A better version of the above code might look like this:
@@ -49,7 +49,7 @@ not in a sub-shell. We also added very basic validations for `branch`.
 [Kernel#system]: https://rubydoc.info/stdlib/core/Kernel#system-instance_method
 
 However, those basic validations are not enough and the above code is still
-vulnerable to option injection via `branch` or any additional argument that is
+vulnerable to [option injection] via `branch` or any additional argument that is
 appended to `args`. While the above code might be suitable for a `Rakefile`
 where we only call `git_pull` with explicit literal values, if we were to pass
 user input to `git_pull`, possibly from say a web app, we would need stronger
@@ -291,7 +291,7 @@ grep.command_string
 
 [Shellwords]: https://rubydoc.info/stdlib/shellwords/Shellwords
 
-In order to prevent option injection, options will explicitly not
+In order to prevent [option injection], options will explicitly not
 allow values that begin with a `-` character:
 
 ```ruby
@@ -305,11 +305,11 @@ Grep.run(label: '--injected-option', patterns: 'foo', file: 'test.txt')
 # 	from /home/postmodern/code/command_mapper.rb/lib/command_mapper/command.rb:108:in `run'
 ```
 
-In order to prevent arbitrary option injection via additional arguments, a `--`
-separator will be inserted between the options and the additional arguments if
-any of the arguments starts with a `-` character. This will force the CLI
-utility to stop parsing options after the `--` separator, and prevents the CLI
-utility from parsing the additional arguments as option flags:
+In order to prevent arbitrary [option injection] via additional arguments,
+a `--` separator will be inserted between the options and the additional
+arguments if any of the arguments starts with a `-` character. This will force
+the CLI utility to stop parsing options after the `--` separator, and prevents
+the CLI utility from parsing the additional arguments as option flags:
 
 ```ruby
 grep = Grep.new(ignore_case: true, patterns: '-foo', file: 'test.txt')
@@ -420,3 +420,6 @@ language ecosystems that Ruby cannot bind to, such as [Elixir], [Go], [Rust],
 Using [command_mapper] we can automate other CLI utilities, written in other
 languages, parse their output or output files, all seamlessly from Ruby as if
 you were calling another Ruby library.
+
+[command injection]: https://owasp.org/www-community/attacks/Command_Injection
+[option injection]: https://staaldraad.github.io/post/2019-11-24-argument-injection/
