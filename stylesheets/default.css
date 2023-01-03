@@ -129,6 +129,13 @@ main h1:first-of-type {
 
 main a {
 	color: var(--fg-color);
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+main a:hover {
+	color: var(--bg-color);
+	background-color: var(--fg-color);
 	text-decoration: none;
 }
 
@@ -160,17 +167,6 @@ main ul,ol {
 
 main ul,ol > li {
 	padding-left: 2em;
-}
-
-main a {
-	font-weight: bold;
-	text-decoration: underline;
-}
-
-main a:hover {
-	color: var(--bg-color);
-	background-color: var(--fg-color);
-	text-decoration: none;
 }
 
 main div.note, div.warning {
