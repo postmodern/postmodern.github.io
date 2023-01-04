@@ -169,7 +169,7 @@ main ul,ol > li {
 	padding-left: 2em;
 }
 
-main div.note, div.warning {
+main div.note, main div.warning {
 	clear: right;
 	margin: 0.5em 0 0.5em 0;
 	padding: 0.5em;
