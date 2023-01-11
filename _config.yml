@@ -3,6 +3,9 @@ server: true
 server_port: 2222
 markdown: kramdown
 
+exclude:
+  - README.md
+
 postmodern:
   github: https://github.com/postmodern
   twitter: https://twitter.com/postmodern_mod3
