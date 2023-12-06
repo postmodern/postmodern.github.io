@@ -5,6 +5,7 @@ author: postmodern
 tags:
   - tryhackme
   - ctf
+  - writeup
   - adventofcyber
   - adventofcyber2023
   - ruby
