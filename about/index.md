@@ -38,7 +38,7 @@ Currently taking the rest of the year off to work on Open Source. See my
   number of CVEs effecting ruby gems.
 
 [Ruby]: https://www.ruby-lang.org
-[Crystal]: https://www.ruby-lang.org
+[Crystal]: https://www.crystal-lang.org
 [Bash]: https://mywiki.wooledge.org/BashGuide
 
 [chruby]: https://github.com/postmodern/chruby#readme
