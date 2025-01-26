@@ -36,7 +36,7 @@ over the years. I used the term "Ruby hate" because in the past other's disdain
 for Ruby has crossed the line into repeated trolling and harassment.
 
 [spidr]: https://github.com/postmodern/spidr#readme
-[ruby-nmap]: https://github.com/sophsec/ruby-nmap#readme
+[ruby-nmap]: https://github.com/postmodern/ruby-nmap#readme
 [bundler-audit]: https://github.com/rubysec/bundler-audit#readme
 
 ## Reason #1: Everyone Else Is Doing It

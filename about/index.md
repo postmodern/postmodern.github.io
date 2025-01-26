@@ -49,11 +49,11 @@ Currently taking the rest of the year off to work on Open Source. See my
 [ruby-advisory-db]: https://github.com/rubysec/ruby-advisory-db#readme
 [ronin]: https://ronin-rb.dev
 [ruby-masscan]: https://github.com/postmodern/ruby-masscan#readme
-[ruby-nmap]: https://github.com/sophsec/ruby-nmap#readme
+[ruby-nmap]: https://github.com/postmodern/ruby-nmap#readme
 [ruby-sslyze]: https://github.com/trailofbits/ruby-sslyze#readme
 [gscraper]: https://github.com/postmodern/gscraper#readme
-[ffi-pcap]: https://github.com/sophsec/ffi-pcap#readme
-[ffi-udis86]: https://github.com/sophsec/ffi-udis86#readme
+[ffi-pcap]: https://github.com/postmodern/ffi-pcap#readme
+[ffi-udis86]: https://github.com/postmodern/ffi-udis86#readme
 [spf-query]: https://github.com/trailofbits/spf-query#readme
 [dkim-query]: https://github.com/trailofbits/spf-query#readme
 [http-security]: https://github.com/trailofbits/http-security#readme
