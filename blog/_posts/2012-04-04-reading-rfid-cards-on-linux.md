@@ -43,7 +43,7 @@ On Fedora:
 
 ## Install the OmniKey 6321 PC/SC Driver
 
-1. Browser to [www.hidglobal.com/driverDownloads.php?techCat=19&prod_id=274][http://www.hidglobal.com/driverDownloads.php?techCat=19&prod_id=274].
+1. Browser to [www.hidglobal.com/driverDownloads.php?techCat=19&prod_id=274](http://www.hidglobal.com/driverDownloads.php?techCat=19&prod_id=274).
 2. Select your Operating System. Choose "Linux" for 32bit or
    "Linux x64" for 64bit.
 3. Download the `ifdokrfid_lnx` tar archive file.
