@@ -93,91 +93,40 @@ words (ex: `CreateIpAddressesTable` not `CreateIPAddressesTable`).
 
 ## Running Migrations
 
-Turns out that ActiveRecord provides a [ActiveRecord::MigrationContext] class
+ActiveRecord provides a [ActiveRecord::MigrationContext] class
 which can load and run migrations similar to `rake db:migrate`. This class can
-be initialized with our own `migrations/` directory or even sub-classed:
+be initialized with our own `migrations/` directory path, which will load all
+migrations within the directory and allow us to run the migrations.
 
 [ActiveRecord::MigrationContext]: https://rubydoc.info/gems/activerecord/ActiveRecord/MigrationContext
 
-```ruby
-require 'active_record'
-
-module Library
-  class MigrationContext < ActiveRecord::MigrationContext
-
-    MIGRATIONS_DIR = File.join(__dir__,'migrations')
-
-    def initialize
-      super(MIGRATIONS_DIR)
-    end
-
-  end
-end
-```
-
-If you want to store the migration numbers in your own `schema_migrations`
-table, that maybe has a prefix in order to keep it separate from a Rails app's
-own `schema_migrations` table, you can sub-class the
-[ActiveRecord::SchemaMigrations] model.
-
-[ActiveRecord::SchemaMigrations]: https://github.com/rails/rails/blob/7-0-stable/activerecord/lib/active_record/schema_migration.rb
-
-```ruby
-require 'active_record'
-
-module Library
-  class SchemaMigrations < ActiveRecord::SchemaMigrations
-
-    self.table_name_prefix = 'library_'
-
-  end
-end
-```
-
-**Note:** setting `self.table_name` does not work since
-[ActiveRecord::SchemaMigrations] defines it's own `#table_name` reader method.
-You _must_ set `self.table_name_prefix` which is used by `#table_name`.
-
-Then you can pass your own `LibrarySchemaMigrations` model to
-[ActiveRecord::MigrationContext#initialize].
-
-[ActiveRecord::MigrationContext#initialize]: https://rubydoc.info/gems/activerecord/ActiveRecord/MigrationContext#initialize-instance_method
-
-```ruby
-# lib/library/migration_context.rb
-require 'active_record'
-
-module Library
-  class MigrationContext < ActiveRecord::MigrationContext
-
-    MIGRATIONS_DIR = File.join(__dir__,'migrations')
-
-    def initialize
-      super(MIGRATIONS_DIR,Library::SchemaMigrations)
-    end
-
-  end
-end
-```
-
-Finally we can add some convenience methods for executing the migrations:
+The next step is to define our own `Migrations` module which defines
+`migrate`, `migrate_up`, and `migrate_down` methods which call the
+`.migrate`, `.up`, and `.down` methods on the initialized
+`ActiveRecord::MigrationContext` object:
 
 ```ruby
 # lib/library/migrations.rb
-require_relative 'migration_context'
+require_relative 'active_record'
 
 module Library
   module Migrations
+    DIR = File.join(__dir__,'migrations')
+
+    def self.context
+      @context ||= ActiveRecord::MigrationContext.new([DIR])
+    end
+
     def self.migrate(target_version=nil)
-      MigrationContext.new.migrate(target_version)
+      context.migrate(target_version)
     end
 
     def self.migrate_up(target_version=nil)
-      MigrationContext.new.up(target_version)
+      context.up(target_version)
     end
 
     def self.migrate_down(target_version=nil)
-      MigrationContext.new.down(target_version)
+      context.down(target_version)
     end
   end
 end
